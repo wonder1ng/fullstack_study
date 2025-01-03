@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <title>테이블 태그의 속성</title>
+    <!-- border: 테두리 선 굵기 -->
+    <!-- width: 넓이 -->
+    <!-- height: 높이 -->
+    <!-- rowspan: 행(가로) 칸 수 -->
+    <!-- colspan: 열(세로) 칸 수 -->
+    <!-- font 태그의 color 속성: 글씨 색상 -->
+    <!-- bgcoder: 배경 속성 -->
+    <!-- align: 정렬(left, center, right) -->
+</head>
+
+<body>
+    <table border="1px" width="500px" height="300px">
+        <!-- thead와 tbody 생략 시 tbody로 인식 -->
+        <thead>
+            <tr bgcolor="skyblue">
+                <th align="left">제목 셀1</font>
+                </th>
+                <th>
+                    <font color="white">제목 셀2</font>
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td align="center">데이터 셀1</td>
+                <td>데이터 셀2</td>
+            </tr>
+            <tr align="right">
+                <td>데이터 셀1</td>
+                <td>데이터 셀2</td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+
+</html>

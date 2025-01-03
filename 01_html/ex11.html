@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <title>테이블 셀 병합</title>
+    <!-- 속성 colspan: 열(가로) 병합 -->
+    <!-- 속성 rowspan: 행(세로) 병합 -->
+</head>
+
+<body>
+    <table border="1px">
+        <thead>
+            <tr>
+                <th colspan="2">제목 셀1</th>
+                <th>제목 셀2</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <!-- 다행 편집 단축키: CRTL + ARTL + 화살표 -->
+                <td>셀 데이터1</td>
+                <td rowspan="2">셀 데이터2</td>
+                <td>셀 데이터3</td>
+            </tr>
+            <tr>
+                <td>셀 데이터4</td>
+                <td>셀 데이터5</td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+
+</html>
