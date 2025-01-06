@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- 문제 1 -->
+    <title>문서제목입니다.</title>
+</head>
+
+<body>
+    <!-- 문제 2 -->
+    <h1>H1태그입니다.</h1>
+    <!-- 문제 3 -->
+    줄바꿈 태그 br를 사용합니다. <br />
+    줄바꿈 태그 br를 사용합니다.
+    <!-- 문제 4 -->
+    <p>문단 태그를 사용하여 여러 줄의 글을 표현할 수 있다. 문단 태그를 사용하여 여러 줄의 글을 표현할 수 있다. 문단 태그를 사용하여 여러 줄의 글을 표현할 수 있다.</p>
+    <p>문단 태그를 사용하여 여러 줄의 글을 표현할 수 있다. 문단 태그를 사용하여 여러 줄의 글을 표현할 수 있다. 문단 태그를 사용하여 여러 줄의 글을 표현할 수 있다.</p>
+    <!-- 문제 5 -->
+    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Harum, doloribus obcaecati? Repellat nostrum quia,
+        magnam possimus voluptas odit quam veniam ducimus praesentium est adipisci impedit nobis quas provident cumque
+        sapiente.</p>
+    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Harum, doloribus obcaecati? Repellat nostrum quia,
+        magnam possimus voluptas odit quam veniam ducimus praesentium est adipisci impedit nobis quas provident cumque
+        sapiente.</p>
+    <!-- 문제 6 -->
+    <a href="https://www.w3schools.com">link to w3schools</a><br />
+    <!-- 문제 7 -->
+    <a href="#" download="ex20.html">ex20.html 파일 다운로드</a>
+    <!-- 문제 8 -->
+    <p>
+    <ul style="border: 1px solid black; width: 280px;">
+        해야 할 일
+        <p>
+            <li style="margin-left: 40px;">장보기</li>
+            <li style="margin-left: 40px;">전등 교체하기</li>
+            <li style="margin-left: 40px;">커피믹스 사기</li>
+            <li style="margin-left: 40px;">이사 준비</li>
+        <ul>
+            <li style="margin-left: 40px;">짐 정리</li>
+            <li style="margin-left: 40px;">이사 업체 선정</li>
+            <li style="margin-left: 40px;">이삿날 날씨 알아보기</li>
+        </ul>
+        </p>
+    </ul>
+    </p>
+    <!-- 문제 9 -->
+    <table border="1px" width="300px">
+        <thead>
+            <tr>
+                <th>Firstname</th>
+                <th>Lastname</th>
+                <th>Age</th>
+            </tr>
+        </thead>
+        <tbody>
+            <td>jill</td>
+            <td>Smith</td>
+            <td>50</td>
+        </tbody>
+        <tbody>
+            <td>Eve</td>
+            <td>Jackson</td>
+            <td>94</td>
+        </tbody>
+        <tbody>
+            <td>John</td>
+            <td>Doe</td>
+            <td>80</td>
+        </tbody>
+    </table>
+    <br />
+    <!-- 문제 10 -->
+    <table border="1px" width="300">
+        <thead>
+            <th>Name:</th>
+            <td>Bill gates</td>
+        </thead>
+        <tbody>
+            <th>Telephone:</th>
+            <td>555 77 855</td>
+        </tbody>
+        <tbody>
+            <th>Telephone:</th>
+            <td>555 77 854</td>
+        </tbody>
+    </table>
+    <!-- 문제 11 -->
+    <p>
+        <img src="https://www.w3schools.com/html/img_girl.jpg" width="500" height="600">
+    </p>
+    <!-- 문제 12 -->
+    <a href="https://www.w3schools.com">
+        <img src="https://www.w3schools.com/images/w3schools_green.jpg">
+    </a><br />
+    <!-- 문제 13 -->
+    <h1>레스토랑 예약하기</h1>
+    <form action="" method="post">
+        <fieldset>
+            <legend>예약자 정보</legend>
+            <label for="customer">예약자: </label>
+            <input type="text" name="customer" id="customer"><br />
+            <label for="tel">연락처: </label>
+            <input type="tel" name="tel" id="tel" placeholder="000-0000-0000"><br />
+            <label for="people">예약인원: </label>
+            <select name="people" id="people">
+                <option value="1명">1명</option>
+                <option value="2명" selected>2명</option>
+                <option value="3명">3명</option>
+                <option value="4명">4명</option>
+                <option value="5명">5인 이상</option>
+            </select>
+        </fieldset>
+        <fieldset>
+            <legend>일자 선택 및 시간 선택</legend>
+            <input type="date" name="date" id="date">
+            <input type="time" name="time" id="time">
+        </fieldset>
+    </form>
+    <br />
+    <!-- 문제 14 -->
+    <h1>설문조사</h1>
+    <form action="" method="post">
+        <fieldset>
+            <legend>성별과 나이를 입력하세요.</legend>
+            성별
+            <input type="radio" name="radio1" id="radio1">
+            <label for="radio1">남자</label>
+            <input type="radio" name="radio2" id="radio2">
+            <label for="radio2">여자</label>
+            <br />
+            <label for="ages">나이: </label>
+            <input type="number" name="number" id="number">
+        </fieldset>
+        <fieldset>
+            <legend>관심 분야를 선택하세요.(1개 이상)</legend>
+            <input type="checkbox" name="checkbox1" id="checkbox1">
+            <label for="checkbox1">디지털 콘텐츠</label>
+            <input type="checkbox" name="checkbox2" id="checkbox2">
+            <label for="checkbox2">웹프로그래밍</label>
+            <input type="checkbox" name="checkbox3" id="checkbox3">
+            <label for="checkbox3">데이터베이스</label>
+            <input type="checkbox" name="checkbox4" id="checkbox4">
+            <label for="checkbox4">전자출판</label>
+        </fieldset>
+        <fieldset>
+            <legend>다음 문항에 대해 5점 척도로 답하세요.</legend>
+            <label for="range1">본 세미나의 주제는 만족스러운가?</label>
+            1<input type="range" name="range1" id="range1" min="1" max="5" value="3">5
+            <br />
+            <label for="range2">본 세미나의 초청 강사는 만족스러운가?</label>
+            1<input type="range" name="range2" id="range2" min="1" max="5" value="3">5
+            <br />
+            <label for="range3">본 세미나의 강의 시간은 적당한가?</label>
+            1<input type="range" name="range3" id="range3" min="1" max="5" value="3">5
+            <br />
+        </fieldset>
+        <br />
+        <label for="textarea">기타 의견 사항</label>
+        <br />
+        <textarea name="textarea" id="textarea" cols="30" rows="5">의견을 적으세요</textarea>
+    </form>
+    <br />
+
+    <!-- 문제 15 -->
+    <video controls>
+        <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
+        <source src="https://www.w3schools.com/html/mov_bbb.ogg" type="video/ogg">
+        video 미지원 시 표기
+    </video>
+    <br />
+
+    <!-- 문제 16 -->
+    <audio src=""></audio>
+    <audio controls>
+        <source src="https://www.w3schools.com/html/horse.ogg" type="audio/ogg">
+        <source src="https://www.w3schools.com/html/horse.mp3" type="audio/mp3">
+        audio 미지원 시 표기
+    </audio>
+    <br />
+
+    <!-- 문제 17 -->
+    <iframe src="https://www.youtube.com/embed/4mYN9dEr3jo">
+        <p>현재 사용 중인 브라우저는 ifram 요소를 지원하지 않습니다 </p>
+    </iframe>
+    <br />
+
+    <!-- 문제 18 -->
+    문제 18 공간분할 타입
+    <br />
+    block타입 태그들: div, h1~h6, p, ol, li, table, ul, hr, form
+    <br />
+    inline타입 태그들: span, a, img, text속성태그(b, i, small, ins, del), input
+    <br />
+
+    <!-- 문제 19 -->
+    <br />
+    문제 19 시멘틱태그
+    <br />
+    header: 페이지 상단의 이름이나 메뉴 등<br />
+    nav: 메뉴, 링크 등<br />
+    section: 구획 구분<br />
+    aside: 부가 기능, 광고 등<br />
+    footer: 페이지 바닥의 사이트 정보 등<br />
+    <br />
+
+    <!-- 문제 20 -->
+    <meta http-equiv="refresh" content="5;url=http://www.w3schools.com">
+
+</body>
+
+</html>
