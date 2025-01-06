@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <title>시맨틱 태그</title>
+    <!-- Semantic 의미론적 -->
+    <!-- 웹페이지의 공통적인 공간 구성 요소를 태그 형식으로 분류한 것 -->
+    <!-- 공통적인 구성요소, 해더(Header), 푸터(Footer), 메인(썩션), 어사이드(Aside), 내비게이션바(메뉴바,Nav) -->
+    <!-- header태그: 상단공간(헤더)-->
+    <!-- nav태그: 내비게이션(메뉴) -->
+    <!-- footer태그: 바닥 공간 -->
+    <!-- main태그: 주 콘텐츠 공간(section + aside) -->
+    <!-- section: 주된 콘탠츠 -->
+    <!-- aside: 사이트(왼쪽, 오른쪽) 공간 -->
+    <!-- div 태그와 기능적으론 동일 -->
+    <!-- *-----------------* -->
+    <!-- |   Header(Top)   | -->
+    <!-- *-----------------* -->
+    <!-- |        Nav      | -->
+    <!-- *-----------------*      -->
+    <!-- |      |          |      -->
+    <!-- |Aside | Section  | Main -->
+    <!-- |      |          |      -->
+    <!-- *-----------------* -->
+    <!-- |      Footer     | -->
+    <!-- *-----------------* -->
+
+    <style>
+        * {
+            border: 1px solid red;
+        }
+
+        ul,
+        li {
+            display: inline;
+        }
+
+        /* float(조정 어려움)보단 flex box 애용 */
+        section {
+            /* display: inline으로 만들고 우측정렬 */
+            float: right;
+            width: 80%
+        }
+
+        aside {
+            /* display: inline으로 만들고 좌측정렬 */
+            float: left;
+            width: 18%
+        }
+
+        footer {
+            /* clear: float - right left 지워준다. block으로 돌아감. */
+            clear: both
+        }
+    </style>
+</head>
+
+<body>
+    <header>헤더영역</header>
+    <nav>
+        <ul>
+            <li><a href="#">메뉴1</a></li>
+            <li><a href="#">메뉴2</a></li>
+            <li style="display: block;"><a href="#">메뉴3</a></li>
+        </ul>
+    </nav>
+    <main>
+        <section>섹션
+            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quae nobis officia minus itaque nisi,
+                perspiciatis
+                tenetur, ad corporis illo excepturi quibusdam amet? Mollitia nemo doloribus necessitatibus ipsa commodi
+                dolor voluptatibus.</p>
+            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quae nobis officia minus itaque nisi,
+                perspiciatis
+                tenetur, ad corporis illo excepturi quibusdam amet? Mollitia nemo doloribus necessitatibus ipsa commodi
+                dolor voluptatibus.</p>
+        </section>
+        <aside>사이드
+            <ul>
+                <li style="display: block;"><a href="#">메뉴1</a></li>
+                <li style="display: block;"><a href="#">메뉴2</a></li>
+                <li style="display: block;"><a href="#">메뉴3</a></li>
+            </ul>
+        </aside>
+    </main>
+    <footer>푸터영역</footer>
+</body>
+
+</html>
