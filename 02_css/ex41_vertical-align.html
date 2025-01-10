@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <title>vertical-align 속성</title>
+    <!-- 수직 정렬은 flexbox 사용 -->
+    <!-- inline 요소에만 적용 -->
+    <style>
+        body div {
+            margin: 0;
+            padding: 0;
+        }
+
+        h3 {
+            border: 1px solid blue;
+        }
+
+        #box1 {
+            height: 100px;
+            display: inline;
+            border: 1px solid red;
+        }
+
+        h3 {
+            text-align: center;
+            vertical-align: middle;
+            /* line-height: 100px; */
+        }
+    </style>
+</head>
+
+<body>
+    <div id="box1">
+        <h3>가운데로 보내주세요~</h3>
+    </div>
+</body>
+
+</html>
