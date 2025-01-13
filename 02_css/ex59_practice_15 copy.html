@@ -16,6 +16,56 @@
             text-align: center;
         }
 
+        body,
+        html {
+            height: 100%;
+        }
+
+        body,
+        button,
+        input,
+        select,
+        td,
+        textarea,
+        th {
+            font-weight: 400;
+            font-size: 12px;
+            line-height: 1.5;
+            font-family: system-ui, -apple-system, Helvetica Neue, Apple SD Gothic Neo, Segoe UI, Roboto, Arial, NotoSans, Open Sans, Malgun Gothic, 맑은 고딕, sans-serif;
+            color: #333;
+        }
+
+        blockquote,
+        body,
+        button,
+        code,
+        dd,
+        div,
+        dl,
+        dt,
+        fieldset,
+        form,
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6,
+        input,
+        legend,
+        li,
+        ol,
+        p,
+        pre,
+        select,
+        td,
+        textarea,
+        th,
+        ul {
+            margin: 0;
+            padding: 0;
+        }
+
         .content-article {
             position: relative;
             width: 580px;
@@ -70,6 +120,69 @@
             font-family: -apple-system, Roboto, NotoSans, AppleSDGothicNeo-Regular, 맑은 고딕, Malgun Gothic, 돋움, dotum, sans-serif;
             letter-spacing: .15em;
         }
+
+        a,
+        button,
+        input,
+        label {
+            -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
+        }
+
+        .BoxLayout_root__Ya1Da .content-article {
+            position: relative;
+            width: 580px;
+            height: 100%;
+            min-height: 480px;
+            margin: 40px auto 30px;
+            padding: 0 69px;
+            border: 1px solid rgba(0, 0, 0, .12);
+            font-size: 12px;
+            box-sizing: border-box;
+        }
+
+        .box_tf .util_tf {
+            position: absolute;
+            right: 0;
+            top: 2px;
+            z-index: 10;
+            min-width: 55px;
+            height: 43px;
+            font-size: 0;
+            text-align: right;
+        }
+
+        .screen_out {
+            position: absolute;
+            width: 0;
+            height: 0;
+        }
+
+        .ir_caption,
+        .screen_out {
+            overflow: hidden;
+            line-height: 0;
+            text-indent: -9999px;
+        }
+
+        a,
+        button,
+        input,
+        label {
+            -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        사용자 에이전트 스타일시트 label {
+            cursor: default;
+        }
+
+        .BoxLayout_root__Ya1Da .content-article .cont_login {
+            word-wrap: break-word;
+        }
     </style>
 </head>
 
@@ -80,30 +193,44 @@
             <div class="login_kakaomail">
                 <form>
                     <div class="item_form fst">
-                        <div class="box_tf"><label class="screen_out" for="loginId--1">계정정보 입력</label><input
-                                placeholder="카카오메일 아이디, 이메일, 전화번호 " type="text" id="loginId--1" name="loginId"
+                        <div class="box_tf">
+                            <label class="screen_out" for="loginId--1">계정정보 입력</label>
+                            <input placeholder="카카오메일 아이디, 이메일, 전화번호 " type="text" id="loginId--1" name="loginId"
                                 class="tf_g" value="">
                             <div class="util_tf"></div>
                         </div>
                     </div>
                     <div class="item_form">
-                        <div class="box_tf"><label class="screen_out" for="password--2">비밀번호 입력</label><input
-                                placeholder="비밀번호" autocomplete="off" type="password" id="password--2" name="password"
-                                class="tf_g" value="">
+                        <div class="box_tf">
+                            <label class="screen_out" for="password--2">비밀번호 입력</label>
+                            <input placeholder="비밀번호" autocomplete="off" type="password" id="password--2"
+                                name="password" class="tf_g" value="">
                             <div class="util_tf"></div>
                         </div>
                     </div>
                     <div class="set_login">
-                        <div class="item_choice"><span><input type="checkbox" id="saveSignedIn--4" class="inp_choice"
-                                    name="saveSignedIn" value="false"><label class="lab_choice" for="saveSignedIn--4"
-                                    id="label-saveSignedIn"><span class="ico_comm ico_check"></span>간편로그인 정보
-                                    저장</label></span><button type="button" class="btn_help"
-                                aria-describedby="label-saveSignedIn" aria-expanded="false"><span
-                                    class="ico_comm ico_help">도움말 보기</span></button></div>
+                        <div class="item_choice">
+                            <span>
+                                <input type="checkbox" id="saveSignedIn--4" class="inp_choice" name="saveSignedIn"
+                                    value="false">
+                                <label class="lab_choice" for="saveSignedIn--4" id="label-saveSignedIn">
+                                    <span class="ico_comm ico_check"></span>
+                                    간편로그인 정보 저장
+                                </label>
+                            </span>
+                            <button type="button" class="btn_help" aria-describedby="label-saveSignedIn"
+                                aria-expanded="false">
+                                <span class="ico_comm ico_help">도움말 보기</span>
+                            </button>
+                        </div>
                     </div>
-                    <div class="confirm_btn"><button type="submit" class="btn_g highlight submit">로그인</button><span
-                            class="line_or"><span class="txt_or">또는</span></span><button type="button"
-                            class="btn_g">QR코드 로그인</button></div>
+                    <div class="confirm_btn">
+                        <button type="submit" class="btn_g highlight submit">로그인</button>
+                        <span class="line_or">
+                            <span class="txt_or">또는</span>
+                        </span>
+                        <button type="button" class="btn_g">QR코드 로그인</button>
+                    </div>
                 </form>
                 <div class="info_user"><a
                         href="/weblogin/create_account?continue=https%3A%2F%2Fwww.daum.net&amp;lang=ko&amp;showHeader=false"

@@ -4,13 +4,15 @@
 <head>
     <title>다음 로그인 화면</title>
     <style>
-        * {
-            /* margin: auto; */
-            text-align: center;
-        }
-
         body {
-            padding: 10px;
+            text-align: center;
+            padding: 0;
+            margin: 0 auto;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            flex-direction: column;
         }
 
 
@@ -21,7 +23,20 @@
             height: 600px;
             border: 1px solid lightgray;
             align-items: center;
+            justify-content: space-around;
             padding: 50px;
+        }
+
+        header {
+            width: 200px;
+            height: 90px;
+            text-align: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        main {
+            text-align: center;
         }
 
         input {
@@ -36,6 +51,20 @@
         img {
             margin: 10px;
         }
+
+        .input1 {
+            width: 400px;
+            height: 30px;
+            border-width: 0px 0px 2px 0px;
+            border-style: solid;
+            border-color: lightgray;
+        }
+
+        .button1 {
+            width: 400px;
+            height: 40px;
+            border: 0px;
+        }
     </style>
 </head>
 
@@ -43,24 +72,24 @@
     <header><img src="logo_kakao.png" alt="kakao"></header>
     <main>
         <form action="http://www.myserver.com/login" method="GET">
-            <input style="width: 400px; height: 30px;" type="text" name="id" placeholder="카카오메일 아이디, 이메일 전화번호"><br />
-            <input style="width: 400px; height: 30px;" type="password" name="pw" placeholder="비밀번호">
-            <span style="align-content: flex-start;">
+            <input class="input1" type="text" name="id" placeholder="카카오메일 아이디, 이메일 전화번호"><br />
+            <input class="input1" type="password" name="pw" placeholder="비밀번호">
+            <div>
                 <input type="radio" name="save_login_data" id="save_login_data">간편로그인 정보 저장
-            </span>
-            <button type="submit"
-                style="width: 400px; height: 30px; background-color: yellow; width: 400px; height: 20px;">로그인</button>
-            <button type="submit"
-                style="width: 400px; height: 30px;background-color: lightgray; width: 400px; height: 20px;">QR코드
+            </div>
+            <button class="button1" type="submit" style="background-color: yellow;">로그인</button>
+            <div>또는</div>
+            <button class="button1" type="submit" style="background-color: lightgray;">QR코드
                 로그인</button>
-            <div style="display: flex; justify-content: space-around;">
+            <div>
                 <span>회원가입</span>
-                <span></span>
-                <span></span>
+                <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                </span>
                 <span>계정 찾기</span>
+                <span>|</span>
                 <span>비밀번호 찾기</span>
             </div>
-            <img src="img_bnr_ko.png" style="background-color: lightgray; height: 15%;">
+            <img src="img_bnr_ko.png" style="background-color: lightgray; height: 15%; justify-content: end;">
         </form>
     </main>
     <footer>
