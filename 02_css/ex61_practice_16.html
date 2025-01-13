@@ -160,11 +160,140 @@
         }
 
         /* ex22 */
-        .ex22 table {
-            /* border: 1px solid gray; */
-            /* border-collapse: collapse; */
-            padding: 20px;
+        div.ex22 table {
+            border-collapse: collapse;
+        }
+
+        th.ex22,
+        td.ex22 {
             text-align: center;
+            border: 1px solid lightgray;
+            padding: 20px;
+        }
+
+        /* ex23 */
+        div.ex23 table {
+            border-collapse: collapse;
+        }
+
+        th.ex23,
+        td.ex23 {
+            text-align: center;
+            border-bottom: 1px solid lightgray;
+            padding: 20px;
+        }
+
+        /* ex24 */
+        div.ex24 table {
+            border-collapse: collapse;
+        }
+
+        th.ex24,
+        td.ex24 {
+            text-align: center;
+            padding: 20px;
+        }
+
+        .ex24 tr:nth-child(even) {
+            background-color: lightgray;
+        }
+
+        /* ex25 */
+        div.ex25 table {
+            border-collapse: collapse;
+        }
+
+        th.ex25,
+        td.ex25 {
+            text-align: center;
+            padding: 20px;
+        }
+
+        .ex25 tr:nth-child(2):hover {
+            background-color: aqua;
+        }
+
+        /* ex26 */
+        div.ex26 table {
+            border-collapse: collapse;
+        }
+
+        th.ex26,
+        td.ex26 {
+            border: 1px solid gray;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .ex26 tr:nth-child(even) {
+            background-color: lightgray;
+        }
+
+        .ex26 tr:nth-child(1) {
+            color: white;
+            background-color: #03aa6d;
+        }
+
+        .ex26 tr:nth-child(2):hover {
+            background-color: aqua;
+        }
+
+        /* ex27 */
+        div.ex27>div {
+            height: 300px;
+            background-image: url(https://www.w3schools.com/css/img_5terre_wide.jpg);
+            background-size: contain;
+            background-repeat: no-repeat;
+            text-align: center;
+            position: relative;
+        }
+
+        .ex27 span {
+            font-size: 32px;
+            color: white;
+            background-color: aqua;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        /* ex28 */
+        div.ex28 {
+            margin: 0;
+            padding: 0;
+        }
+
+        .ex28 ul {
+            display: table;
+            width: 100%;
+            text-align: center;
+            border-spacing: 20px;
+        }
+
+        .ex28 ul li {
+            display: table-cell;
+            width: 20%;
+            height: 100px;
+            border: 2px solid lightgray;
+            vertical-align: middle;
+            list-style-type: none;
+        }
+
+        /* ex29 */
+        .ex29 h1 {
+            border-style: solid;
+            border-width: 2px;
+        }
+
+        .ex29 h2 {
+            border-style: dotted;
+            border-width: 1px;
+        }
+
+        .ex29 p {
+            border-style: double;
+            border-width: 6px;
         }
     </style>
 </head>
@@ -339,7 +468,8 @@
         <h2 class="ex21">이것은 헤더태그 H2입니다.</h2>
         <p class="ex21">이것은 문단입니다.이것은 문단입니다.이것은 문단입니다.이것은 문단입니다.이것은 문단입니다.</p>
     </div>
-    <h2>테이블 예제</h2>
+    <!-- ex22 -->
+    <h2 class="ex22">테이블 예제</h2>
     <div class="ex22">
         <table class="ex22">
             <tr class="ex22">
@@ -368,6 +498,153 @@
                 <td class="ex22">현모양처</td>
             </tr>
         </table>
+    </div>
+    <!-- ex23 -->
+    <h2 class="ex23">테이블 예제</h2>
+    <div class="ex23">
+        <table class="ex23">
+            <tr class="ex23">
+                <th class="ex23">이름</th>
+                <th class="ex23">나이</th>
+                <th class="ex23">직업</th>
+            </tr>
+            <tr class="ex23">
+                <td class="ex23">홍길동</td>
+                <td class="ex23">30</td>
+                <td class="ex23">별난사람</td>
+            </tr>
+            <tr class="ex23">
+                <td class="ex23">이순신</td>
+                <td class="ex23">40</td>
+                <td class="ex23">장군</td>
+            </tr>
+            <tr class="ex23">
+                <td class="ex23">변사또</td>
+                <td class="ex23">50</td>
+                <td class="ex23">공무원</td>
+            </tr>
+            <tr class="ex23">
+                <td class="ex23">사임당</td>
+                <td class="ex23">20</td>
+                <td class="ex23">현모양처</td>
+            </tr>
+        </table>
+    </div>
+    <!-- ex24 -->
+    <h2 class="ex24">테이블 예제</h2>
+    <div class="ex24">
+        <table class="ex24">
+            <tr class="ex24">
+                <th class="ex24">이름</th>
+                <th class="ex24">나이</th>
+                <th class="ex24">직업</th>
+            </tr>
+            <tr class="ex24">
+                <td class="ex24">홍길동</td>
+                <td class="ex24">30</td>
+                <td class="ex24">별난사람</td>
+            </tr>
+            <tr class="ex24">
+                <td class="ex24">이순신</td>
+                <td class="ex24">40</td>
+                <td class="ex24">장군</td>
+            </tr>
+            <tr class="ex24">
+                <td class="ex24">변사또</td>
+                <td class="ex24">50</td>
+                <td class="ex24">공무원</td>
+            </tr>
+            <tr class="ex24">
+                <td class="ex24">사임당</td>
+                <td class="ex24">20</td>
+                <td class="ex24">현모양처</td>
+            </tr>
+        </table>
+    </div>
+    <!-- ex25 -->
+    <h2 class="ex25">테이블 예제</h2>
+    <div class="ex25">
+        <table class="ex25">
+            <tr class="ex25">
+                <th class="ex25">이름</th>
+                <th class="ex25">나이</th>
+                <th class="ex25">직업</th>
+            </tr>
+            <tr class="ex25">
+                <td class="ex25">홍길동</td>
+                <td class="ex25">30</td>
+                <td class="ex25">별난사람</td>
+            </tr>
+            <tr class="ex25">
+                <td class="ex25">이순신</td>
+                <td class="ex25">40</td>
+                <td class="ex25">장군</td>
+            </tr>
+            <tr class="ex25">
+                <td class="ex25">변사또</td>
+                <td class="ex25">50</td>
+                <td class="ex25">공무원</td>
+            </tr>
+            <tr class="ex25">
+                <td class="ex25">사임당</td>
+                <td class="ex25">20</td>
+                <td class="ex25">현모양처</td>
+            </tr>
+        </table>
+    </div>
+    <!-- ex26 -->
+    <h2 class="ex26">테이블 예제</h2>
+    <div class="ex26">
+        <table class="ex26">
+            <tr class="ex26">
+                <th class="ex26">이름</th>
+                <th class="ex26">나이</th>
+                <th class="ex26">직업</th>
+            </tr>
+            <tr class="ex26">
+                <td class="ex26">홍길동</td>
+                <td class="ex26">30</td>
+                <td class="ex26">별난사람</td>
+            </tr>
+            <tr class="ex26">
+                <td class="ex26">이순신</td>
+                <td class="ex26">40</td>
+                <td class="ex26">장군</td>
+            </tr>
+            <tr class="ex26">
+                <td class="ex26">변사또</td>
+                <td class="ex26">50</td>
+                <td class="ex26">공무원</td>
+            </tr>
+            <tr class="ex26">
+                <td class="ex26">사임당</td>
+                <td class="ex26">20</td>
+                <td class="ex26">현모양처</td>
+            </tr>
+        </table>
+    </div>
+    <!-- ex27 -->
+    <div class="ex27">
+        <h2 class="ex27">이미지 위의 텍스트</h2>
+        <div>
+            <span class="ex27">아름다운 섬마을</span>
+        </div>
+    </div>
+    <!-- ex28 -->
+    <div class="ex28">
+        <ul class="ex28">
+            <li class="ex28">항목 1</li>
+            <li class="ex28">항목 2</li>
+            <li class="ex28">항목 3</li>
+            <li class="ex28">항목 4</li>
+        </ul>
+    </div>
+
+    <!-- ex29 -->
+    <div class="ex29">
+        <h1 class="ex29">이것은 헤더태그 H1입니다.</h1>
+        <h2 class="ex29">이것은 헤더태그 H2입니다.</h2>
+        <p class="ex29">이것은 문단입니다.이것은 문단입니다.이것은 문단입니다.이것은 문단입니다.이것은 문단입니다.</p>
     </div>
 </body>
 

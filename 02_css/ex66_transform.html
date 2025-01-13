@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <title>변형 속성 - transform 속성</title>
+    <!-- 크기, 각도 등이 변형되는 것 -->
+    <!-- 2차원(XY평면), 3차원(XYZ평면) -->
+    <!-- 2차원 좌표계: Left-Top이 원점 -->
+    <!-- 3차원 좌표계: 2차원 + z축 -->
+    <!--            : z+방향: 모니터 앞으로 -->
+    <!--            : z-방향: 모니터 뒤로 -->
+    <!-- rotate(각도값): 회전 -->
+    <!-- translate(x, y): X, Y 좌표로 이동 -->
+    <!-- translateX(x): X좌표만 이동 -->
+    <!-- translateY(y): y좌표만 이동 -->
+    <!-- scale(X, Y): 크기 조절. 기본값 1(배수) -->
+    <!-- scaleX(x): x 크기 조절 -->
+    <!-- scaleY(y): y 크기 조절 -->
+    <!-- skrew(x, y): 기울이기-->
+    <!-- skrewX(x): x 기울이기-->
+    <!-- skrewY(y): y 기울이기-->
+    <!-- transform-origin: 앵커값(회전 기준) -->
+    <style>
+        section {
+            width: 100px;
+            height: 100px;
+            border: 5px solid black;
+        }
+
+        div {
+            width: 100px;
+            height: 100px;
+            background-color: red;
+
+            /* transform: rotate(45deg); */
+            /* transform-origin: left bottom; */
+            /* transform-origin: 30% 75%; */
+
+            /* transform: translate(30px, 30px) rotate(30deg); */
+            transform: skew(10deg);
+        }
+    </style>
+</head>
+
+<body>
+    <section>
+        <div></div>
+    </section>
+</body>
+
+</html>

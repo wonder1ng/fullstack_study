@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <title>변환효과 - transision 속성</title>
+    <!-- 위치 송성: top left right bottmom -->
+    <!-- 크기 속성: width height -->
+    <!-- 박스 속성: margin padding -->
+    <!-- 테두리속성: border-width radius color style -->
+    <!-- 색상 속성: color background=color -->
+    <!-- 투명도: opacity 0.0(투명) ~ 1.0(불투명) -->
+    <!-- 형태: transfor(기울기, 스케일-줌) -->
+
+    <style>
+        .box {
+            width: 100px;
+            height: 100px;
+            background-color: orange;
+            /* 모든 속성, 2초 동안 */
+            transition: all 2s;
+        }
+
+        .box:hover {
+            width: 200px;
+            height: 200px;
+        }
+
+        .box:active {
+            background-color: red;
+            opacity: 0.8;
+            font-size: 32px;
+            border: 20px solid green;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">클릭!</div>
+</body>
+
+</html>
