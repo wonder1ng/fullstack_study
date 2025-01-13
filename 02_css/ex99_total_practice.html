@@ -240,9 +240,9 @@
 
         /* ex27 */
         div.ex27>div {
-            height: 300px;
+            height: 423px;
             background-image: url(https://www.w3schools.com/css/img_5terre_wide.jpg);
-            background-size: contain;
+            background-size: cover;
             background-repeat: no-repeat;
             text-align: center;
             position: relative;
@@ -295,7 +295,164 @@
             border-style: double;
             border-width: 6px;
         }
+
+        /* ex30 */
+        .ex30 {
+            border: 2px red;
+        }
+
+        .ex30 h1 {
+            border-style: solid;
+            border-width: 2px;
+        }
+
+        .ex30 h2 {
+            border-style: dashed;
+            border-radius: 10px;
+        }
+
+        .ex30 p {
+            border-style: dotted;
+            border-radius: 20px;
+        }
+
+        /* ex31 */
+        .ex31 h1 {
+            margin: 30px;
+            padding: 20px;
+            border: 2px solid black;
+        }
+
+        /* ex32 */
+        .ex32 h1 {
+            margin: 30px 0px 10px 0px;
+            padding: 0px 20px 0px 20px;
+            border: 2px solid black;
+        }
+
+        /* ex33 */
+        .ex33 p {
+            text-indent: 20px
+        }
+
+        /* ex34 */
+        .ex34 p {
+            margin: 0;
+            padding: 0;
+            position: fixed;
+            bottom: 0%;
+            right: 0%;
+            border: 3px solid red;
+        }
+
+        /* ex35 */
+        .ex35.sticky {
+            margin: 0;
+            padding: 0;
+            position: sticky;
+            top: 0%;
+            background-color: #cae8ca;
+            border: 2px solid #4CAF50;
+        }
+
+        /* ex36 */
+        .ex36#red {
+            position: absolute;
+            top: 7260px;
+            left: 0px;
+            width: 100px;
+            height: 100px;
+            background-color: red;
+        }
+
+        .ex36#blue {
+            position: absolute;
+            top: 7300px;
+            left: 40px;
+            width: 100px;
+            height: 100px;
+            background-color: blue;
+        }
+
+        /* ex37 */
+        .ex37>p:nth-child(1) {
+            font-family: "Nanum Pen Script", serif;
+            font-weight: 400;
+            font-style: normal;
+        }
+
+        .ex37>p:nth-child(2) {
+            font-family: "Roboto", serif;
+            font-optical-sizing: auto;
+            font-style: normal;
+            font-variation-settings:
+                "wdth" 100;
+        }
+
+        /* ex38 */
+        .ex38 {
+            background-color: #faf0e6;
+            text-align: center;
+            margin: 0;
+        }
+
+        .ex38 h3 {
+            color: brown;
+            margin-top: 20px;
+            margin-bottom: 20px;
+        }
+
+        .ex38 p {
+            color: purple;
+            margin-top: 20px;
+            margin-bottom: 20px;
+        }
+
+        /* ex39 */
+        div.ex39 {
+            margin: 0 auto;
+            height: 100vh;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+        }
+
+        header.ex39 {
+            flex: 1;
+            background: yellow;
+        }
+
+        main.ex39 {
+            display: flex;
+            flex: 5;
+            background: orange;
+        }
+
+        nav.ex39 {
+            flex: 1;
+            background: orange;
+        }
+
+        section.ex39 {
+            flex: 5;
+            background: olivedrab;
+        }
+
+        aside.ex39 {
+            flex: 1;
+            background: orange;
+        }
+
+        footer.ex39 {
+            flex: 1;
+            background: plum;
+        }
     </style>
+    <link href="https://fonts.googleapis.com/css2?family=Nanum+Pen+Script&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+
+
 </head>
 
 <body>
@@ -626,7 +783,7 @@
     <!-- ex27 -->
     <div class="ex27">
         <h2 class="ex27">이미지 위의 텍스트</h2>
-        <div>
+        <div class="ex27">
             <span class="ex27">아름다운 섬마을</span>
         </div>
     </div>
@@ -639,13 +796,72 @@
             <li class="ex28">항목 4</li>
         </ul>
     </div>
-
     <!-- ex29 -->
     <div class="ex29">
         <h1 class="ex29">이것은 헤더태그 H1입니다.</h1>
         <h2 class="ex29">이것은 헤더태그 H2입니다.</h2>
         <p class="ex29">이것은 문단입니다.이것은 문단입니다.이것은 문단입니다.이것은 문단입니다.이것은 문단입니다.</p>
     </div>
+    <!-- ex30 -->
+    <div class="ex30">
+        <h1 class="ex30">이것은 헤더태그 H1입니다.</h1>
+        <h2 class="ex30">이것은 헤더태그 H2입니다.</h2>
+        <p class="ex30">이것은 문단입니다.이것은 문단입니다.이것은 문단입니다.이것은 문단입니다.이것은 문단입니다.</p>
+    </div>
+    <!-- ex32 -->
+    <div class="ex32">
+        <h1 class="ex32">이것은 헤더태그 H1입니다.</h1>
+        <h2 class="ex32">이것은 헤더태그 H2입니다.</h2>
+        <p class="ex32">이것은 문단입니다.이것은 문단입니다.이것은 문단입니다.이것은 문단입니다.이것은 문단입니다.</p>
+    </div>
+    <!-- ex33 -->
+    <div class="ex33">
+        <p class="ex33">이것은 문단입니다.이것은 문단입니다.이것은 문단입니다.이것은 문단입니다.이것은 문단입니다.</p>
+    </div>
+    <!-- ex34 -->
+    <div class="ex34">
+        <p class="ex34">이것은 문단입니다.이것은 문단입니다.이것은 문단입니다.이것은 문단입니다.이것은 문단입니다.</p>
+    </div>
+    <!-- ex35 -->
+    <div class="ex35">
+        <p class="ex35 sticky">이것은 문단입니다.이것은 문단입니다.이것은 문단입니다.이것은 문단입니다.이것은 문단입니다.</p>
+        <p class="ex35">이것은 문단입니다.이것은 문단입니다.이것은 문단입니다.이것은 문단입니다.이것은 문단입니다.</p>
+        <p class="ex35">이것은 문단입니다.이것은 문단입니다.이것은 문단입니다.이것은 문단입니다.이것은 문단입니다.</p>
+        <p class="ex35">이것은 문단입니다.이것은 문단입니다.이것은 문단입니다.이것은 문단입니다.이것은 문단입니다.</p>
+        <p class="ex35">이것은 문단입니다.이것은 문단입니다.이것은 문단입니다.이것은 문단입니다.이것은 문단입니다.</p>
+        <p class="ex35">이것은 문단입니다.이것은 문단입니다.이것은 문단입니다.이것은 문단입니다.이것은 문단입니다.</p>
+    </div>
+    <!-- ex36 -->
+    <div class="ex36" style="height: 150px;">
+        <div class="ex36" id="red"></div>
+        <div class="ex36" id="blue">
+            <p class="ex36">문단태그입니다.</p>
+        </div>
+    </div>
+    <!-- ex37 -->
+    <div class="ex37">
+        <p class="ex37">성공의 비결은 단 한 가지, 잘할 수 있는 일에 광적으로 집중하는 것이다.</p>
+        <p class="ex37">도미노피자 창업자 Tom Monaghan</p>
+    </div>
+    <!-- ex38 -->
+    <div class="ex38">
+        <h3 class="ex38">소연재</h3>
+        <hr class="ex38">
+        <p class="ex38">저는 체조 선수 소연재입니다. 음악을 들으면서
+            책읽기를 좋아합니다. 김치 찌개와 막국수 무척
+            좋아합니다.</p>
+    </div>
+    <!-- ex39 -->
+    <div class="ex39">
+        <header class="ex39">header</header>
+        <main class="ex39">
+            <nav class="ex39">nav</nav>
+            <section class="ex39">section</section>
+            <aside class="ex39">aside</aside>
+        </main>
+        <footer class="ex39">footer</footer>
+    </div>
+    <div style="height: 50px;"></div>
 </body>
 
 </html>
