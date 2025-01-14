@@ -1,33 +1,31 @@
 <!DOCTYPE html>
 <html lang="ko">
-
-<head>
+  <head>
     <title>입력태그의 종류2</title>
-</head>
+  </head>
 
-<body>
+  <body>
     <form action="http://www.myserver.com" method="get">
-        <!-- button태그: HTML 4.0부터 지원 -->
-        <!-- type 미 설정 시 기본 submit -->
-        <button>버튼1</button>
-        <button type="submit">버튼1</button>
-        <input type="submit">
-        <br />
-        <button type="button" onclick="alert('클릭!')">버튼2</button>
-        <br />
-        <input type="reset" value="리셋">
-        <input type="text">
-        <br />
-        <!-- formaction 속성 -->
-        <button type="submit" formaction="http://www.myserver2.com">
-            다른 주소로 전송
-        </button>
-        <!-- 이미지 버튼 -->
-        <input type="image" src="play-button.png" width="50px" height="50px">
-        <button type="submit" style="border: none; background-color: transparent;">
-            <img src="play-button.png" width="50px" height="50px">
-        </button>
+      <!-- button태그: HTML 4.0부터 지원 -->
+      <!-- type 미 설정 시 기본 submit -->
+      <button>버튼1</button>
+      <button type="submit">버튼1</button>
+      <input type="submit" />
+      <br />
+      <button type="button" onclick="alert('클릭!')">버튼2</button>
+      <br />
+      <input type="reset" value="리셋" />
+      <input type="text" />
+      <br />
+      <!-- formaction 속성 -->
+      <button type="submit" formaction="http://www.myserver2.com">
+        다른 주소로 전송
+      </button>
+      <!-- 이미지 버튼 -->
+      <input type="image" src="play-button.png" width="50px" height="50px" />
+      <button type="submit" style="border: none; background-color: transparent">
+        <img src="play-button.png" width="50px" height="50px" />
+      </button>
     </form>
-</body>
-
+  </body>
 </html>

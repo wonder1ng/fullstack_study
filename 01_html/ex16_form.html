@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="ko">
-
-<head>
+  <head>
     <title>입력양식 태그 - form 태그</title>
     <!-- 로그인, 회원가입 화면에서 사용자 정보 서버 전송 용도 -->
     <!-- 
@@ -26,16 +25,18 @@
     ?: 구분자
     id=admin&pw=1234: Key-Value 쌍
     -->
-</head>
+  </head>
 
-<body>
-    <a href="http://www.mysite.com:8080/mypage/qna?phone=01012341234&address=한양"></a>
+  <body>
+    <a
+      href="http://www.mysite.com:8080/mypage/qna?phone=01012341234&address=한양"
+    ></a>
     <!-- 한글은 URL Encoding: 한 양 => %ED95%9C %EC%96%91 -->
     <!-- UTF-8 유니코드를 3바이트 변환, %기호 사용 표시 -->
     <!-- 모든 서버 및 시스템은 아스키 코드 사용. 유니코드 미사용 -->
     <form action="http://www.mysite.com:8080/mypage/qna" method="GET">
-        <input type="hidden" name="phone" value="01012341234">
-        <input type="hidden" name="address" value="한양">
+      <input type="hidden" name="phone" value="01012341234" />
+      <input type="hidden" name="address" value="한양" />
     </form>
 
     <!--     
@@ -69,14 +70,9 @@
             : void login(String id, String pw)
      -->
     <form action="http://www.myserver.com/login" method="GET">
-        <input type="text" name="id"><br />
-        <input type="password" name="pw"><br />
-        <input type="submit"><br />
-
-
+      <input type="text" name="id" /><br />
+      <input type="password" name="pw" /><br />
+      <input type="submit" /><br />
     </form>
-
-
-</body>
-
+  </body>
 </html>

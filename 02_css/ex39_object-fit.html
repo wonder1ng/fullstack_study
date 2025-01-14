@@ -1,50 +1,47 @@
 <!DOCTYPE html>
 <html lang="ko">
-
-<head>
+  <head>
     <title>img태그 이미지 배치 -object=fit 속성</title>
     <style>
-        .box {
-            width: 200px;
-            height: 200px;
-            border: 2px solid red;
-            margin: 10px;
-        }
+      .box {
+        width: 200px;
+        height: 200px;
+        border: 2px solid red;
+        margin: 10px;
+      }
 
-        .img1 {
-            /* none: 본래 이미지 유지(박스 크기만큼만 보임, 중앙 배치) */
-            object-fit: none;
-        }
+      .img1 {
+        /* none: 본래 이미지 유지(박스 크기만큼만 보임, 중앙 배치) */
+        object-fit: none;
+      }
 
-        .img2 {
-            /* fill(기본값): 크기 맞춤 (해상도 무시. 여백 없음.)*/
-            object-fit: fill;
-        }
+      .img2 {
+        /* fill(기본값): 크기 맞춤 (해상도 무시. 여백 없음.)*/
+        object-fit: fill;
+      }
 
-        .img3 {
-            /* contain: 크기 맞춤(해상도 유지. 여백 발생.) */
-            object-fit: contain;
-        }
+      .img3 {
+        /* contain: 크기 맞춤(해상도 유지. 여백 발생.) */
+        object-fit: contain;
+      }
 
-        .img4 {
-            /* cover: 크기 맞춤(해상도 유지. 여백 없음, 일부 잘릴 수 있음.) */
-            object-fit: cover;
-        }
+      .img4 {
+        /* cover: 크기 맞춤(해상도 유지. 여백 없음, 일부 잘릴 수 있음.) */
+        object-fit: cover;
+      }
 
-        .img5 {
-            /* scale-down: 박스가 작으면 contain, 크면 none 적용 */
-            object-fit: scale-down;
-        }
+      .img5 {
+        /* scale-down: 박스가 작으면 contain, 크면 none 적용 */
+        object-fit: scale-down;
+      }
     </style>
-</head>
+  </head>
 
-
-<body>
-    <div><img class="box img1" src="bg.jpg"></div>
-    <div><img class="box img2" src="bg.jpg"></div>
-    <div><img class="box img3" src="bg.jpg"></div>
-    <div><img class="box img4" src="bg.jpg"></div>
-    <div><img class="box img5" src="bg.jpg"></div>
-</body>
-
+  <body>
+    <div><img class="box img1" src="bg.jpg" /></div>
+    <div><img class="box img2" src="bg.jpg" /></div>
+    <div><img class="box img3" src="bg.jpg" /></div>
+    <div><img class="box img4" src="bg.jpg" /></div>
+    <div><img class="box img5" src="bg.jpg" /></div>
+  </body>
 </html>

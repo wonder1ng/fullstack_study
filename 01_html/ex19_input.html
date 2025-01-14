@@ -1,54 +1,61 @@
 <!DOCTYPE html>
 <html lang="ko">
-
-<head>
+  <head>
     <title>입력태그의 종류3</title>
-</head>
+  </head>
 
-<body>
+  <body>
     <form action="http://www.myserver.com">
-        <!-- hidden: 숨김 속성, 사용자에게는 보이지 않고 서버에는 입력값이 전달됨 -->
-        <input type="hidden" name="hiddenVal" value="게시물 아이디값">
-        <br />
-        <!-- select태그: 선택목록(dropdown) -->
-        <!-- selected: 기본 건택 값 -->
-        <select name="drink">
-            <option value="coke">콜라</option>
-            <option value="sidar" selected>사이다</option>
-            <option value="juice">쥬스</option>
-        </select>
-        <!-- hr태그: 수평선 -->
-        <hr />
-        <!-- 색상 선택 태그 -->
-        <input type="color" name="color" value="#FF0000">
-        <!-- 색상 표현 빛의 3원색 -->
-        <!-- R: red, G: green, B:blue, A: alpha -->
-        <!-- 4바이트 = 1픽셀 색상: RGBA -->
-        <!-- Red: 1바이트: 0~255: 8bit -->
-        <!-- Green: 1바이트: 0~255: 8bit -->
-        <!-- Blue: 1바이트: 0~255: 8bit -->
-        <!-- ALpha: 1바이트: 0.0~1.0: 8bit -->
+      <!-- hidden: 숨김 속성, 사용자에게는 보이지 않고 서버에는 입력값이 전달됨 -->
+      <input type="hidden" name="hiddenVal" value="게시물 아이디값" />
+      <br />
+      <!-- select태그: 선택목록(dropdown) -->
+      <!-- selected: 기본 건택 값 -->
+      <select name="drink">
+        <option value="coke">콜라</option>
+        <option value="sidar" selected>사이다</option>
+        <option value="juice">쥬스</option>
+      </select>
+      <!-- hr태그: 수평선 -->
+      <hr />
+      <!-- 색상 선택 태그 -->
+      <input type="color" name="color" value="#FF0000" />
+      <!-- 색상 표현 빛의 3원색 -->
+      <!-- R: red, G: green, B:blue, A: alpha -->
+      <!-- 4바이트 = 1픽셀 색상: RGBA -->
+      <!-- Red: 1바이트: 0~255: 8bit -->
+      <!-- Green: 1바이트: 0~255: 8bit -->
+      <!-- Blue: 1바이트: 0~255: 8bit -->
+      <!-- ALpha: 1바이트: 0.0~1.0: 8bit -->
 
-        <!-- 날짜 선택 태그 -->
-        <input type="date" name="date" value="2025-01-06"><br />
-        <!-- 날짜 시간 선택 태그 -->
-        <input type="datetime-local" name="datetime" value="2025-01-06T12:27:00"><br />
-        <!-- email -->
-        <input type="email" name="email" value="abc@gmail.com"><br />
-        <!-- email 다중 선택 -->
-        <input type="email" name="email" value="abc@gmail.com,123@gmail.com" multiple><br />
-        <!-- 달(Month) -->
-        <input type="month" name="month" value="2025-11"><br />
-        <!-- 숫지(Number) -->
-        <input type="number" value="10" min="5" max="10" step="2"><br />
-        <!-- 범위 -->
-        <input type="range" value="6" min="1" max="10" step="5"><br />
-        <!-- 많은 텍스트: textarea -->
-        <textarea name="memo" cols="30" rows="10">
+      <!-- 날짜 선택 태그 -->
+      <input type="date" name="date" value="2025-01-06" /><br />
+      <!-- 날짜 시간 선택 태그 -->
+      <input
+        type="datetime-local"
+        name="datetime"
+        value="2025-01-06T12:27:00"
+      /><br />
+      <!-- email -->
+      <input type="email" name="email" value="abc@gmail.com" /><br />
+      <!-- email 다중 선택 -->
+      <input
+        type="email"
+        name="email"
+        value="abc@gmail.com,123@gmail.com"
+        multiple
+      /><br />
+      <!-- 달(Month) -->
+      <input type="month" name="month" value="2025-11" /><br />
+      <!-- 숫지(Number) -->
+      <input type="number" value="10" min="5" max="10" step="2" /><br />
+      <!-- 범위 -->
+      <input type="range" value="6" min="1" max="10" step="5" /><br />
+      <!-- 많은 텍스트: textarea -->
+      <textarea name="memo" cols="30" rows="10">
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis molestias, temporibus eveniet dolores illum libero accusantium vero cupiditate ex voluptatibus asperiores, voluptas maiores nulla officiis, debitis minus excepturi iusto ab?
-        </textarea><br />
+        </textarea
+      ><br />
     </form>
-
-</body>
-
+  </body>
 </html>

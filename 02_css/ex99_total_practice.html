@@ -1,867 +1,955 @@
 <!DOCTYPE html>
 <html lang="ko">
-
-<head>
+  <head>
     <title>CSS 연습문제 39제</title>
     <style>
-        /* ex1 */
-        h1.ex1 {
-            color: red;
-        }
-
-        h2.ex1 {
-            color: green;
-        }
-
-        p.ex1 {
-            color: blue;
-        }
-
-        /* ex2 */
-        *.ex2 {
-            color: red;
-            background-color: aqua;
-        }
-
-        /* ex3 */
-        *.ex3#header1 {
-            color: red;
-        }
-
-        *.ex3.select {
-            color: blue;
-        }
-
-        /* ex5 */
-        .ex5 a:link {
-            color: green;
-        }
-
-        .ex5 a:visited {
-            color: brown;
-        }
-
-        /* ex6 */
-        .ex6#contact>:nth-child(1) {
-            background-color: aqua;
-        }
-
-        /* ex7 */
-        .ex7 li:nth-child(1) {
-            background-color: aqua;
-        }
-
-        /* ex8 */
-        .ex8#contact>li:nth-child(1),
-        .ex8#contact>li:nth-child(2),
-        .ex8#contact>li:nth-child(3) {
-            background-color: aqua;
-        }
-
-        /* ex9 */
-        .ex9#sns li {
-            background-color: aqua;
-        }
-
-        /* ex10 */
-        .ex10#sns>li:nth-child(1) {
-            background-color: aqua;
-        }
-
-        /* ex11 */
-        div.ex11 {
-            background-color: aqua;
-        }
-
-        /* ex12 */
-        div.ex12 {
-            background-image: url(https://www.w3schools.com/css/paper.gif);
-        }
-
-        /* ex13 */
-        div.ex13 {
-            background-image: url(https://www.w3schools.com/css/img_tree.png);
-            background-position: right top;
-            height: 360px;
-            background-repeat: no-repeat;
-            margin-right: 200px;
-        }
-
-        /* ex14 */
-        div.ex14 {
-            background-image: url(https://www.w3schools.com/css/img_tree.png);
-            background-position: right top;
-            background-attachment: fixed;
-            height: 360px;
-            width: 100%;
-            background-repeat: no-repeat;
-            margin-right: 200px;
-        }
-
-        /* ex15 */
-        div.ex15 {
-            background-image: url(https://www.w3schools.com/css/gradient_bg.png);
-            background-repeat: repeat-x;
-        }
-
-        /* ex16 */
-        .ex16 p {
-            border: 5px solid red;
-        }
-
-        /* ex17 */
-        .ex17 h2 {
-            padding: 10px 50px;
-            margin: 10px 50px;
-            border: 5px solid red;
-        }
-
-        /* ex18 */
-        .ex18 h1 {
-            width: 150px;
-            height: 150px;
-            background-color: aqua;
-            border: 5px solid red;
-        }
-
-        /* ex19 */
-        .ex19 h1 {
-            width: 100px;
-            height: 100px;
-            background-color: aqua;
-            border: 5px solid red;
-            overflow: hidden;
-        }
-
-        /* ex20 */
-        .ex20 h1 {
-            text-align: right;
-        }
-
-        .ex20 h2 {
-            text-align: left;
-        }
-
-        .ex20 p {
-            text-align: center;
-        }
-
-        /* ex21 */
-        .ex21 h1 {
-            cursor: move;
-        }
-
-        .ex21 h2 {
-            cursor: n-resize;
-        }
-
-        .ex21 p {
-            cursor: progress;
-        }
-
-        /* ex22 */
-        div.ex22 table {
-            border-collapse: collapse;
-        }
-
-        th.ex22,
-        td.ex22 {
-            text-align: center;
-            border: 1px solid lightgray;
-            padding: 20px;
-        }
-
-        /* ex23 */
-        div.ex23 table {
-            border-collapse: collapse;
-        }
-
-        th.ex23,
-        td.ex23 {
-            text-align: center;
-            border-bottom: 1px solid lightgray;
-            padding: 20px;
-        }
-
-        /* ex24 */
-        div.ex24 table {
-            border-collapse: collapse;
-        }
-
-        th.ex24,
-        td.ex24 {
-            text-align: center;
-            padding: 20px;
-        }
-
-        .ex24 tr:nth-child(even) {
-            background-color: lightgray;
-        }
-
-        /* ex25 */
-        div.ex25 table {
-            border-collapse: collapse;
-        }
-
-        th.ex25,
-        td.ex25 {
-            text-align: center;
-            padding: 20px;
-        }
-
-        .ex25 tr:nth-child(2):hover {
-            background-color: aqua;
-        }
-
-        /* ex26 */
-        div.ex26 table {
-            border-collapse: collapse;
-        }
-
-        th.ex26,
-        td.ex26 {
-            border: 1px solid gray;
-            text-align: center;
-            padding: 20px;
-        }
-
-        .ex26 tr:nth-child(even) {
-            background-color: lightgray;
-        }
-
-        .ex26 tr:nth-child(1) {
-            color: white;
-            background-color: #03aa6d;
-        }
-
-        .ex26 tr:nth-child(2):hover {
-            background-color: aqua;
-        }
-
-        /* ex27 */
-        div.ex27>div {
-            height: 423px;
-            background-image: url(https://www.w3schools.com/css/img_5terre_wide.jpg);
-            background-size: cover;
-            background-repeat: no-repeat;
-            text-align: center;
-            position: relative;
-        }
-
-        .ex27 span {
-            font-size: 32px;
-            color: white;
-            background-color: aqua;
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-        }
-
-        /* ex28 */
-        div.ex28 {
-            margin: 0;
-            padding: 0;
-        }
-
-        .ex28 ul {
-            display: table;
-            width: 100%;
-            text-align: center;
-            border-spacing: 20px;
-        }
-
-        .ex28 ul li {
-            display: table-cell;
-            width: 20%;
-            height: 100px;
-            border: 2px solid lightgray;
-            vertical-align: middle;
-            list-style-type: none;
-        }
-
-        /* ex29 */
-        .ex29 h1 {
-            border-style: solid;
-            border-width: 2px;
-        }
-
-        .ex29 h2 {
-            border-style: dotted;
-            border-width: 1px;
-        }
-
-        .ex29 p {
-            border-style: double;
-            border-width: 6px;
-        }
-
-        /* ex30 */
-        .ex30 {
-            border: 2px red;
-        }
-
-        .ex30 h1 {
-            border-style: solid;
-            border-width: 2px;
-        }
-
-        .ex30 h2 {
-            border-style: dashed;
-            border-radius: 10px;
-        }
-
-        .ex30 p {
-            border-style: dotted;
-            border-radius: 20px;
-        }
-
-        /* ex31 */
-        .ex31 h1 {
-            margin: 30px;
-            padding: 20px;
-            border: 2px solid black;
-        }
-
-        /* ex32 */
-        .ex32 h1 {
-            margin: 30px 0px 10px 0px;
-            padding: 0px 20px 0px 20px;
-            border: 2px solid black;
-        }
-
-        /* ex33 */
-        .ex33 p {
-            text-indent: 20px
-        }
-
-        /* ex34 */
-        .ex34 p {
-            margin: 0;
-            padding: 0;
-            position: fixed;
-            bottom: 0%;
-            right: 0%;
-            border: 3px solid red;
-        }
-
-        /* ex35 */
-        .ex35.sticky {
-            margin: 0;
-            padding: 0;
-            position: sticky;
-            top: 0%;
-            background-color: #cae8ca;
-            border: 2px solid #4CAF50;
-        }
-
-        /* ex36 */
-        .ex36#red {
-            position: absolute;
-            top: 7260px;
-            left: 0px;
-            width: 100px;
-            height: 100px;
-            background-color: red;
-        }
-
-        .ex36#blue {
-            position: absolute;
-            top: 7300px;
-            left: 40px;
-            width: 100px;
-            height: 100px;
-            background-color: blue;
-        }
-
-        /* ex37 */
-        .ex37>p:nth-child(1) {
-            font-family: "Nanum Pen Script", serif;
-            font-weight: 400;
-            font-style: normal;
-        }
-
-        .ex37>p:nth-child(2) {
-            font-family: "Roboto", serif;
-            font-optical-sizing: auto;
-            font-style: normal;
-            font-variation-settings:
-                "wdth" 100;
-        }
-
-        /* ex38 */
-        .ex38 {
-            background-color: #faf0e6;
-            text-align: center;
-            margin: 0;
-        }
-
-        .ex38 h3 {
-            color: brown;
-            margin-top: 20px;
-            margin-bottom: 20px;
-        }
-
-        .ex38 p {
-            color: purple;
-            margin-top: 20px;
-            margin-bottom: 20px;
-        }
-
-        /* ex39 */
-        div.ex39 {
-            margin: 0 auto;
-            height: 100vh;
-            padding: 0;
-            display: flex;
-            flex-direction: column;
-        }
-
-        header.ex39 {
-            flex: 1;
-            background: yellow;
-        }
-
-        main.ex39 {
-            display: flex;
-            flex: 5;
-            background: orange;
-        }
-
-        nav.ex39 {
-            flex: 1;
-            background: orange;
-        }
-
-        section.ex39 {
-            flex: 5;
-            background: olivedrab;
-        }
-
-        aside.ex39 {
-            flex: 1;
-            background: orange;
-        }
-
-        footer.ex39 {
-            flex: 1;
-            background: plum;
-        }
+      /* ex1 */
+      h1.ex1 {
+        color: red;
+      }
+
+      h2.ex1 {
+        color: green;
+      }
+
+      p.ex1 {
+        color: blue;
+      }
+
+      /* ex2 */
+      *.ex2 {
+        color: red;
+        background-color: aqua;
+      }
+
+      /* ex3 */
+      *.ex3#header1 {
+        color: red;
+      }
+
+      *.ex3.select {
+        color: blue;
+      }
+
+      /* ex5 */
+      .ex5 a:link {
+        color: green;
+      }
+
+      .ex5 a:visited {
+        color: brown;
+      }
+
+      /* ex6 */
+      .ex6#contact > :nth-child(1) {
+        background-color: aqua;
+      }
+
+      /* ex7 */
+      .ex7 li:nth-child(1) {
+        background-color: aqua;
+      }
+
+      /* ex8 */
+      .ex8#contact > li:nth-child(1),
+      .ex8#contact > li:nth-child(2),
+      .ex8#contact > li:nth-child(3) {
+        background-color: aqua;
+      }
+
+      /* ex9 */
+      .ex9#sns li {
+        background-color: aqua;
+      }
+
+      /* ex10 */
+      .ex10#sns > li:nth-child(1) {
+        background-color: aqua;
+      }
+
+      /* ex11 */
+      div.ex11 {
+        background-color: aqua;
+      }
+
+      /* ex12 */
+      div.ex12 {
+        background-image: url(https://www.w3schools.com/css/paper.gif);
+      }
+
+      /* ex13 */
+      div.ex13 {
+        background-image: url(https://www.w3schools.com/css/img_tree.png);
+        background-position: right top;
+        height: 360px;
+        background-repeat: no-repeat;
+        margin-right: 200px;
+      }
+
+      /* ex14 */
+      div.ex14 {
+        background-image: url(https://www.w3schools.com/css/img_tree.png);
+        background-position: right top;
+        background-attachment: fixed;
+        height: 360px;
+        width: 100%;
+        background-repeat: no-repeat;
+        margin-right: 200px;
+      }
+
+      /* ex15 */
+      div.ex15 {
+        background-image: url(https://www.w3schools.com/css/gradient_bg.png);
+        background-repeat: repeat-x;
+      }
+
+      /* ex16 */
+      .ex16 p {
+        border: 5px solid red;
+      }
+
+      /* ex17 */
+      .ex17 h2 {
+        padding: 10px 50px;
+        margin: 10px 50px;
+        border: 5px solid red;
+      }
+
+      /* ex18 */
+      .ex18 h1 {
+        width: 150px;
+        height: 150px;
+        background-color: aqua;
+        border: 5px solid red;
+      }
+
+      /* ex19 */
+      .ex19 h1 {
+        width: 100px;
+        height: 100px;
+        background-color: aqua;
+        border: 5px solid red;
+        overflow: hidden;
+      }
+
+      /* ex20 */
+      .ex20 h1 {
+        text-align: right;
+      }
+
+      .ex20 h2 {
+        text-align: left;
+      }
+
+      .ex20 p {
+        text-align: center;
+      }
+
+      /* ex21 */
+      .ex21 h1 {
+        cursor: move;
+      }
+
+      .ex21 h2 {
+        cursor: n-resize;
+      }
+
+      .ex21 p {
+        cursor: progress;
+      }
+
+      /* ex22 */
+      div.ex22 table {
+        border-collapse: collapse;
+      }
+
+      th.ex22,
+      td.ex22 {
+        text-align: center;
+        border: 1px solid lightgray;
+        padding: 20px;
+      }
+
+      /* ex23 */
+      div.ex23 table {
+        border-collapse: collapse;
+      }
+
+      th.ex23,
+      td.ex23 {
+        text-align: center;
+        border-bottom: 1px solid lightgray;
+        padding: 20px;
+      }
+
+      /* ex24 */
+      div.ex24 table {
+        border-collapse: collapse;
+      }
+
+      th.ex24,
+      td.ex24 {
+        text-align: center;
+        padding: 20px;
+      }
+
+      .ex24 tr:nth-child(even) {
+        background-color: lightgray;
+      }
+
+      /* ex25 */
+      div.ex25 table {
+        border-collapse: collapse;
+      }
+
+      th.ex25,
+      td.ex25 {
+        text-align: center;
+        padding: 20px;
+      }
+
+      .ex25 tr:nth-child(2):hover {
+        background-color: aqua;
+      }
+
+      /* ex26 */
+      div.ex26 table {
+        border-collapse: collapse;
+      }
+
+      th.ex26,
+      td.ex26 {
+        border: 1px solid gray;
+        text-align: center;
+        padding: 20px;
+      }
+
+      .ex26 tr:nth-child(even) {
+        background-color: lightgray;
+      }
+
+      .ex26 tr:nth-child(1) {
+        color: white;
+        background-color: #03aa6d;
+      }
+
+      .ex26 tr:nth-child(2):hover {
+        background-color: aqua;
+      }
+
+      /* ex27 */
+      div.ex27 > div {
+        height: 423px;
+        background-image: url(https://www.w3schools.com/css/img_5terre_wide.jpg);
+        background-size: cover;
+        background-repeat: no-repeat;
+        text-align: center;
+        position: relative;
+      }
+
+      .ex27 span {
+        font-size: 32px;
+        color: white;
+        background-color: aqua;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+
+      /* ex28 */
+      div.ex28 {
+        margin: 0;
+        padding: 0;
+      }
+
+      .ex28 ul {
+        display: table;
+        width: 100%;
+        text-align: center;
+        border-spacing: 20px;
+      }
+
+      .ex28 ul li {
+        display: table-cell;
+        width: 20%;
+        height: 100px;
+        border: 2px solid lightgray;
+        vertical-align: middle;
+        list-style-type: none;
+      }
+
+      /* ex29 */
+      .ex29 h1 {
+        border-style: solid;
+        border-width: 2px;
+      }
+
+      .ex29 h2 {
+        border-style: dotted;
+        border-width: 1px;
+      }
+
+      .ex29 p {
+        border-style: double;
+        border-width: 6px;
+      }
+
+      /* ex30 */
+      .ex30 {
+        border: 2px red;
+      }
+
+      .ex30 h1 {
+        border-style: solid;
+        border-width: 2px;
+      }
+
+      .ex30 h2 {
+        border-style: dashed;
+        border-radius: 10px;
+      }
+
+      .ex30 p {
+        border-style: dotted;
+        border-radius: 20px;
+      }
+
+      /* ex31 */
+      .ex31 h1 {
+        margin: 30px;
+        padding: 20px;
+        border: 2px solid black;
+      }
+
+      /* ex32 */
+      .ex32 h1 {
+        margin: 30px 0px 10px 0px;
+        padding: 0px 20px 0px 20px;
+        border: 2px solid black;
+      }
+
+      /* ex33 */
+      .ex33 p {
+        text-indent: 20px;
+      }
+
+      /* ex34 */
+      .ex34 p {
+        margin: 0;
+        padding: 0;
+        position: fixed;
+        bottom: 0%;
+        right: 0%;
+        border: 3px solid red;
+      }
+
+      /* ex35 */
+      .ex35.sticky {
+        margin: 0;
+        padding: 0;
+        position: sticky;
+        top: 0%;
+        background-color: #cae8ca;
+        border: 2px solid #4caf50;
+      }
+
+      /* ex36 */
+      .ex36#red {
+        position: absolute;
+        top: 7260px;
+        left: 0px;
+        width: 100px;
+        height: 100px;
+        background-color: red;
+      }
+
+      .ex36#blue {
+        position: absolute;
+        top: 7300px;
+        left: 40px;
+        width: 100px;
+        height: 100px;
+        background-color: blue;
+      }
+
+      /* ex37 */
+      .ex37 > p:nth-child(1) {
+        font-family: "Nanum Pen Script", serif;
+        font-weight: 400;
+        font-style: normal;
+      }
+
+      .ex37 > p:nth-child(2) {
+        font-family: "Roboto", serif;
+        font-optical-sizing: auto;
+        font-style: normal;
+        font-variation-settings: "wdth" 100;
+      }
+
+      /* ex38 */
+      .ex38 {
+        background-color: #faf0e6;
+        text-align: center;
+        margin: 0;
+      }
+
+      .ex38 h3 {
+        color: brown;
+        margin-top: 20px;
+        margin-bottom: 20px;
+      }
+
+      .ex38 p {
+        color: purple;
+        margin-top: 20px;
+        margin-bottom: 20px;
+      }
+
+      /* ex39 */
+      div.ex39 {
+        margin: 0 auto;
+        height: 100vh;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+      }
+
+      header.ex39 {
+        flex: 1;
+        background: yellow;
+      }
+
+      main.ex39 {
+        display: flex;
+        flex: 5;
+        background: orange;
+      }
+
+      nav.ex39 {
+        flex: 1;
+        background: orange;
+      }
+
+      section.ex39 {
+        flex: 5;
+        background: olivedrab;
+      }
+
+      aside.ex39 {
+        flex: 1;
+        background: orange;
+      }
+
+      footer.ex39 {
+        flex: 1;
+        background: plum;
+      }
     </style>
-    <link href="https://fonts.googleapis.com/css2?family=Nanum+Pen+Script&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
-        rel="stylesheet">
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nanum+Pen+Script&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
 
-
-</head>
-
-<body>
+  <body>
     <!-- ex1 -->
     <div class="ex1">
-        <h1 class="ex1">이것은 헤더태그 H1입니다.</h1>
-        <h2 class="ex1">이것은 헤더태그 H2입니다.</h2>
-        <p class="ex1">이것은 문단입니다.이것은 문단입니다.이것은 문단입니다.이것은 문단입니다.이것은 문단입니다.</p>
+      <h1 class="ex1">이것은 헤더태그 H1입니다.</h1>
+      <h2 class="ex1">이것은 헤더태그 H2입니다.</h2>
+      <p class="ex1">
+        이것은 문단입니다.이것은 문단입니다.이것은 문단입니다.이것은
+        문단입니다.이것은 문단입니다.
+      </p>
     </div>
     <!-- ex2 -->
     <div class="ex2">
-        <h1 class="ex2">이것은 헤더태그 H1입니다.</h1>
-        <h2 class="ex2">이것은 헤더태그 H2입니다.</h2>
-        <p class="ex2">이것은 문단입니다.이것은 문단입니다.이것은 문단입니다.이것은 문단입니다.이것은 문단입니다.</p>
+      <h1 class="ex2">이것은 헤더태그 H1입니다.</h1>
+      <h2 class="ex2">이것은 헤더태그 H2입니다.</h2>
+      <p class="ex2">
+        이것은 문단입니다.이것은 문단입니다.이것은 문단입니다.이것은
+        문단입니다.이것은 문단입니다.
+      </p>
     </div>
     <!-- ex3 -->
     <div class="ex3">
-        <h1 class="ex3" id="header1">이것은 헤더태그 H1입니다.</h1>
-        <h2 class="ex3 select">이것은 헤더태그 H2입니다.</h2>
-        <p class="ex3 select">이것은 문단입니다.이것은 문단입니다.이것은 문단입니다.이것은 문단입니다.이것은 문단입니다.</p>
+      <h1 class="ex3" id="header1">이것은 헤더태그 H1입니다.</h1>
+      <h2 class="ex3 select">이것은 헤더태그 H2입니다.</h2>
+      <p class="ex3 select">
+        이것은 문단입니다.이것은 문단입니다.이것은 문단입니다.이것은
+        문단입니다.이것은 문단입니다.
+      </p>
     </div>
     <!-- ex4 -->
     <div class="ex4">
-        <h1 class="ex4" style="color: red;">이것은 헤더태그 H1입니다.</h1>
-        <h2 class="ex4" style="background-color: aqua;">이것은 헤더태그 H2입니다.</h2>
-        <p class="ex4">이것은 문단입니다.이것은 문단입니다.이것은 문단입니다.이것은 문단입니다.이것은 문단입니다.</p>
+      <h1 class="ex4" style="color: red">이것은 헤더태그 H1입니다.</h1>
+      <h2 class="ex4" style="background-color: aqua">
+        이것은 헤더태그 H2입니다.
+      </h2>
+      <p class="ex4">
+        이것은 문단입니다.이것은 문단입니다.이것은 문단입니다.이것은
+        문단입니다.이것은 문단입니다.
+      </p>
     </div>
     <!-- ex5 -->
     <div class="ex5">
-        <a class="ex5" href="#">앵커 태크입니다. link to w3schools</a>
+      <a class="ex5" href="#">앵커 태크입니다. link to w3schools</a>
     </div>
     <!-- ex6 -->
     <div class="ex6">
-        <ul class="ex6" id="contact">
-            <li class="ex6">핸드폰</li>
-            <li class="ex6">이메일</li>
-            <li class="ex6">주소</li>
-            <li class="ex6">SNS
-                <ul class="ex6" id="sns">
-                    <li class="ex6">유튜브</li>
-                    <li class="ex6">카카오톡</li>
-                    <li class="ex6">인스타그램</li>
-                </ul>
-            </li>
-        </ul>
+      <ul class="ex6" id="contact">
+        <li class="ex6">핸드폰</li>
+        <li class="ex6">이메일</li>
+        <li class="ex6">주소</li>
+        <li class="ex6">
+          SNS
+          <ul class="ex6" id="sns">
+            <li class="ex6">유튜브</li>
+            <li class="ex6">카카오톡</li>
+            <li class="ex6">인스타그램</li>
+          </ul>
+        </li>
+      </ul>
     </div>
     <!-- ex7 -->
     <div class="ex7">
-        <ul class="ex7" id="contact">
-            <li class="ex7">핸드폰</li>
-            <li class="ex7">이메일</li>
-            <li class="ex7">주소</li>
-            <li class="ex7">SNS
-                <ul class="ex7" id="sns">
-                    <li class="ex7">유튜브</li>
-                    <li class="ex7">카카오톡</li>
-                    <li class="ex7">인스타그램</li>
-                </ul>
-            </li>
-        </ul>
+      <ul class="ex7" id="contact">
+        <li class="ex7">핸드폰</li>
+        <li class="ex7">이메일</li>
+        <li class="ex7">주소</li>
+        <li class="ex7">
+          SNS
+          <ul class="ex7" id="sns">
+            <li class="ex7">유튜브</li>
+            <li class="ex7">카카오톡</li>
+            <li class="ex7">인스타그램</li>
+          </ul>
+        </li>
+      </ul>
     </div>
     <!-- ex8 -->
     <div class="ex8">
-        <ul class="ex8" id="contact">
-            <li class="ex8">핸드폰</li>
-            <li class="ex8">이메일</li>
-            <li class="ex8">주소</li>
-            <li class="ex8">SNS
-                <ul class="ex8" id="sns">
-                    <li class="ex8">유튜브</li>
-                    <li class="ex8">카카오톡</li>
-                    <li class="ex8">인스타그램</li>
-                </ul>
-            </li>
-        </ul>
+      <ul class="ex8" id="contact">
+        <li class="ex8">핸드폰</li>
+        <li class="ex8">이메일</li>
+        <li class="ex8">주소</li>
+        <li class="ex8">
+          SNS
+          <ul class="ex8" id="sns">
+            <li class="ex8">유튜브</li>
+            <li class="ex8">카카오톡</li>
+            <li class="ex8">인스타그램</li>
+          </ul>
+        </li>
+      </ul>
     </div>
     <!-- ex9 -->
     <div class="ex9">
-        <ul class="ex9" id="contact">
-            <li class="ex9">핸드폰</li>
-            <li class="ex9">이메일</li>
-            <li class="ex9">주소</li>
-            <li class="ex9">SNS
-                <ul class="ex9" id="sns">
-                    <li class="ex9">유튜브</li>
-                    <li class="ex9">카카오톡</li>
-                    <li class="ex9">인스타그램</li>
-                </ul>
-            </li>
-        </ul>
+      <ul class="ex9" id="contact">
+        <li class="ex9">핸드폰</li>
+        <li class="ex9">이메일</li>
+        <li class="ex9">주소</li>
+        <li class="ex9">
+          SNS
+          <ul class="ex9" id="sns">
+            <li class="ex9">유튜브</li>
+            <li class="ex9">카카오톡</li>
+            <li class="ex9">인스타그램</li>
+          </ul>
+        </li>
+      </ul>
     </div>
     <!-- ex10 -->
     <div class="ex10">
-        <ul class="ex10" id="contact">
-            <li class="ex10">핸드폰</li>
-            <li class="ex10">이메일</li>
-            <li class="ex10">주소</li>
-            <li class="ex10">SNS
-                <ul class="ex10" id="sns">
-                    <li class="ex10">유튜브</li>
-                    <li class="ex10">카카오톡</li>
-                    <li class="ex10">인스타그램</li>
-                </ul>
-            </li>
-        </ul>
+      <ul class="ex10" id="contact">
+        <li class="ex10">핸드폰</li>
+        <li class="ex10">이메일</li>
+        <li class="ex10">주소</li>
+        <li class="ex10">
+          SNS
+          <ul class="ex10" id="sns">
+            <li class="ex10">유튜브</li>
+            <li class="ex10">카카오톡</li>
+            <li class="ex10">인스타그램</li>
+          </ul>
+        </li>
+      </ul>
     </div>
     <!-- ex11 -->
     <div class="ex11">
-        <h1 class="ex11">이것은 헤더태그 H1입니다.</h1>
-        <h2 class="ex11">이것은 헤더태그 H2입니다.</h2>
-        <p class="ex11">이것은 문단입니다.이것은 문단입니다.이것은 문단입니다.이것은 문단입니다.이것은 문단입니다.</p>
+      <h1 class="ex11">이것은 헤더태그 H1입니다.</h1>
+      <h2 class="ex11">이것은 헤더태그 H2입니다.</h2>
+      <p class="ex11">
+        이것은 문단입니다.이것은 문단입니다.이것은 문단입니다.이것은
+        문단입니다.이것은 문단입니다.
+      </p>
     </div>
     <!-- ex12 -->
     <div class="ex12">
-        <h1 class="ex12">이것은 헤더태그 H1입니다.</h1>
-        <h2 class="ex12">이것은 헤더태그 H2입니다.</h2>
-        <p class="ex12">이것은 문단입니다.이것은 문단입니다.이것은 문단입니다.이것은 문단입니다.이것은 문단입니다.</p>
+      <h1 class="ex12">이것은 헤더태그 H1입니다.</h1>
+      <h2 class="ex12">이것은 헤더태그 H2입니다.</h2>
+      <p class="ex12">
+        이것은 문단입니다.이것은 문단입니다.이것은 문단입니다.이것은
+        문단입니다.이것은 문단입니다.
+      </p>
     </div>
     <!-- ex13 -->
     <div class="ex13">
-        <h1 class="ex13">이것은 헤더태그 H1입니다.</h1>
-        <h2 class="ex13">이것은 헤더태그 H2입니다.</h2>
-        <p class="ex13">이것은 문단입니다.이것은 문단입니다.이것은 문단입니다.이것은 문단입니다.이것은 문단입니다.</p>
+      <h1 class="ex13">이것은 헤더태그 H1입니다.</h1>
+      <h2 class="ex13">이것은 헤더태그 H2입니다.</h2>
+      <p class="ex13">
+        이것은 문단입니다.이것은 문단입니다.이것은 문단입니다.이것은
+        문단입니다.이것은 문단입니다.
+      </p>
     </div>
     <!-- ex14 -->
     <div class="ex14">
-        <h1 class="ex14">이것은 헤더태그 H1입니다.</h1>
-        <h2 class="ex14">이것은 헤더태그 H2입니다.</h2>
-        <p class="ex14">이것은 문단입니다.이것은 문단입니다.이것은 문단입니다.이것은 문단입니다.이것은 문단입니다.</p>
+      <h1 class="ex14">이것은 헤더태그 H1입니다.</h1>
+      <h2 class="ex14">이것은 헤더태그 H2입니다.</h2>
+      <p class="ex14">
+        이것은 문단입니다.이것은 문단입니다.이것은 문단입니다.이것은
+        문단입니다.이것은 문단입니다.
+      </p>
     </div>
     <!-- ex15 -->
     <div class="ex15">
-        <h1 class="ex15">이것은 헤더태그 H1입니다.</h1>
-        <h2 class="ex15">이것은 헤더태그 H2입니다.</h2>
-        <p class="ex15">이것은 문단입니다.이것은 문단입니다.이것은 문단입니다.이것은 문단입니다.이것은 문단입니다.</p>
+      <h1 class="ex15">이것은 헤더태그 H1입니다.</h1>
+      <h2 class="ex15">이것은 헤더태그 H2입니다.</h2>
+      <p class="ex15">
+        이것은 문단입니다.이것은 문단입니다.이것은 문단입니다.이것은
+        문단입니다.이것은 문단입니다.
+      </p>
     </div>
     <!-- ex16 -->
     <div class="ex16">
-        <h1 class="ex16">이것은 헤더태그 H1입니다.</h1>
-        <h2 class="ex16">이것은 헤더태그 H2입니다.</h2>
-        <p class="ex16">이것은 문단입니다.이것은 문단입니다.이것은 문단입니다.이것은 문단입니다.이것은 문단입니다.</p>
+      <h1 class="ex16">이것은 헤더태그 H1입니다.</h1>
+      <h2 class="ex16">이것은 헤더태그 H2입니다.</h2>
+      <p class="ex16">
+        이것은 문단입니다.이것은 문단입니다.이것은 문단입니다.이것은
+        문단입니다.이것은 문단입니다.
+      </p>
     </div>
     <!-- ex17 -->
     <div class="ex17">
-        <h1 class="ex17">이것은 헤더태그 H1입니다.</h1>
-        <h2 class="ex17">이것은 헤더태그 H2입니다.</h2>
-        <p class="ex17">이것은 문단입니다.이것은 문단입니다.이것은 문단입니다.이것은 문단입니다.이것은 문단입니다.</p>
+      <h1 class="ex17">이것은 헤더태그 H1입니다.</h1>
+      <h2 class="ex17">이것은 헤더태그 H2입니다.</h2>
+      <p class="ex17">
+        이것은 문단입니다.이것은 문단입니다.이것은 문단입니다.이것은
+        문단입니다.이것은 문단입니다.
+      </p>
     </div>
     <!-- ex18 -->
     <div class="ex18">
-        <h1 class="ex18">이것은 헤더태그 H1입니다.</h1>
-        <h2 class="ex18">이것은 헤더태그 H2입니다.</h2>
-        <p class="ex18">이것은 문단입니다.이것은 문단입니다.이것은 문단입니다.이것은 문단입니다.이것은 문단입니다.</p>
+      <h1 class="ex18">이것은 헤더태그 H1입니다.</h1>
+      <h2 class="ex18">이것은 헤더태그 H2입니다.</h2>
+      <p class="ex18">
+        이것은 문단입니다.이것은 문단입니다.이것은 문단입니다.이것은
+        문단입니다.이것은 문단입니다.
+      </p>
     </div>
     <!-- ex19 -->
     <div class="ex19">
-        <h1 class="ex19">이것은 헤더태그 H1입니다.</h1>
-        <h2 class="ex19">이것은 헤더태그 H2입니다.</h2>
-        <p class="ex19">이것은 문단입니다.이것은 문단입니다.이것은 문단입니다.이것은 문단입니다.이것은 문단입니다.</p>
+      <h1 class="ex19">이것은 헤더태그 H1입니다.</h1>
+      <h2 class="ex19">이것은 헤더태그 H2입니다.</h2>
+      <p class="ex19">
+        이것은 문단입니다.이것은 문단입니다.이것은 문단입니다.이것은
+        문단입니다.이것은 문단입니다.
+      </p>
     </div>
     <!-- ex20 -->
     <div class="ex20">
-        <h1 class="ex20">이것은 헤더태그 H1입니다.</h1>
-        <h2 class="ex20">이것은 헤더태그 H2입니다.</h2>
-        <p class="ex20">이것은 문단입니다.이것은 문단입니다.이것은 문단입니다.이것은 문단입니다.이것은 문단입니다.</p>
+      <h1 class="ex20">이것은 헤더태그 H1입니다.</h1>
+      <h2 class="ex20">이것은 헤더태그 H2입니다.</h2>
+      <p class="ex20">
+        이것은 문단입니다.이것은 문단입니다.이것은 문단입니다.이것은
+        문단입니다.이것은 문단입니다.
+      </p>
     </div>
     <!-- ex21 -->
     <div class="ex21">
-        <h1 class="ex21">이것은 헤더태그 H1입니다.</h1>
-        <h2 class="ex21">이것은 헤더태그 H2입니다.</h2>
-        <p class="ex21">이것은 문단입니다.이것은 문단입니다.이것은 문단입니다.이것은 문단입니다.이것은 문단입니다.</p>
+      <h1 class="ex21">이것은 헤더태그 H1입니다.</h1>
+      <h2 class="ex21">이것은 헤더태그 H2입니다.</h2>
+      <p class="ex21">
+        이것은 문단입니다.이것은 문단입니다.이것은 문단입니다.이것은
+        문단입니다.이것은 문단입니다.
+      </p>
     </div>
     <!-- ex22 -->
     <h2 class="ex22">테이블 예제</h2>
     <div class="ex22">
-        <table class="ex22">
-            <tr class="ex22">
-                <th class="ex22">이름</th>
-                <th class="ex22">나이</th>
-                <th class="ex22">직업</th>
-            </tr>
-            <tr class="ex22">
-                <td class="ex22">홍길동</td>
-                <td class="ex22">30</td>
-                <td class="ex22">별난사람</td>
-            </tr>
-            <tr class="ex22">
-                <td class="ex22">이순신</td>
-                <td class="ex22">40</td>
-                <td class="ex22">장군</td>
-            </tr>
-            <tr class="ex22">
-                <td class="ex22">변사또</td>
-                <td class="ex22">50</td>
-                <td class="ex22">공무원</td>
-            </tr>
-            <tr class="ex22">
-                <td class="ex22">사임당</td>
-                <td class="ex22">20</td>
-                <td class="ex22">현모양처</td>
-            </tr>
-        </table>
+      <table class="ex22">
+        <tr class="ex22">
+          <th class="ex22">이름</th>
+          <th class="ex22">나이</th>
+          <th class="ex22">직업</th>
+        </tr>
+        <tr class="ex22">
+          <td class="ex22">홍길동</td>
+          <td class="ex22">30</td>
+          <td class="ex22">별난사람</td>
+        </tr>
+        <tr class="ex22">
+          <td class="ex22">이순신</td>
+          <td class="ex22">40</td>
+          <td class="ex22">장군</td>
+        </tr>
+        <tr class="ex22">
+          <td class="ex22">변사또</td>
+          <td class="ex22">50</td>
+          <td class="ex22">공무원</td>
+        </tr>
+        <tr class="ex22">
+          <td class="ex22">사임당</td>
+          <td class="ex22">20</td>
+          <td class="ex22">현모양처</td>
+        </tr>
+      </table>
     </div>
     <!-- ex23 -->
     <h2 class="ex23">테이블 예제</h2>
     <div class="ex23">
-        <table class="ex23">
-            <tr class="ex23">
-                <th class="ex23">이름</th>
-                <th class="ex23">나이</th>
-                <th class="ex23">직업</th>
-            </tr>
-            <tr class="ex23">
-                <td class="ex23">홍길동</td>
-                <td class="ex23">30</td>
-                <td class="ex23">별난사람</td>
-            </tr>
-            <tr class="ex23">
-                <td class="ex23">이순신</td>
-                <td class="ex23">40</td>
-                <td class="ex23">장군</td>
-            </tr>
-            <tr class="ex23">
-                <td class="ex23">변사또</td>
-                <td class="ex23">50</td>
-                <td class="ex23">공무원</td>
-            </tr>
-            <tr class="ex23">
-                <td class="ex23">사임당</td>
-                <td class="ex23">20</td>
-                <td class="ex23">현모양처</td>
-            </tr>
-        </table>
+      <table class="ex23">
+        <tr class="ex23">
+          <th class="ex23">이름</th>
+          <th class="ex23">나이</th>
+          <th class="ex23">직업</th>
+        </tr>
+        <tr class="ex23">
+          <td class="ex23">홍길동</td>
+          <td class="ex23">30</td>
+          <td class="ex23">별난사람</td>
+        </tr>
+        <tr class="ex23">
+          <td class="ex23">이순신</td>
+          <td class="ex23">40</td>
+          <td class="ex23">장군</td>
+        </tr>
+        <tr class="ex23">
+          <td class="ex23">변사또</td>
+          <td class="ex23">50</td>
+          <td class="ex23">공무원</td>
+        </tr>
+        <tr class="ex23">
+          <td class="ex23">사임당</td>
+          <td class="ex23">20</td>
+          <td class="ex23">현모양처</td>
+        </tr>
+      </table>
     </div>
     <!-- ex24 -->
     <h2 class="ex24">테이블 예제</h2>
     <div class="ex24">
-        <table class="ex24">
-            <tr class="ex24">
-                <th class="ex24">이름</th>
-                <th class="ex24">나이</th>
-                <th class="ex24">직업</th>
-            </tr>
-            <tr class="ex24">
-                <td class="ex24">홍길동</td>
-                <td class="ex24">30</td>
-                <td class="ex24">별난사람</td>
-            </tr>
-            <tr class="ex24">
-                <td class="ex24">이순신</td>
-                <td class="ex24">40</td>
-                <td class="ex24">장군</td>
-            </tr>
-            <tr class="ex24">
-                <td class="ex24">변사또</td>
-                <td class="ex24">50</td>
-                <td class="ex24">공무원</td>
-            </tr>
-            <tr class="ex24">
-                <td class="ex24">사임당</td>
-                <td class="ex24">20</td>
-                <td class="ex24">현모양처</td>
-            </tr>
-        </table>
+      <table class="ex24">
+        <tr class="ex24">
+          <th class="ex24">이름</th>
+          <th class="ex24">나이</th>
+          <th class="ex24">직업</th>
+        </tr>
+        <tr class="ex24">
+          <td class="ex24">홍길동</td>
+          <td class="ex24">30</td>
+          <td class="ex24">별난사람</td>
+        </tr>
+        <tr class="ex24">
+          <td class="ex24">이순신</td>
+          <td class="ex24">40</td>
+          <td class="ex24">장군</td>
+        </tr>
+        <tr class="ex24">
+          <td class="ex24">변사또</td>
+          <td class="ex24">50</td>
+          <td class="ex24">공무원</td>
+        </tr>
+        <tr class="ex24">
+          <td class="ex24">사임당</td>
+          <td class="ex24">20</td>
+          <td class="ex24">현모양처</td>
+        </tr>
+      </table>
     </div>
     <!-- ex25 -->
     <h2 class="ex25">테이블 예제</h2>
     <div class="ex25">
-        <table class="ex25">
-            <tr class="ex25">
-                <th class="ex25">이름</th>
-                <th class="ex25">나이</th>
-                <th class="ex25">직업</th>
-            </tr>
-            <tr class="ex25">
-                <td class="ex25">홍길동</td>
-                <td class="ex25">30</td>
-                <td class="ex25">별난사람</td>
-            </tr>
-            <tr class="ex25">
-                <td class="ex25">이순신</td>
-                <td class="ex25">40</td>
-                <td class="ex25">장군</td>
-            </tr>
-            <tr class="ex25">
-                <td class="ex25">변사또</td>
-                <td class="ex25">50</td>
-                <td class="ex25">공무원</td>
-            </tr>
-            <tr class="ex25">
-                <td class="ex25">사임당</td>
-                <td class="ex25">20</td>
-                <td class="ex25">현모양처</td>
-            </tr>
-        </table>
+      <table class="ex25">
+        <tr class="ex25">
+          <th class="ex25">이름</th>
+          <th class="ex25">나이</th>
+          <th class="ex25">직업</th>
+        </tr>
+        <tr class="ex25">
+          <td class="ex25">홍길동</td>
+          <td class="ex25">30</td>
+          <td class="ex25">별난사람</td>
+        </tr>
+        <tr class="ex25">
+          <td class="ex25">이순신</td>
+          <td class="ex25">40</td>
+          <td class="ex25">장군</td>
+        </tr>
+        <tr class="ex25">
+          <td class="ex25">변사또</td>
+          <td class="ex25">50</td>
+          <td class="ex25">공무원</td>
+        </tr>
+        <tr class="ex25">
+          <td class="ex25">사임당</td>
+          <td class="ex25">20</td>
+          <td class="ex25">현모양처</td>
+        </tr>
+      </table>
     </div>
     <!-- ex26 -->
     <h2 class="ex26">테이블 예제</h2>
     <div class="ex26">
-        <table class="ex26">
-            <tr class="ex26">
-                <th class="ex26">이름</th>
-                <th class="ex26">나이</th>
-                <th class="ex26">직업</th>
-            </tr>
-            <tr class="ex26">
-                <td class="ex26">홍길동</td>
-                <td class="ex26">30</td>
-                <td class="ex26">별난사람</td>
-            </tr>
-            <tr class="ex26">
-                <td class="ex26">이순신</td>
-                <td class="ex26">40</td>
-                <td class="ex26">장군</td>
-            </tr>
-            <tr class="ex26">
-                <td class="ex26">변사또</td>
-                <td class="ex26">50</td>
-                <td class="ex26">공무원</td>
-            </tr>
-            <tr class="ex26">
-                <td class="ex26">사임당</td>
-                <td class="ex26">20</td>
-                <td class="ex26">현모양처</td>
-            </tr>
-        </table>
+      <table class="ex26">
+        <tr class="ex26">
+          <th class="ex26">이름</th>
+          <th class="ex26">나이</th>
+          <th class="ex26">직업</th>
+        </tr>
+        <tr class="ex26">
+          <td class="ex26">홍길동</td>
+          <td class="ex26">30</td>
+          <td class="ex26">별난사람</td>
+        </tr>
+        <tr class="ex26">
+          <td class="ex26">이순신</td>
+          <td class="ex26">40</td>
+          <td class="ex26">장군</td>
+        </tr>
+        <tr class="ex26">
+          <td class="ex26">변사또</td>
+          <td class="ex26">50</td>
+          <td class="ex26">공무원</td>
+        </tr>
+        <tr class="ex26">
+          <td class="ex26">사임당</td>
+          <td class="ex26">20</td>
+          <td class="ex26">현모양처</td>
+        </tr>
+      </table>
     </div>
     <!-- ex27 -->
     <div class="ex27">
-        <h2 class="ex27">이미지 위의 텍스트</h2>
-        <div class="ex27">
-            <span class="ex27">아름다운 섬마을</span>
-        </div>
+      <h2 class="ex27">이미지 위의 텍스트</h2>
+      <div class="ex27">
+        <span class="ex27">아름다운 섬마을</span>
+      </div>
     </div>
     <!-- ex28 -->
     <div class="ex28">
-        <ul class="ex28">
-            <li class="ex28">항목 1</li>
-            <li class="ex28">항목 2</li>
-            <li class="ex28">항목 3</li>
-            <li class="ex28">항목 4</li>
-        </ul>
+      <ul class="ex28">
+        <li class="ex28">항목 1</li>
+        <li class="ex28">항목 2</li>
+        <li class="ex28">항목 3</li>
+        <li class="ex28">항목 4</li>
+      </ul>
     </div>
     <!-- ex29 -->
     <div class="ex29">
-        <h1 class="ex29">이것은 헤더태그 H1입니다.</h1>
-        <h2 class="ex29">이것은 헤더태그 H2입니다.</h2>
-        <p class="ex29">이것은 문단입니다.이것은 문단입니다.이것은 문단입니다.이것은 문단입니다.이것은 문단입니다.</p>
+      <h1 class="ex29">이것은 헤더태그 H1입니다.</h1>
+      <h2 class="ex29">이것은 헤더태그 H2입니다.</h2>
+      <p class="ex29">
+        이것은 문단입니다.이것은 문단입니다.이것은 문단입니다.이것은
+        문단입니다.이것은 문단입니다.
+      </p>
     </div>
     <!-- ex30 -->
     <div class="ex30">
-        <h1 class="ex30">이것은 헤더태그 H1입니다.</h1>
-        <h2 class="ex30">이것은 헤더태그 H2입니다.</h2>
-        <p class="ex30">이것은 문단입니다.이것은 문단입니다.이것은 문단입니다.이것은 문단입니다.이것은 문단입니다.</p>
+      <h1 class="ex30">이것은 헤더태그 H1입니다.</h1>
+      <h2 class="ex30">이것은 헤더태그 H2입니다.</h2>
+      <p class="ex30">
+        이것은 문단입니다.이것은 문단입니다.이것은 문단입니다.이것은
+        문단입니다.이것은 문단입니다.
+      </p>
     </div>
     <!-- ex32 -->
     <div class="ex32">
-        <h1 class="ex32">이것은 헤더태그 H1입니다.</h1>
-        <h2 class="ex32">이것은 헤더태그 H2입니다.</h2>
-        <p class="ex32">이것은 문단입니다.이것은 문단입니다.이것은 문단입니다.이것은 문단입니다.이것은 문단입니다.</p>
+      <h1 class="ex32">이것은 헤더태그 H1입니다.</h1>
+      <h2 class="ex32">이것은 헤더태그 H2입니다.</h2>
+      <p class="ex32">
+        이것은 문단입니다.이것은 문단입니다.이것은 문단입니다.이것은
+        문단입니다.이것은 문단입니다.
+      </p>
     </div>
     <!-- ex33 -->
     <div class="ex33">
-        <p class="ex33">이것은 문단입니다.이것은 문단입니다.이것은 문단입니다.이것은 문단입니다.이것은 문단입니다.</p>
+      <p class="ex33">
+        이것은 문단입니다.이것은 문단입니다.이것은 문단입니다.이것은
+        문단입니다.이것은 문단입니다.
+      </p>
     </div>
     <!-- ex34 -->
     <div class="ex34">
-        <p class="ex34">이것은 문단입니다.이것은 문단입니다.이것은 문단입니다.이것은 문단입니다.이것은 문단입니다.</p>
+      <p class="ex34">
+        이것은 문단입니다.이것은 문단입니다.이것은 문단입니다.이것은
+        문단입니다.이것은 문단입니다.
+      </p>
     </div>
     <!-- ex35 -->
     <div class="ex35">
-        <p class="ex35 sticky">이것은 문단입니다.이것은 문단입니다.이것은 문단입니다.이것은 문단입니다.이것은 문단입니다.</p>
-        <p class="ex35">이것은 문단입니다.이것은 문단입니다.이것은 문단입니다.이것은 문단입니다.이것은 문단입니다.</p>
-        <p class="ex35">이것은 문단입니다.이것은 문단입니다.이것은 문단입니다.이것은 문단입니다.이것은 문단입니다.</p>
-        <p class="ex35">이것은 문단입니다.이것은 문단입니다.이것은 문단입니다.이것은 문단입니다.이것은 문단입니다.</p>
-        <p class="ex35">이것은 문단입니다.이것은 문단입니다.이것은 문단입니다.이것은 문단입니다.이것은 문단입니다.</p>
-        <p class="ex35">이것은 문단입니다.이것은 문단입니다.이것은 문단입니다.이것은 문단입니다.이것은 문단입니다.</p>
+      <p class="ex35 sticky">
+        이것은 문단입니다.이것은 문단입니다.이것은 문단입니다.이것은
+        문단입니다.이것은 문단입니다.
+      </p>
+      <p class="ex35">
+        이것은 문단입니다.이것은 문단입니다.이것은 문단입니다.이것은
+        문단입니다.이것은 문단입니다.
+      </p>
+      <p class="ex35">
+        이것은 문단입니다.이것은 문단입니다.이것은 문단입니다.이것은
+        문단입니다.이것은 문단입니다.
+      </p>
+      <p class="ex35">
+        이것은 문단입니다.이것은 문단입니다.이것은 문단입니다.이것은
+        문단입니다.이것은 문단입니다.
+      </p>
+      <p class="ex35">
+        이것은 문단입니다.이것은 문단입니다.이것은 문단입니다.이것은
+        문단입니다.이것은 문단입니다.
+      </p>
+      <p class="ex35">
+        이것은 문단입니다.이것은 문단입니다.이것은 문단입니다.이것은
+        문단입니다.이것은 문단입니다.
+      </p>
     </div>
     <!-- ex36 -->
-    <div class="ex36" style="height: 150px;">
-        <div class="ex36" id="red"></div>
-        <div class="ex36" id="blue">
-            <p class="ex36">문단태그입니다.</p>
-        </div>
+    <div class="ex36" style="height: 150px">
+      <div class="ex36" id="red"></div>
+      <div class="ex36" id="blue">
+        <p class="ex36">문단태그입니다.</p>
+      </div>
     </div>
     <!-- ex37 -->
     <div class="ex37">
-        <p class="ex37">성공의 비결은 단 한 가지, 잘할 수 있는 일에 광적으로 집중하는 것이다.</p>
-        <p class="ex37">도미노피자 창업자 Tom Monaghan</p>
+      <p class="ex37">
+        성공의 비결은 단 한 가지, 잘할 수 있는 일에 광적으로 집중하는 것이다.
+      </p>
+      <p class="ex37">도미노피자 창업자 Tom Monaghan</p>
     </div>
     <!-- ex38 -->
     <div class="ex38">
-        <h3 class="ex38">소연재</h3>
-        <hr class="ex38">
-        <p class="ex38">저는 체조 선수 소연재입니다. 음악을 들으면서
-            책읽기를 좋아합니다. 김치 찌개와 막국수 무척
-            좋아합니다.</p>
+      <h3 class="ex38">소연재</h3>
+      <hr class="ex38" />
+      <p class="ex38">
+        저는 체조 선수 소연재입니다. 음악을 들으면서 책읽기를 좋아합니다. 김치
+        찌개와 막국수 무척 좋아합니다.
+      </p>
     </div>
     <!-- ex39 -->
     <div class="ex39">
-        <header class="ex39">header</header>
-        <main class="ex39">
-            <nav class="ex39">nav</nav>
-            <section class="ex39">section</section>
-            <aside class="ex39">aside</aside>
-        </main>
-        <footer class="ex39">footer</footer>
+      <header class="ex39">header</header>
+      <main class="ex39">
+        <nav class="ex39">nav</nav>
+        <section class="ex39">section</section>
+        <aside class="ex39">aside</aside>
+      </main>
+      <footer class="ex39">footer</footer>
     </div>
-    <div style="height: 50px;"></div>
-</body>
-
+    <div style="height: 50px"></div>
+  </body>
 </html>

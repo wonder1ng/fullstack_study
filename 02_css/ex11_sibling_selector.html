@@ -1,22 +1,21 @@
 <!DOCTYPE html>
 <html lang="ko">
-
-<head>
+  <head>
     <title>형제(동위레벨) 선택자</title>
     <style>
-        /* +: h2 바로 뒤 h1 하나 선택 */
-        h2+h1 {
-            color: red;
-        }
+      /* +: h2 바로 뒤 h1 하나 선택 */
+      h2 + h1 {
+        color: red;
+      }
 
-        /* ~: h1 뒤의 모든 h2 선택 */
-        h1~h2 {
-            color: blue;
-        }
+      /* ~: h1 뒤의 모든 h2 선택 */
+      h1 ~ h2 {
+        color: blue;
+      }
     </style>
-</head>
+  </head>
 
-<body>
+  <body>
     <h2>제목태그 h2</h2>
     <h1>제목태그 h1</h1>
     <h1>제목태그 h1</h1>
@@ -27,6 +26,5 @@
     <h2>제목태그 h2-5</h2>
     <h3>제목태그 h3</h3>
     <h2>제목태그 h2-6</h2>
-</body>
-
+  </body>
 </html>

@@ -1,253 +1,306 @@
 <!DOCTYPE html>
 <html lang="ko">
-
-<head>
+  <head>
     <title>다음 로그인 화면</title>
     <style>
-        .logo_kakao {
-            display: block;
-            width: 88px;
-            height: 27px;
-            margin: 0 auto;
-            background: #fff url(logo_kakao.png) no-repeat 0 0;
-            background-size: 100px 80px;
-            font-size: 19px;
-            line-height: 27px;
-            text-align: center;
-        }
+      .logo_kakao {
+        display: block;
+        width: 88px;
+        height: 27px;
+        margin: 0 auto;
+        background: #fff url(logo_kakao.png) no-repeat 0 0;
+        background-size: 100px 80px;
+        font-size: 19px;
+        line-height: 27px;
+        text-align: center;
+      }
 
-        body,
-        html {
-            height: 100%;
-        }
+      body,
+      html {
+        height: 100%;
+      }
 
-        body,
-        button,
-        input,
-        select,
-        td,
-        textarea,
-        th {
-            font-weight: 400;
-            font-size: 12px;
-            line-height: 1.5;
-            font-family: system-ui, -apple-system, Helvetica Neue, Apple SD Gothic Neo, Segoe UI, Roboto, Arial, NotoSans, Open Sans, Malgun Gothic, 맑은 고딕, sans-serif;
-            color: #333;
-        }
+      body,
+      button,
+      input,
+      select,
+      td,
+      textarea,
+      th {
+        font-weight: 400;
+        font-size: 12px;
+        line-height: 1.5;
+        font-family: system-ui, -apple-system, Helvetica Neue,
+          Apple SD Gothic Neo, Segoe UI, Roboto, Arial, NotoSans, Open Sans,
+          Malgun Gothic, 맑은 고딕, sans-serif;
+        color: #333;
+      }
 
-        blockquote,
-        body,
-        button,
-        code,
-        dd,
-        div,
-        dl,
-        dt,
-        fieldset,
-        form,
-        h1,
-        h2,
-        h3,
-        h4,
-        h5,
-        h6,
-        input,
-        legend,
-        li,
-        ol,
-        p,
-        pre,
-        select,
-        td,
-        textarea,
-        th,
-        ul {
-            margin: 0;
-            padding: 0;
-        }
+      blockquote,
+      body,
+      button,
+      code,
+      dd,
+      div,
+      dl,
+      dt,
+      fieldset,
+      form,
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6,
+      input,
+      legend,
+      li,
+      ol,
+      p,
+      pre,
+      select,
+      td,
+      textarea,
+      th,
+      ul {
+        margin: 0;
+        padding: 0;
+      }
 
-        .content-article {
-            position: relative;
-            width: 580px;
-            height: 100%;
-            min-height: 480px;
-            margin: 40px auto 30px;
-            padding: 0 69px;
-            border: 1px solid rgba(0, 0, 0, .12);
-            font-size: 12px;
-            box-sizing: border-box;
-        }
+      .content-article {
+        position: relative;
+        width: 580px;
+        height: 100%;
+        min-height: 480px;
+        margin: 40px auto 30px;
+        padding: 0 69px;
+        border: 1px solid rgba(0, 0, 0, 0.12);
+        font-size: 12px;
+        box-sizing: border-box;
+      }
 
-        .content-article [class^=cont_] {
-            position: relative;
-            height: 100%;
-            padding: 55px 0 50px;
-            box-sizing: border-box;
-        }
+      .content-article [class^="cont_"] {
+        position: relative;
+        height: 100%;
+        padding: 55px 0 50px;
+        box-sizing: border-box;
+      }
 
-        .set_login .item_choice .lab_choice {
-            float: left;
-        }
+      .set_login .item_choice .lab_choice {
+        float: left;
+      }
 
-        .set_login .lab_choice {
-            font-size: 14px;
-            line-height: 20px;
-            color: #666;
-        }
+      .set_login .lab_choice {
+        font-size: 14px;
+        line-height: 20px;
+        color: #666;
+      }
 
-        .box_tf .tf_g {
-            position: relative;
-            z-index: 1;
-            width: 100%;
-            min-height: 45px;
-            padding: 10px 0 8px;
-            border: 0;
-            font-size: 18px;
-            line-height: 25px;
-            color: #191919;
-            background-color: transparent;
-            letter-spacing: 0;
-            box-sizing: border-box;
-            outline: 0 none;
-            caret-color: #191919;
-            opacity: 1;
-        }
+      .box_tf .tf_g {
+        position: relative;
+        z-index: 1;
+        width: 100%;
+        min-height: 45px;
+        padding: 10px 0 8px;
+        border: 0;
+        font-size: 18px;
+        line-height: 25px;
+        color: #191919;
+        background-color: transparent;
+        letter-spacing: 0;
+        box-sizing: border-box;
+        outline: 0 none;
+        caret-color: #191919;
+        opacity: 1;
+      }
 
-        .box_tf .tf_g[type=password] {
-            padding: 12px 0 8px;
-            font: small-caption;
-            font-size: 18px;
-            font-family: -apple-system, Roboto, NotoSans, AppleSDGothicNeo-Regular, 맑은 고딕, Malgun Gothic, 돋움, dotum, sans-serif;
-            letter-spacing: .15em;
-        }
+      .box_tf .tf_g[type="password"] {
+        padding: 12px 0 8px;
+        font: small-caption;
+        font-size: 18px;
+        font-family: -apple-system, Roboto, NotoSans, AppleSDGothicNeo-Regular,
+          맑은 고딕, Malgun Gothic, 돋움, dotum, sans-serif;
+        letter-spacing: 0.15em;
+      }
 
-        a,
-        button,
-        input,
-        label {
-            -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
-        }
+      a,
+      button,
+      input,
+      label {
+        -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
+      }
 
-        .BoxLayout_root__Ya1Da .content-article {
-            position: relative;
-            width: 580px;
-            height: 100%;
-            min-height: 480px;
-            margin: 40px auto 30px;
-            padding: 0 69px;
-            border: 1px solid rgba(0, 0, 0, .12);
-            font-size: 12px;
-            box-sizing: border-box;
-        }
+      .BoxLayout_root__Ya1Da .content-article {
+        position: relative;
+        width: 580px;
+        height: 100%;
+        min-height: 480px;
+        margin: 40px auto 30px;
+        padding: 0 69px;
+        border: 1px solid rgba(0, 0, 0, 0.12);
+        font-size: 12px;
+        box-sizing: border-box;
+      }
 
-        .box_tf .util_tf {
-            position: absolute;
-            right: 0;
-            top: 2px;
-            z-index: 10;
-            min-width: 55px;
-            height: 43px;
-            font-size: 0;
-            text-align: right;
-        }
+      .box_tf .util_tf {
+        position: absolute;
+        right: 0;
+        top: 2px;
+        z-index: 10;
+        min-width: 55px;
+        height: 43px;
+        font-size: 0;
+        text-align: right;
+      }
 
-        .screen_out {
-            position: absolute;
-            width: 0;
-            height: 0;
-        }
+      .screen_out {
+        position: absolute;
+        width: 0;
+        height: 0;
+      }
 
-        .ir_caption,
-        .screen_out {
-            overflow: hidden;
-            line-height: 0;
-            text-indent: -9999px;
-        }
+      .ir_caption,
+      .screen_out {
+        overflow: hidden;
+        line-height: 0;
+        text-indent: -9999px;
+      }
 
-        a,
-        button,
-        input,
-        label {
-            -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
-        }
+      a,
+      button,
+      input,
+      label {
+        -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
+      }
 
-        * {
-            margin: 0;
-            padding: 0;
-        }
+      * {
+        margin: 0;
+        padding: 0;
+      }
 
-        사용자 에이전트 스타일시트 label {
-            cursor: default;
-        }
+      사용자 에이전트 스타일시트 label {
+        cursor: default;
+      }
 
-        .BoxLayout_root__Ya1Da .content-article .cont_login {
-            word-wrap: break-word;
-        }
+      .BoxLayout_root__Ya1Da .content-article .cont_login {
+        word-wrap: break-word;
+      }
     </style>
-</head>
+  </head>
 
-<body>
+  <body>
     <header class="logo_kakao"></header>
     <article id="mainContent" class="content-article">
-        <div class="cont_login">
-            <div class="login_kakaomail">
-                <form>
-                    <div class="item_form fst">
-                        <div class="box_tf">
-                            <label class="screen_out" for="loginId--1">계정정보 입력</label>
-                            <input placeholder="카카오메일 아이디, 이메일, 전화번호 " type="text" id="loginId--1" name="loginId"
-                                class="tf_g" value="">
-                            <div class="util_tf"></div>
-                        </div>
-                    </div>
-                    <div class="item_form">
-                        <div class="box_tf">
-                            <label class="screen_out" for="password--2">비밀번호 입력</label>
-                            <input placeholder="비밀번호" autocomplete="off" type="password" id="password--2"
-                                name="password" class="tf_g" value="">
-                            <div class="util_tf"></div>
-                        </div>
-                    </div>
-                    <div class="set_login">
-                        <div class="item_choice">
-                            <span>
-                                <input type="checkbox" id="saveSignedIn--4" class="inp_choice" name="saveSignedIn"
-                                    value="false">
-                                <label class="lab_choice" for="saveSignedIn--4" id="label-saveSignedIn">
-                                    <span class="ico_comm ico_check"></span>
-                                    간편로그인 정보 저장
-                                </label>
-                            </span>
-                            <button type="button" class="btn_help" aria-describedby="label-saveSignedIn"
-                                aria-expanded="false">
-                                <span class="ico_comm ico_help">도움말 보기</span>
-                            </button>
-                        </div>
-                    </div>
-                    <div class="confirm_btn">
-                        <button type="submit" class="btn_g highlight submit">로그인</button>
-                        <span class="line_or">
-                            <span class="txt_or">또는</span>
-                        </span>
-                        <button type="button" class="btn_g">QR코드 로그인</button>
-                    </div>
-                </form>
-                <div class="info_user"><a
-                        href="/weblogin/create_account?continue=https%3A%2F%2Fwww.daum.net&amp;lang=ko&amp;showHeader=false"
-                        class="link_join">회원가입</a>
-                    <ul class="list_user">
-                        <li><a href="/weblogin/find_account?continue=https%3A%2F%2Fwww.daum.net&amp;lang=ko&amp;showHeader=false"
-                                class="link_user">계정 찾기</a></li>
-                        <li><a href="/weblogin/find_password?continue=%2Flogin%3Fcontinue%3Dhttps%253A%252F%252Fwww.daum.net&amp;lang=ko&amp;showHeader=false"
-                                class="link_user">비밀번호 찾기</a></li>
-                    </ul>
-                </div>
+      <div class="cont_login">
+        <div class="login_kakaomail">
+          <form>
+            <div class="item_form fst">
+              <div class="box_tf">
+                <label class="screen_out" for="loginId--1">계정정보 입력</label>
+                <input
+                  placeholder="카카오메일 아이디, 이메일, 전화번호 "
+                  type="text"
+                  id="loginId--1"
+                  name="loginId"
+                  class="tf_g"
+                  value=""
+                />
+                <div class="util_tf"></div>
+              </div>
             </div>
-            <div class="box_bnr"><a href="/weblogin/unify_campaign?continue=https%3A%2F%2Fwww.daum.net" class="link_bnr"
-                    rel="noreferrer noopener"><img src="https://accounts.kakaocdn.net/images/img_bnr_ko.png"
-                        class="img_bnr" alt="[광고] 통합하지 않은 Daum ID 안내 카카오계정과 통합 후 이용할 수 있어요" height="100%"></a></div>
+            <div class="item_form">
+              <div class="box_tf">
+                <label class="screen_out" for="password--2"
+                  >비밀번호 입력</label
+                >
+                <input
+                  placeholder="비밀번호"
+                  autocomplete="off"
+                  type="password"
+                  id="password--2"
+                  name="password"
+                  class="tf_g"
+                  value=""
+                />
+                <div class="util_tf"></div>
+              </div>
+            </div>
+            <div class="set_login">
+              <div class="item_choice">
+                <span>
+                  <input
+                    type="checkbox"
+                    id="saveSignedIn--4"
+                    class="inp_choice"
+                    name="saveSignedIn"
+                    value="false"
+                  />
+                  <label
+                    class="lab_choice"
+                    for="saveSignedIn--4"
+                    id="label-saveSignedIn"
+                  >
+                    <span class="ico_comm ico_check"></span>
+                    간편로그인 정보 저장
+                  </label>
+                </span>
+                <button
+                  type="button"
+                  class="btn_help"
+                  aria-describedby="label-saveSignedIn"
+                  aria-expanded="false"
+                >
+                  <span class="ico_comm ico_help">도움말 보기</span>
+                </button>
+              </div>
+            </div>
+            <div class="confirm_btn">
+              <button type="submit" class="btn_g highlight submit">
+                로그인
+              </button>
+              <span class="line_or">
+                <span class="txt_or">또는</span>
+              </span>
+              <button type="button" class="btn_g">QR코드 로그인</button>
+            </div>
+          </form>
+          <div class="info_user">
+            <a
+              href="/weblogin/create_account?continue=https%3A%2F%2Fwww.daum.net&amp;lang=ko&amp;showHeader=false"
+              class="link_join"
+              >회원가입</a
+            >
+            <ul class="list_user">
+              <li>
+                <a
+                  href="/weblogin/find_account?continue=https%3A%2F%2Fwww.daum.net&amp;lang=ko&amp;showHeader=false"
+                  class="link_user"
+                  >계정 찾기</a
+                >
+              </li>
+              <li>
+                <a
+                  href="/weblogin/find_password?continue=%2Flogin%3Fcontinue%3Dhttps%253A%252F%252Fwww.daum.net&amp;lang=ko&amp;showHeader=false"
+                  class="link_user"
+                  >비밀번호 찾기</a
+                >
+              </li>
+            </ul>
+          </div>
         </div>
+        <div class="box_bnr">
+          <a
+            href="/weblogin/unify_campaign?continue=https%3A%2F%2Fwww.daum.net"
+            class="link_bnr"
+            rel="noreferrer noopener"
+            ><img
+              src="https://accounts.kakaocdn.net/images/img_bnr_ko.png"
+              class="img_bnr"
+              alt="[광고] 통합하지 않은 Daum ID 안내 카카오계정과 통합 후 이용할 수 있어요"
+              height="100%"
+          /></a>
+        </div>
+      </div>
     </article>
-</body>
-
+  </body>
 </html>

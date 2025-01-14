@@ -1,101 +1,102 @@
 <!DOCTYPE html>
 <html lang="ko">
-
-<head>
+  <head>
     <title>텍스트나 콘텐츠의 정렬</title>
     <!-- 수평 정렬: text-align -->
     <!-- 수직 정렬: vertical-align -->
     <style>
-        .box {
-            border: 1px solid red;
-            width: 100px;
-            min-height: 50px;
-        }
+      .box {
+        border: 1px solid red;
+        width: 100px;
+        min-height: 50px;
+      }
 
-        /* text-align */
-        .text-left {
-            text-align: left;
-        }
+      /* text-align */
+      .text-left {
+        text-align: left;
+      }
 
-        .text-center {
-            text-align: center;
-        }
+      .text-center {
+        text-align: center;
+      }
 
-        .text-right {
-            text-align: right;
-        }
+      .text-right {
+        text-align: right;
+      }
 
-        .text-justify {
-            text-align: justify;
-        }
+      .text-justify {
+        text-align: justify;
+      }
 
-        /* vertical-align */
-        .vertical {
-            border: 1px solid blue;
-            background: #eee;
-        }
+      /* vertical-align */
+      .vertical {
+        border: 1px solid blue;
+        background: #eee;
+      }
 
-        .box2 {
-            display: inline-block;
-            width: 50px;
-            height: 50px;
-            border: 1px solid red;
-            margin: 20px;
-        }
+      .box2 {
+        display: inline-block;
+        width: 50px;
+        height: 50px;
+        border: 1px solid red;
+        margin: 20px;
+      }
 
-        .box2 {
-            width: 50px;
-            height: 50px;
-        }
+      .box2 {
+        width: 50px;
+        height: 50px;
+      }
 
-        .baseline {
-            vertical-align: baseline;
-            background: aquamarine;
-        }
+      .baseline {
+        vertical-align: baseline;
+        background: aquamarine;
+      }
 
-        .top {
-            vertical-align: top;
-            background: aquamarine;
-        }
+      .top {
+        vertical-align: top;
+        background: aquamarine;
+      }
 
-        .middle {
-            vertical-align: middle;
-            background: aquamarine;
-        }
+      .middle {
+        vertical-align: middle;
+        background: aquamarine;
+      }
 
-        .bottom {
-            vertical-align: bottom;
-            background: aquamarine;
-        }
+      .bottom {
+        vertical-align: bottom;
+        background: aquamarine;
+      }
 
+      .text-top {
+        vertical-align: text-top;
+        background: aquamarine;
+      }
 
-        .text-top {
-            vertical-align: text-top;
-            background: aquamarine;
-        }
-
-        .text-bottom {
-            vertical-align: text-bottom;
-            background: aquamarine;
-        }
+      .text-bottom {
+        vertical-align: text-bottom;
+        background: aquamarine;
+      }
     </style>
-</head>
+  </head>
 
-<body>
+  <body>
     <!-- text-align -->
-    <div class="box text-left">좌측정렬 <br />이것은 배분 정렬과 비교하기 위한 텍스트입니다.</div>
+    <div class="box text-left">
+      좌측정렬 <br />이것은 배분 정렬과 비교하기 위한 텍스트입니다.
+    </div>
     <div class="box text-center">중앙 정렬</div>
     <div class="box text-right">우측 정렬</div>
-    <div class="box text-justify">배분 정렬 <br />이것은 배분 정렬과 비교하기 위한 텍스트입니다.</div>
+    <div class="box text-justify">
+      배분 정렬 <br />이것은 배분 정렬과 비교하기 위한 텍스트입니다.
+    </div>
     <!-- vertical-align -->
     <div class="vertical">
-        <span class="box2 baseline">Baseline</span>
-        <span class="box2 top">Top</span>
-        <span class="box2 middle">Middle</span>
-        <span class="box2 bottom">Bottom</span>
-        <span class="box2 text-top">Text-Top</span>
-        <span class="box2 text-bottom">Text-Bottom</span>
+      <span class="box2 baseline">Baseline</span>
+      <span class="box2 top">Top</span>
+      <span class="box2 middle">Middle</span>
+      <span class="box2 bottom">Bottom</span>
+      <span class="box2 text-top">Text-Top</span>
+      <span class="box2 text-bottom">Text-Bottom</span>
     </div>
-</body>
-
+  </body>
 </html>

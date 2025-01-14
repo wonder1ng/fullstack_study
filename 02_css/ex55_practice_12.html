@@ -1,89 +1,86 @@
 <!DOCTYPE html>
 <html lang="ko">
-
-<head>
+  <head>
     <title>연습문제- flex로 시멘틱 태그만들기</title>
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-        }
+      * {
+        margin: 0;
+        padding: 0;
+      }
 
-        #wrap {
-            /* 고정너비 */
-            /* width: 1000px;  */
-            /* 가변너비 */
-            width: 100%;
-            /* 최소너비 */
-            min-width: 760px;
-            /* 최대너비 */
-            max-width: 1080px;
+      #wrap {
+        /* 고정너비 */
+        /* width: 1000px;  */
+        /* 가변너비 */
+        width: 100%;
+        /* 최소너비 */
+        min-width: 760px;
+        /* 최대너비 */
+        max-width: 1080px;
 
-            /*      상하 좌우:여백균등하게 */
-            margin: 0 auto;
-            height: 100vh;
-            display: flex;
-            flex-direction: column;
-        }
+        /*      상하 좌우:여백균등하게 */
+        margin: 0 auto;
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+      }
 
-        body {
-            padding: 20px;
+      body {
+        padding: 20px;
+      }
 
-        }
+      .box {
+        border: 1px solid black;
+        color: white;
+        background-color: gray;
+        font-size: 22px;
+        text-align: center;
+        align-content: center;
+      }
 
-        .box {
-            border: 1px solid black;
-            color: white;
-            background-color: gray;
-            font-size: 22px;
-            text-align: center;
-            align-content: center;
-        }
+      #header {
+        background-color: purple;
+        height: 10%;
+      }
 
-        #header {
-            background-color: purple;
-            height: 10%
-        }
+      #nav {
+        background-color: green;
+        height: 10%;
+      }
 
-        #nav {
-            background-color: green;
-            height: 10%;
-        }
+      #main {
+        display: flex;
+        flex: 1;
+      }
 
-        #main {
-            display: flex;
-            flex: 1;
-        }
+      #aside {
+        background-color: orange;
+        height: 100%;
+        flex: 1;
+      }
 
-        #aside {
-            background-color: orange;
-            height: 100%;
-            flex: 1;
-        }
+      #section {
+        background-color: teal;
+        height: 100%;
+        flex: 2;
+      }
 
-        #section {
-            background-color: teal;
-            height: 100%;
-            flex: 2;
-        }
-
-        #footer {
-            background-color: darkgreen;
-            height: 10%;
-        }
+      #footer {
+        background-color: darkgreen;
+        height: 10%;
+      }
     </style>
-</head>
+  </head>
 
-<body>
+  <body>
     <div id="wrap">
-        <div class="box" id="header">Header</div>
-        <div class="box" id="nav">Nav</div>
-        <div class="box" id="main">
-            <div class="box" id="section">Section</div>
-            <div class="box" id="aside">Aside</div>
-        </div>
-        <div class="box" id="footer">Footer</div>
+      <div class="box" id="header">Header</div>
+      <div class="box" id="nav">Nav</div>
+      <div class="box" id="main">
+        <div class="box" id="section">Section</div>
+        <div class="box" id="aside">Aside</div>
+      </div>
+      <div class="box" id="footer">Footer</div>
     </div>
-</body>
-
+  </body>
 </html>

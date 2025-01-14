@@ -1,54 +1,71 @@
 <!DOCTYPE html>
 <html lang="ko">
-
-<head>
+  <head>
     <title>연습문제 - 그림과 같이 입력 양식을 구현하시오.</title>
-</head>
+  </head>
 
-<body>
+  <body>
     <h1>회원가입 폼</h1>
     <form action="" method="post">
-        <label for="name">이름: </label>
-        <input type="text" name="name" id="name" placeholder="이름을 입력하세요.">
-        <br />
-        <label for="pw">비밀번호: </label>
-        <input type="password" name="pw" id="pw" placeholder="비번을 입력하세요.">
-        <br />
-        <label for="tel">핸드폰: </label>
-        <input type="tel" name="tel" id="tel" placeholder="핸드폰을 입력하세요.">
-        <br />
-        <label for="email">이메일: </label>
-        <input type="email" name="email" id="email" placeholder="이메일을 입력하세요.">
-        <br />
-        성별
-        <label for="radio1"> 남성</label>
-        <input type="radio" name="radio" id="radio1" checked>
-        <label for="radio2"> 여성</label>
-        <input type="radio" name="radio" id="radio2">
-        <br />
-        취미
-        <input type="checkbox" name="checkbox" id="check1">
-        <label for="check1">걷기</label>
-        <input type="checkbox" name="checkbox" id="check2" checked>
-        <label for="check2">달리기</label>
-        <input type="checkbox" name="checkbox" id="check3">
-        <label for="check3">자전거타기</label>
-        <br />
-        사는 곳:
-        <select name="select" id="select">
-            <option value="seoul" selected>서울</option>
-            <option value="seoul">대구</option>
-            <option value="seoul">대전</option>
-            <option value="seoul">부산</option>
-            <option value="seoul">울산</option>
-            <option value="seoul">인천</option>
-            <option value="seoul">광주</option>
-            <option value="seoul">세종</option>
-        </select>
-        <br />
-        <button type="button" onclick="alert('가입')">회원가입</button>
-
+      <label for="name">이름: </label>
+      <input
+        type="text"
+        name="name"
+        id="name"
+        placeholder="이름을 입력하세요."
+      />
+      <br />
+      <label for="pw">비밀번호: </label>
+      <input
+        type="password"
+        name="pw"
+        id="pw"
+        placeholder="비번을 입력하세요."
+      />
+      <br />
+      <label for="tel">핸드폰: </label>
+      <input
+        type="tel"
+        name="tel"
+        id="tel"
+        placeholder="핸드폰을 입력하세요."
+      />
+      <br />
+      <label for="email">이메일: </label>
+      <input
+        type="email"
+        name="email"
+        id="email"
+        placeholder="이메일을 입력하세요."
+      />
+      <br />
+      성별
+      <label for="radio1"> 남성</label>
+      <input type="radio" name="radio" id="radio1" checked />
+      <label for="radio2"> 여성</label>
+      <input type="radio" name="radio" id="radio2" />
+      <br />
+      취미
+      <input type="checkbox" name="checkbox" id="check1" />
+      <label for="check1">걷기</label>
+      <input type="checkbox" name="checkbox" id="check2" checked />
+      <label for="check2">달리기</label>
+      <input type="checkbox" name="checkbox" id="check3" />
+      <label for="check3">자전거타기</label>
+      <br />
+      사는 곳:
+      <select name="select" id="select">
+        <option value="seoul" selected>서울</option>
+        <option value="seoul">대구</option>
+        <option value="seoul">대전</option>
+        <option value="seoul">부산</option>
+        <option value="seoul">울산</option>
+        <option value="seoul">인천</option>
+        <option value="seoul">광주</option>
+        <option value="seoul">세종</option>
+      </select>
+      <br />
+      <button type="button" onclick="alert('가입')">회원가입</button>
     </form>
-</body>
-
+  </body>
 </html>

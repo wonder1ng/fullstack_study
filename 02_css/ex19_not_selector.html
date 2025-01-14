@@ -1,31 +1,29 @@
 <!DOCTYPE html>
 <html lang="ko">
-
-<head>
+  <head>
     <title>부정선택자 - not</title>
     <!-- ex19 -->
     <style>
-        input:not([type="text"]) {
-            background-color: red;
-        }
+      input:not([type="text"]) {
+        background-color: red;
+      }
 
-        input:not([type="password"]) {
-            background-color: blue;
-        }
+      input:not([type="password"]) {
+        background-color: blue;
+      }
 
-        body :not(h1) {
-            color: green;
-        }
+      body :not(h1) {
+        color: green;
+      }
     </style>
-</head>
+  </head>
 
-<body>
+  <body>
     <input type="text" /><br />
     <input type="password" /><br />
     <input type="text" /><br />
     <input type="password" /><br />
     <h1>제목태그 h1</h1>
     <p>문단태그 p</p>
-</body>
-
+  </body>
 </html>

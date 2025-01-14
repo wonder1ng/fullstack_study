@@ -1,105 +1,128 @@
 <!DOCTYPE html>
 <html lang="ko">
-
-<head>
+  <head>
     <title>다음 로그인 화면</title>
     <style>
-        body {
-            text-align: center;
-            padding: 0;
-            margin: 0 auto;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            flex-direction: column;
-        }
+      body {
+        text-align: center;
+        padding: 0;
+        margin: 0 auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        flex-direction: column;
+      }
 
+      form {
+        display: flex;
+        flex-direction: column;
+        width: 500px;
+        height: 600px;
+        border: 1px solid lightgray;
+        align-items: center;
+        justify-content: space-around;
+        padding: 50px;
+      }
 
-        form {
-            display: flex;
-            flex-direction: column;
-            width: 500px;
-            height: 600px;
-            border: 1px solid lightgray;
-            align-items: center;
-            justify-content: space-around;
-            padding: 50px;
-        }
+      header {
+        width: 200px;
+        height: 90px;
+        text-align: center;
+        justify-content: center;
+        overflow: hidden;
+      }
 
-        header {
-            width: 200px;
-            height: 90px;
-            text-align: center;
-            justify-content: center;
-            overflow: hidden;
-        }
+      main {
+        text-align: center;
+      }
 
-        main {
-            text-align: center;
-        }
+      input {
+        text-align: left;
+        margin: 10px;
+      }
 
-        input {
-            text-align: left;
-            margin: 10px;
-        }
+      button,
+      main,
+      footer,
+      div,
+      img {
+        margin: 10px;
+      }
 
-        button,
-        main,
-        footer,
-        div,
-        img {
-            margin: 10px;
-        }
+      .input1 {
+        width: 400px;
+        height: 30px;
+        border-width: 0px 0px 2px 0px;
+        border-style: solid;
+        border-color: lightgray;
+      }
 
-        .input1 {
-            width: 400px;
-            height: 30px;
-            border-width: 0px 0px 2px 0px;
-            border-style: solid;
-            border-color: lightgray;
-        }
-
-        .button1 {
-            width: 400px;
-            height: 40px;
-            border: 0px;
-        }
+      .button1 {
+        width: 400px;
+        height: 40px;
+        border: 0px;
+      }
     </style>
-</head>
+  </head>
 
-<body>
-    <header><img src="logo_kakao.png" alt="kakao"></header>
+  <body>
+    <header><img src="logo_kakao.png" alt="kakao" /></header>
     <main>
-        <form action="http://www.myserver.com/login" method="GET">
-            <input class="input1" type="text" name="id" placeholder="카카오메일 아이디, 이메일 전화번호"><br />
-            <input class="input1" type="password" name="pw" placeholder="비밀번호">
-            <div>
-                <input type="radio" name="save_login_data" id="save_login_data">간편로그인 정보 저장
-            </div>
-            <button class="button1" type="submit" style="background-color: yellow;">로그인</button>
-            <div>또는</div>
-            <button class="button1" type="submit" style="background-color: lightgray;">QR코드
-                로그인</button>
-            <div>
-                <span>회원가입</span>
-                <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                </span>
-                <span>계정 찾기</span>
-                <span>|</span>
-                <span>비밀번호 찾기</span>
-            </div>
-            <img src="img_bnr_ko.png" style="background-color: lightgray; height: 15%; justify-content: end;">
-        </form>
+      <form action="http://www.myserver.com/login" method="GET">
+        <input
+          class="input1"
+          type="text"
+          name="id"
+          placeholder="카카오메일 아이디, 이메일 전화번호"
+        /><br />
+        <input
+          class="input1"
+          type="password"
+          name="pw"
+          placeholder="비밀번호"
+        />
+        <div>
+          <input
+            type="radio"
+            name="save_login_data"
+            id="save_login_data"
+          />간편로그인 정보 저장
+        </div>
+        <button class="button1" type="submit" style="background-color: yellow">
+          로그인
+        </button>
+        <div>또는</div>
+        <button
+          class="button1"
+          type="submit"
+          style="background-color: lightgray"
+        >
+          QR코드 로그인
+        </button>
+        <div>
+          <span>회원가입</span>
+          <span
+            >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          </span>
+          <span>계정 찾기</span>
+          <span>|</span>
+          <span>비밀번호 찾기</span>
+        </div>
+        <img
+          src="img_bnr_ko.png"
+          style="background-color: lightgray; height: 15%; justify-content: end"
+        />
+      </form>
     </main>
     <footer>
-        <select name="lang">
-            <option value="korean" selected>한국어</option>
-            <option value="english">English</option>
-            <option value="japanese">日本語</option>
-        </select>
-        | 이용약관 | <font style="font-weight: bold;">개인정보 처리방침</font> | 고객센터 | ©Kakao Corp.
+      <select name="lang">
+        <option value="korean" selected>한국어</option>
+        <option value="english">English</option>
+        <option value="japanese">日本語</option>
+      </select>
+      | 이용약관 | <font style="font-weight: bold">개인정보 처리방침</font> |
+      고객센터 | ©Kakao Corp.
     </footer>
-</body>
-
+  </body>
 </html>

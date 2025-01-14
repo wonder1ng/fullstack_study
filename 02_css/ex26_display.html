@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="ko">
-
-<head>
+  <head>
     <title>display 속성</title>
     <!-- `display:none`: 안 보이게. 자기 공간도 사라짐.-->
     <!-- `visibility: hidden`: 안 보이게. 자기 공간 존재 -->
@@ -13,40 +12,39 @@
     <!-- inline 속성 span, a, img. text 속성(b, small, ins...), input, label -->
 
     <style>
-        body {
-            margin: 0;
-        }
+      body {
+        margin: 0;
+      }
 
-        body * {
-            border: 1px solid red;
-        }
+      body * {
+        border: 1px solid red;
+      }
 
-        div {
-            display: block;
-        }
+      div {
+        display: block;
+      }
 
-        #span1 {
-            /* 공간 차지, 안 보임 */
-            visibility: hidden;
-            /* 공간 미차지, 안 보임. */
-            display: none;
-            width: 100px;
-            height: 100px;
-        }
+      #span1 {
+        /* 공간 차지, 안 보임 */
+        visibility: hidden;
+        /* 공간 미차지, 안 보임. */
+        display: none;
+        width: 100px;
+        height: 100px;
+      }
 
-        #span2 {
-            width: 100px;
-            height: 100px;
-            /* inline이면서  너비·높이 조절 가능 */
-            display: inline-block;
-        }
+      #span2 {
+        width: 100px;
+        height: 100px;
+        /* inline이면서  너비·높이 조절 가능 */
+        display: inline-block;
+      }
     </style>
-</head>
+  </head>
 
-<body>
+  <body>
     <div>div는 block 속성이다</div>
     <span id="span1">span1</span>
     <span id="span2">span2</span>
-</body>
-
+  </body>
 </html>
