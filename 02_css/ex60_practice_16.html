@@ -12,6 +12,16 @@
       li {
         list-style-type: none;
       }
+      #header .logo {
+        display: block;
+        width: 140px;
+        height: 47px;
+        margin: 0;
+        padding: 0;
+        font-size: 0;
+        line-height: 0;
+        background: url(logo_new2.png) center center no-repeat;
+      }
 
       body {
         overflow: auto;
@@ -31,44 +41,52 @@
         margin: 0;
         padding: 0;
       }
-
       .nav-menu {
-        list-style: none;
         display: flex;
       }
-
       .nav-item {
         position: relative;
       }
-
       .nav-item > a {
         display: block;
-        padding: 15px, 20px;
+        padding: 15px 20px;
+        text-decoration: none;
+      }
+      /* .nav-item > a:hover,
+      .dropdown a:hover {
+        background-color: aqua;
+      } */
+      .dropdown {
+        /* position: absolute; */
+        top: 100%;
+        left: 0;
+        background-color: darkcyan;
+        display: none;
+        z-index: 10;
+      }
+      .dropdown a {
+        display: flex;
+        width: 100vh;
+        padding: 10px 15px;
+        margin: 0;
         color: white;
         text-decoration: none;
       }
-
-      /* .nav-item>a:hover {
-            background-color: #555;
-        } */
-
-      /* .dropdown {
-            position: absolute;
-            top: 100%;
-            left: 0;
-            background-origin: #444;
-            display: none;
-            z-index: 10;
-        } */
+      .nav-item:hover .dropdown {
+        display: flex;
+      }
     </style>
   </head>
 
   <body>
     <header>
+      <h1 class="ci">
+        <a href="/" title="MEGABOX 메인으로 가기">MEGABOX : Life Theater</a>
+      </h1>
       <a href="#">VIP LOUNGE</a>
       <a href="#">멤버십</a>
       <a href="#">고객센터</a>
-      <img src="logo_new2.png" alt="" />
+      <a href="#" class="logo"></a>
       <a href="#">로그인</a>
       <a href="#">회원가입</a>
       <a href="#">빠른예매</a>
@@ -79,9 +97,7 @@
           <a href="#">영화</a>
           <div class="dropdown">
             <ul>
-              <li>
-                <a href="#">전체영화</a>
-              </li>
+              <li><a href="#">전체영화</a></li>
             </ul>
           </div>
         </li>
