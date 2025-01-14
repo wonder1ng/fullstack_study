@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <title>반응형 웹 = 미디어쿼리</title>
+    <!-- 반응형 웹: 화면 너비에 따라 반응하는 동적인 웹 -->
+    <!-- PC, Tablet, Mobile 3가지 구분 -->
+    <!-- 반응형 웹 만드는 방법 -->
+    <!-- 1. PC웹과 Mobile웹을 별도로 제작 -->
+    <!-- 예) 네이버(PC: nwaver.com, Mobile: m.naver.com) -->
+    <!-- 2. 반응형으로 해상도에 따라 동적 배치 -->
+    <!-- 예) 카페24 디자인센터, 아임웹, wix.com, 크리에이터링크 -->
+
+    <!-- PC 화면 너비: 가로 960px 이상 -->
+    <!-- Table 화면 너비: 가로 768 이상, 구형 아이패드 기준 -->
+    <!-- Mobile 화면 너비: 가로 767px 이하 -->
+    <style>
+      /* PC 해상도 */
+      @media screen and (min-width: 960px) {
+        body {
+          background-color: plum;
+        }
+      }
+
+      /* Tablet 해상도 */
+      @media screen and (min-width: 768px) and (max-width: 959px) {
+        body {
+          background-color: green;
+        }
+      }
+
+      /* Moblie 해상도 */
+      @media screen and (max-width: 767px) and (orientation: portrait) {
+        body {
+          background-color: aqua;
+        }
+      }
+
+      @media screen and (orientation: landscape) {
+        body {
+          background-color: brown;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <h1>제목태그 H1</h1>
+    <p>
+      Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptatem cum
+      ducimus est? Ex eos libero enim quidem, quis accusantium odio dignissimos
+      consectetur facilis, ea repellat deserunt ab obcaecati, labore iusto?
+    </p>
+    <p>
+      Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptatem cum
+      ducimus est? Ex eos libero enim quidem, quis accusantium odio dignissimos
+      consectetur facilis, ea repellat deserunt ab obcaecati, labore iusto?
+    </p>
+  </body>
+</html>

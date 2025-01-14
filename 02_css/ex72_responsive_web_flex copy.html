@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>반응형웹과 Flex 연결</title>
+    <!-- ex72 -->
+    <style>
+      /* 초기화 코드 */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-size: 32px;
+        font-weight: bold;
+      }
+
+      .wrap {
+        display: flex;
+        flex-flow: row wrap;
+      }
+
+      .wrpa div {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      /* PC해상도 */
+      .header {
+        background-color: greenyellow;
+        height: 100px;
+        /* flex - grow basis */
+        flex: 1 100%;
+      }
+
+      .main {
+        background-color: coral;
+        height: 400px;
+        flex: 1 100%;
+      }
+
+      .ad {
+        background-color: blueviolet;
+        height: 100px;
+        flex: 1 50%;
+      }
+
+      .info {
+        background-color: lightskyblue;
+        height: 100px;
+        flex: 1 50%;
+      }
+
+      .footer {
+        background-color: brown;
+        height: 100px;
+        flex: 1 100%;
+      }
+
+      /* Tablet해상도 */
+      @media screen and (min-width: 768px) and (max-width: 959px) {
+        .header {
+          flex: 1 100%;
+          order: 0;
+        }
+        .ad {
+          flex: 1 20%;
+          order: 1;
+          height: 400px;
+        }
+        .main {
+          flex: 1 60%;
+          order: 2;
+          height: 400px;
+        }
+        .info {
+          flex: 1 20%;
+          order: 3;
+          height: 400px;
+        }
+        .footer {
+          flex: 1 100%;
+          order: 4;
+        }
+      }
+
+      /* Mobile해상도 */
+      @media screen and (max-width: 767px) {
+        .header {
+          height: 100px;
+          flex: 1 20%;
+          order: 1;
+        }
+        .main {
+          height: 400px;
+          order: 2;
+        }
+        .info {
+          flex: 1 0%;
+          height: 0;
+          visibility: hidden;
+          order: 3;
+        }
+        .footer {
+          height: 100px;
+          flex: 1 100%;
+          order: 4;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- 전체 콘텐츠를 감싸는 div  -->
+    <div class="wrap">
+      <!-- 헤더 -->
+      <div class="header">
+        <p>헤더</p>
+      </div>
+      <!-- 메뉴 nav -->
+      <!-- 메인 = section + aside -->
+      <div class="main">
+        <p>메인</p>
+      </div>
+      <!-- 광고 -->
+      <div class="ad">
+        <p>광고</p>
+      </div>
+      <!-- 정보 -->
+      <div class="info">
+        <p>정보</p>
+      </div>
+      <!-- 푸터 -->
+      <div class="footer">
+        <p>푸터</p>
+      </div>
+    </div>
+  </body>
+</html>

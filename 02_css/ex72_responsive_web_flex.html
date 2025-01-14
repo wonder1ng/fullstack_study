@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>반응협 웹과 Flex 연결</title>
+    <style>
+      /* 초기화 코드 */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-size: 32px;
+        font-weight: bold;
+      }
+
+      /* PC해상도 */
+      .wrap {
+        display: flex;
+        flex-flow: column;
+      }
+
+      .wrap div {
+        border: 1px solid red;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100px;
+      }
+
+      .header {
+        background-color: greenyellow;
+      }
+
+      .nav {
+        background-color: yellow;
+        flex-grow: 1;
+      }
+
+      .main {
+        display: flex;
+        flex-flow: row wrap;
+      }
+
+      .section {
+        flex-basis: 70%;
+      }
+
+      .aside {
+        flex-basis: 30%;
+      }
+
+      /* Tablet 해상도 */
+      /* Mobile 해상도 */
+    </style>
+  </head>
+
+  <body>
+    <!-- 전체 콘텐츠를 감싸는 div -->
+    <div class="wrap">
+      <!-- 헤더 -->
+      <div class="header">
+        해더
+        <!-- <p>해더</p> -->
+      </div>
+      <!-- 내비 -->
+      <div class="nav">
+        <p>내비 바</p>
+      </div>
+      <!-- 메인 = 세션 + 사이드바-->
+      <div class="main">
+        <!-- 세션 -->
+        <div class="section">세션</div>
+        <!-- 사이드바 -->
+        <div class="aside">사이드 바</div>
+      </div>
+      <!-- 광고 -->
+      <div class="ad">광고</div>
+      <!-- 정보 -->
+      <div class="info">정보</div>
+      <!-- 푸터 -->
+      <div class="footer">푸터</div>
+    </div>
+  </body>
+</html>

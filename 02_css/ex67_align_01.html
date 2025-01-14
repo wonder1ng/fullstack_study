@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <title>수평/수직 정렬(align)</title>
+    <!-- 1. text-align: 2행 이상 오작동 가능 -->
+    <!-- 2. vertical-align: inline, inline-block, table만 가능 -->
+    <!-- 3. line height: 부모와 자신의 높이 조절 -->
+    <!-- 4. margin/padding: 부정확 -->
+    <!-- 5. `position: absolute`, top, left, bottom, right: 부정확 -->
+    <!-- 6. flex -->
+    <!-- 7. grid -->
+    <style>
+      * {
+        /* box-sizing: border-box; */
+        margin: 0;
+        padding: 0;
+      }
+
+      .box1 {
+        border: 2px solid red;
+        height: 100px;
+      }
+
+      .box2 {
+        border: 2px solid blue;
+        text-align: center;
+        /* line-height: 100px; */
+        margin-top: 33px;
+      }
+
+      .box3 {
+        border: 2px solid red;
+        height: 100px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .box4 {
+        border: 2px solid blue;
+        text-align: center;
+      }
+
+      .box3 {
+        border: 2px solid red;
+        height: 100px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .box4 {
+        border: 2px solid blue;
+        text-align: center;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="box1">
+      <h3 class="box2">가운데로 정렬해주세요.</h3>
+    </div>
+    <div class="box3">
+      <h3 class="box4">가운데로 정렬해주세요.</h3>
+    </div>
+    <div class="box5">
+      <h3 class="box6">가운데로 정렬해주세요.</h3>
+    </div>
+  </body>
+</html>
