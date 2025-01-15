@@ -6,21 +6,18 @@
     <style>
       * {
         box-sizing: border-box;
+        /* border: 1px solid gray; */
+      }
+      *:link,
+      *:visited {
+        color: black;
       }
 
       ul,
       li {
-        list-style-type: none;
-      }
-      #header .logo {
-        display: block;
-        width: 140px;
-        height: 47px;
         margin: 0;
         padding: 0;
-        font-size: 0;
-        line-height: 0;
-        background: url(logo_new2.png) center center no-repeat;
+        list-style-type: none;
       }
 
       body {
@@ -41,58 +38,147 @@
         margin: 0;
         padding: 0;
       }
+      header {
+        display: flex;
+        justify-content: space-between;
+        background: url(logo_new2.png) center center no-repeat;
+        background-position: top;
+        height: 60px;
+      }
+      .left-link {
+        position: absolute;
+        top: 15px;
+        left: 0;
+        font-size: 0.8667em;
+      }
+      .right-link {
+        position: absolute;
+        top: 15px;
+        right: 0;
+        font-size: 0.8667em;
+      }
       .nav-menu {
         display: flex;
+        justify-content: row nowrap;
       }
       .nav-item {
         position: relative;
+        width: 100%;
       }
       .nav-item > a {
         display: block;
         padding: 15px 20px;
         text-decoration: none;
+        position: absolute;
+        top: -38px;
+        height: 38px;
       }
-      /* .nav-item > a:hover,
-      .dropdown a:hover {
-        background-color: aqua;
-      } */
+
       .dropdown {
-        /* position: absolute; */
         top: 100%;
-        left: 0;
+        width: 100vw;
         background-color: darkcyan;
         display: none;
         z-index: 10;
       }
       .dropdown a {
         display: flex;
-        width: 100vh;
+        width: 100%;
         padding: 10px 15px;
         margin: 0;
         color: white;
         text-decoration: none;
       }
       .nav-item:hover .dropdown {
-        display: flex;
+        display: block;
+      }
+      .dropdown li {
+        display: inline-block;
+      }
+      body > nav > ul > li:nth-child(1) > a {
+        position: absolute;
+        left: 10%;
+      }
+      body > nav > ul > li:nth-child(2) > a {
+        position: absolute;
+        left: 26%;
+      }
+      body > nav > ul > li:nth-child(3) > a {
+        position: absolute;
+        left: 42%;
+      }
+      body > nav > ul > li:nth-child(4) > a {
+        position: absolute;
+        left: 58%;
+      }
+      body > nav > ul > li:nth-child(5) > a {
+        position: absolute;
+        left: 74%;
+      }
+      body > nav > ul > li:nth-child(6) > a {
+        position: absolute;
+        left: 80%;
       }
     </style>
   </head>
 
   <body>
     <header>
-      <h1 class="ci">
-        <a href="/" title="MEGABOX 메인으로 가기">MEGABOX : Life Theater</a>
-      </h1>
-      <a href="#">VIP LOUNGE</a>
-      <a href="#">멤버십</a>
-      <a href="#">고객센터</a>
-      <a href="#" class="logo"></a>
-      <a href="#">로그인</a>
-      <a href="#">회원가입</a>
-      <a href="#">빠른예매</a>
+      <div class="left-link">
+        <a href="#">VIP LOUNGE</a>
+        <a href="#">멤버십</a>
+        <a href="#">고객센터</a>
+      </div>
+      <div class="right-link">
+        <a href="#">로그인</a>
+        <a href="#">회원가입</a>
+        <a href="#">빠른예매</a>
+      </div>
     </header>
     <nav class="nav">
       <ul class="nav-menu">
+        <li class="nav-item">
+          <a href="#">영화</a>
+          <div class="dropdown">
+            <ul>
+              <li><a href="#">전체영화</a></li>
+            </ul>
+          </div>
+        </li>
+        <li class="nav-item">
+          <a href="#">예매</a>
+          <div class="dropdown">
+            <ul>
+              <li><a href="#">빠른예매</a></li>
+              <li><a href="#">상영시간표</a></li>
+              <li><a href="#">더 부티크 프라이빗 예매</a></li>
+            </ul>
+          </div>
+        </li>
+        <li class="nav-item">
+          <a href="#">영화</a>
+          <div class="dropdown">
+            <ul>
+              <li><a href="#">전체영화</a></li>
+            </ul>
+          </div>
+        </li>
+        <li class="nav-item">
+          <a href="#">영화</a>
+          <div class="dropdown">
+            <ul>
+              <li><a href="#">전체영화</a></li>
+            </ul>
+          </div>
+        </li>
+        <li class="nav-item">
+          <a href="#">영화</a>
+          <div class="dropdown">
+            <ul>
+              <li><a href="#">전체영화</a></li>
+            </ul>
+          </div>
+        </li>
         <li class="nav-item">
           <a href="#">영화</a>
           <div class="dropdown">
