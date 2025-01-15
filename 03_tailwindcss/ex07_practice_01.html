@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>반응형웹과 Flex 연결</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      * {
+        font-size: 1.5rem;
+        font-weight: bold;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="flex justify-center items-center flex-wrap h-[100dvh]">
+      <div
+        class="h-[14.4%] w-full md:h-1/6 md:w-4/5 md:order-[-1] lg:h-[14.4%] lg:w-full bg-[#9cf137] flex justify-center items-center"
+      >
+        해더
+      </div>
+      <div
+        class="h-[28.9%] w-1/2 md:h-1/6 md:w-full lg:h-[28.9%] lg:w-1/2 bg-[#ffb3b3] flex justify-center items-center"
+      >
+        섹션1
+      </div>
+      <div
+        class="h-[28.9%] w-1/2 md:h-1/6 md:w-full lg:h-[28.9%] lg:w-1/2 bg-[#ffdcdc] flex justify-center items-center"
+      >
+        섹션2
+      </div>
+      <div
+        class="h-[28.9%] w-1/2 md:h-1/6 md:w-full lg:h-[28.9%] lg:w-1/2 bg-[#85e4eb] flex justify-center items-center"
+      >
+        섹션3
+      </div>
+      <div
+        class="h-[28.9%] w-1/2 md:h-1/6 md:w-full lg:h-[28.9%] lg:w-1/2 bg-[#b1e8ec] flex justify-center items-center"
+      >
+        섹션4
+      </div>
+      <div
+        class="h-[14.4%] w-[30%] md:h-1/6 md:w-1/5 md:order-[-1] lg:h-[14.4%] lg:w-1/2 lg:order-none bg-[#ecb3ff] flex justify-center items-center"
+      >
+        광고
+      </div>
+      <div
+        class="h-[14.4%] w-[70%] md:h-1/6 md:w-2/6 lg:h-[14.4%] lg:w-1/2 bg-[#497c8d] flex justify-center items-center"
+      >
+        정보
+      </div>
+      <div
+        class="h-[14.4%] w-full md:h-1/6 md:w-4/6 bg-[#b3ffd9] lg:h-[14.4%] lg:w-full flex justify-center items-center"
+      >
+        푸터
+      </div>
+    </div>
+  </body>
+</html>
