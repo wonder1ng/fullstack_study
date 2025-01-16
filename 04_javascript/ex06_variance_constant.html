@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>변수와 상수</title>
+    <script>
+      // 변수: 메모리 공간(주소)에 명칭 지정
+      // 상수: 변수지만 한 번 값 지정 후 변경 불가. PI(원주율) 같은 고정값에 사용.
+
+      // const: 상수
+      // var: 변수, 재선언, 타입 변경 가능
+      // 전역 스코프(scope):
+      // let: 변수(최근 추가)
+      // 블록 스코프
+
+      // =(등호 연산자): 우측 값 좌측에 할당.
+      var num = 10; // 리터럴: 하드 코딩된 데이터. 리터럴 값 확인 후 타입 결정
+      document.write(num + "<br>");
+      document.write(typeof num + "<br>");
+
+      var num = "hello js~";
+      document.write(num + "<br>");
+      document.write(typeof num + "<br>");
+
+      let myNum = 10;
+      document.write(myNum + "<br>");
+      document.write(typeof myNum + "<br>");
+
+      // let은 변수 재선언 불가
+      try {
+        let myNum = "hello js~";
+      } catch {
+        pass;
+      }
+      document.write("오류 발생하여 기존 my Num 출력: ", myNum, "<br>");
+      // SyntaxError: 문법 오류 발생
+
+      // 상수 선언(전체 대문자 사용)
+      const PI = 3.14;
+      document.write(PI + "<br>");
+      document.write(typeof PI + "<br>");
+    </script>
+  </head>
+  <body></body>
+</html>
