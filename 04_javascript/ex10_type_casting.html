@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>형 변환: number와 string</title>
+    <script>
+      // String(): number -> string
+      let num1 = 456; // number 타입 확정
+      document.write(typeof num1, " ", num1 + "<br>");
+      let str1 = String(num1);
+      document.write(typeof str1, " ", str1 + "<br>");
+
+      // Number(): string -> number
+      let str2 = "123"; // 숫자로만 이뤄져야함
+      let num2 = Number(str2);
+      document.write(typeof num2, " ", num2 + "<br>");
+      let str22 = "       000123.051242  ";
+      let num22 = Number(str22);
+      document.write(typeof num22, " ", num22 + "<br>");
+      let str23 = "0 123";
+      let num23 = Number(str23);
+      document.write(typeof num23, " ", num23 + "<br>");
+
+      // 이전 방법
+      let str3 = "123.45";
+      let num5 = parseInt(str3); // 정수로 변환
+      let num6 = parseFloat(str3); // 실수로 변환
+      document.write(num5 + "<br>");
+      document.write(num6 + "<br>");
+
+      // 오류 발생
+      let str4 = "abc";
+      let num7 = parseInt(str4); // NaN: Not a Number
+      document.write(num7 + "<br>");
+      document.write(undefined + 1, "<br>");
+      document.write(10 / 0, "<br>"); // infinity
+      document.write(999 ** 999, "<br>");
+      document.write(20 / null, "<br>"); // null은 숫자 연산에선 0으로 인식
+      document.write(null + "adqweds" + "<br>"); // 문자 연산에선 "null"로 인식
+
+      // NaN 발생 예
+      // 1. 숫자로 변활할 수 없는 값: "abc"
+      // 2. 0으로 나눴을 때: 10/0
+      // 3. undefined에 연산할 때: undefined + 5
+      // 4. 잘못된 수학 연산: `Math.sqrt(-1)`(음수의 제곱근)
+
+      // 예외적인 방법(더티코드)
+      let num3 = "123" * 1;
+      document.write(typeof num3, " ", num3 + "<br>");
+      let num4 = +"123";
+      document.write(typeof num4, " ", num4 + "<br>");
+    </script>
+  </head>
+  <body></body>
+</html>

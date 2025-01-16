@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>연산자</title>
+    <script>
+      // 단항(Unary) 연산자: 연산의 대상이 1개
+      // 이항(Binary) 연산자: 산비논대(산술(Arithmetic), 비교(Comparison), 논리(Logical), 대입(Assignment))
+      // 삼항(Ternary) 연산자: A?B:C(A가 참일 땐 B, 거짓일 땐 C)
+      // 대입(Assignment) 연산자: 산술과 할당을 동시에 함
+
+      // 연산자의 우선 순위: 한 줄의 코드에 존재하는 연산자의 연산 순서
+      // 단항 > 이항 > 삼항 > 대입(=): 좌측일수록 우선
+      // 동순위는 사칙연산 순서, 다음 좌측일수록 우선
+
+      // 단항: ++, --, !, -(minus)
+      // 산술: +, -, *, /, %
+      // 비교: <, >, ==, !=, <=, >=
+      // 논리: &&, ||
+      // 삼항: A ? B : C
+      // 대입: =, +=, -=, *=, /=, %=
+
+      // 단항 연산자(++, --)
+      let i = 10; // b0000 ... b1010 4바이트 정수
+      // ++: 자신에게 1을 더하는 연산자
+      // --: 자신에게 1을 빼는 연산자
+      // A++: A = A + 1
+      // A--: A = A - 1
+      i++;
+      document.write(i + "<br>");
+      i--;
+      document.write(i + "<br>");
+      // ++A: 먼저 +1 연산을 한 후 진행
+      // A++: +1 연산을 마지막에 진항
+      document.write("처음 값: ", i + "<br>");
+      document.write("i++ 값: ", i++ + "<br>");
+      document.write("i 값: ", i + "<br>");
+      document.write("++i 값: ", ++i + "<br>");
+      document.write("i 값: ", i + "<br>");
+      // 단항, 삼항 연산자는 가급적 한 줄에 하나만 쓰자
+
+      // 이항 연산자: 산술
+      document.write(10 + 3 + "<br>");
+      document.write(10 + 3 - 5 + "<br>");
+      document.write(10 / 3 + "<br>");
+      document.write(Math.floor(10 / 3) + "<br>"); // 몫
+      document.write((10 % 3) + "<br>"); // 나머지
+      // 연산자 우선 순위
+      // prettier-ignore
+      document.write(10 + 3 * 5 / 3 * 2 + "<br>"); // 계산 순서는 아래처럼 됨
+      document.write(10 + ((3 * 5) / 3) * 2 + "<br>");
+    </script>
+  </head>
+  <body></body>
+</html>
