@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>논리 연산자</title>
+    <script>
+      // 논리 연산자 and, or, not
+      // and: 모두 True
+      // `T && T`: T
+      // `T && F`: F
+      // `F && T`: F
+      // `F && F`: F
+
+      // or: 하나라도 True
+      // `T || T`: T
+      // `T || F`: T
+      // `F || T`: T
+      // `F || F`: F
+
+      // Not: 아닐 경우 True
+      // `!T`: F
+      // `!F`: T
+      document.write(!(10 > 20) || 10 < 20);
+      document.write("<br>");
+      document.write(10 >= 20 && !(10 <= 20));
+    </script>
+  </head>
+  <body></body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <title>반복문 - brreak문, continue문</title>
+    <script>
+      // break문: 해당 반복문, switch문 종료.
+      // continue문: 해당 회차(loop)를 건너뜀. 증감문으로 이동.
+      for (let i = 0; i < 10; i++) {
+        document.write(`i: ${i}<br>`);
+        if (i > 5) break;
+      }
+      for (let i = 0; i < 10; i++) {
+        if (i % 2 == 0) {
+          continue;
+        }
+        document.write(`i: ${i}<br>`);
+      }
+
+      // 이중 반복문에서 break, contunue 사용 시 레이블 사용.
+      for (let i = 0; i < 10; i++) {
+        for (let j = 0; j < 3; j++) {
+          document.write(`i: ${i}, j: ${j}<br>`);
+          if (i === j) break;
+        }
+      }
+    </script>
+  </head>
+  <body></body>
+</html>

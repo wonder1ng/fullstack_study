@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>조건문 - switch문</title>
+    <script>
+      // switch문 형식
+      // switch(변수(number, string, logical)) {
+      //  case 10:
+      //    실행문1;
+      //    break;
+      //  case 20:
+      //    실행문2;
+      //    break;
+      //  default:
+      //    실행문2;
+      //    break;
+      // }
+      let num = 20;
+      switch (num) {
+        case 10:
+          document.write("10입니다.");
+          break;
+        case 20:
+          document.write("20입니다.");
+          break;
+        default:
+          document.write("그 외의 수입니다.");
+          break;
+      }
+      // "fall-through"현상: break 부재 시 다른 case도 실행되는 현상
+      document.write("<br>");
+
+      // if else if 문으로 변환
+      if (num == 10) {
+        document.write("10입니다.");
+      } else if (num == 20) {
+        document.write("20입니다.");
+      } else {
+        document.write("그 외의 수입니다.");
+      }
+
+      // 문자열 사용
+      let str1 = "10";
+      switch (str1) {
+        case 10:
+          // case는 `===`로 비교
+          document.write("number 10입니다.");
+          break;
+        case "10":
+          document.write("string 10입니다.");
+          break;
+      }
+      document.write("<br>");
+
+      // boolean 사용
+      let isLogin = true;
+      switch (isLogin) {
+        case true:
+          document.write("true입니다.");
+          break;
+      }
+      document.write("<br>");
+
+      // 랜덤수 생성
+      // Math.random()함수: 0이상 1 미만까지의 임의 실수 생성
+      let N = 6;
+      let dice = Math.floor(Math.random() * N) + 1;
+
+      //연습문제 - switch case문
+      //1. 1~10까지의 랜덤한 정수 1개를 발생시키고,
+      // switch문에서 짝수, 홀수 여부를 출력하시오.
+      //2. 주사위를 2개 던져서,
+      //  첫번째 주사위는 10의 자리로, 두번째 주사위는 1의 자리로
+      // 만들어서, 출력하시오.
+      // 예) 5, 2 => 52
+
+      let randN = parseInt(Math.random() * 10 + 1);
+      switch (randN % 2) {
+        case 1:
+          document.write("홀수<br>");
+          break;
+        case 0:
+          document.write("짝수<br>");
+          break;
+      }
+
+      let N2 = 6;
+      let dice1 = Math.floor(Math.random() * N2) + 1;
+      let dice2 = Math.floor(Math.random() * N2) + 1;
+      document.write("주사위 결과: ", dice1, dice2, "<br>");
+    </script>
+  </head>
+  <body></body>
+</html>

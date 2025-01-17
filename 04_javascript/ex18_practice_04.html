@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <title>연습문제</title>
+    <script>
+      //for문 사용
+      //1. 반복변수 i를 1부터 10까지 출력하시오.
+      //2. 1부터 10사이의 홀수만 출력하시오.
+      //3. 1부터 10사이의 3의 배수만 출력하시오. 3,6,9
+      //4. 1부터 100까지의 합을 출력하시오.
+      //5. 1부터 6사이의 랜덤수 10개를 출력하시오.
+      //6. 1부터 100사이의 랜덤값을 100개 발생시키고,
+      //  그 중 가장 큰 수(Max)을 출력하시오.
+      document.write("문제 1<br>");
+      for (let i = 1; i <= 10; i++) {
+        document.write(i, " ");
+      }
+
+      document.write("<br><br> 문제 2<br>");
+      for (let i = 1; i <= 10; i += 2) {
+        document.write(i, " ");
+      }
+
+      document.write("<br><br> 문제 3<br>");
+      for (let i = 3; i <= 10; i += 3) {
+        document.write(i, " ");
+      }
+
+      document.write("<br><br> 문제 4<br>");
+      let res1 = 0;
+      for (let i = 1; i <= 100; i++) {
+        res1 += i;
+      }
+      document.write(res1, "<br>");
+
+      document.write("<br><br> 문제 5<br>");
+      for (_ = 0; _ < 10; _++) {
+        document.write(parseInt(Math.random() * 6 + 1), " ");
+      }
+
+      document.write("<br><br> 문제 6<br>");
+      var res2 = 0;
+      for (_ = 0; _ < 100; _++) {
+        n = parseInt(Math.random() * 100 + 1);
+        document.write(n, " ");
+        var res2 = res2 > n ? res2 : n;
+      }
+      document.write("<br>", res2, "<br>");
+
+      // 중급
+      //7. 1부터 100까지의 소수의 갯수를 출력하시오.
+      //   소수 : 약수가 1과 자신인 수
+      //   약수 : 나누어 떨어지는 수
+      //8. 이번주 행운의 로또 숫자 6개를 출력하시오.
+      //   1부터 45까지의 랜덤한 수 6개를 뽑되
+      //   반복허용하지 않음. 재추첨 로직을 넣으시오.
+      //9. 주사위 2개 10번 던져서, 두 주사위 수를 합산한 다음
+      //   최소수와 최대수를 출력하시오.
+
+      document.write("<br><br> 문제 7<br>");
+      var cnt1 = 1;
+      var cnt2 = 0;
+      for (let i = 3; i <= 100; i += 2) {
+        for (let j = 1; j < i; j++) {
+          cnt2 += i % j === 0 ? 1 : 0;
+        }
+        cnt1 += cnt2 === 1 ? 1 : 0;
+        var cnt2 = 0;
+      }
+
+      document.write("<br><br> 문제 8<br>");
+      let n1 = parseInt(Math.random() * 45 + 1);
+      let n2 = parseInt(Math.random() * 45 + 1);
+      while (true) {
+        if (n1 != n2) {
+          break;
+        } else {
+          delete n2;
+          let n2 = parseInt(Math.random() * 45 + 1);
+        }
+      }
+      let n3 = parseInt(Math.random() * 45 + 1);
+      while (true) {
+        if ((n1 != n2) != n3) {
+          break;
+        } else {
+          delete n3;
+          let n3 = parseInt(Math.random() * 45 + 1);
+        }
+      }
+      let n4 = parseInt(Math.random() * 45 + 1);
+      while (true) {
+        if (((n1 != n2) != n3) != n4) {
+          break;
+        } else {
+          delete n4;
+          let n4 = parseInt(Math.random() * 45 + 1);
+        }
+      }
+      let n5 = parseInt(Math.random() * 45 + 1);
+      while (true) {
+        if ((((n1 != n2) != n3) != n4) != n5) {
+          break;
+        } else {
+          delete n5;
+          let n5 = parseInt(Math.random() * 45 + 1);
+        }
+      }
+      let n6 = parseInt(Math.random() * 45 + 1);
+      while (true) {
+        if (((((n1 != n2) != n3) != n4) != n5) != n6) {
+          break;
+        } else {
+          delete n6;
+          let n6 = parseInt(Math.random() * 45 + 1);
+        }
+      }
+      document.write(
+        n1 + ", ",
+        n2 + ", ",
+        n3 + ", ",
+        n4 + ", ",
+        n5 + ", ",
+        n6,
+        "<br>"
+      );
+
+      let arr1 = [];
+      while (arr1.length < 6) {
+        let n = parseInt(Math.random() * 45 + 1);
+        if (!arr1.includes(n)) {
+          arr1.push(n);
+        }
+      }
+
+      document.write("<br><br> 문제 9<br>");
+      var maxd = 0;
+      var mind = 12;
+      for (_ = 0; _ < 10; _++) {
+        n = parseInt(Math.random() * 6 + 1) + parseInt(Math.random() * 6 + 1);
+        var maxd = n > maxd ? n : maxd;
+        var mind = n < mind ? n : mind;
+      }
+      document.write("최댓값: " + maxd, " 최솟값: " + mind, "<br>");
+
+      let arr2 = [];
+      for (_ = 0; _ < 10; _++) {
+        arr2.push(
+          parseInt(Math.random() * 6 + 1) + parseInt(Math.random() * 6 + 1)
+        );
+      }
+      document.write(
+        "최댓값: " + Math.max(...arr2),
+        " 최솟값: " + Math.min(...arr2)
+      );
+    </script>
+  </head>
+  <body></body>
+</html>
