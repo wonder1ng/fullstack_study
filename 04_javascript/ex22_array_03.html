@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <title>배열의 함수</title>
+    <script>
+      // 자바스크립트에서 배열은 리스트의 기능을 포함.
+      // push(): 맨 뒤에 요소 추가
+      // unshift(): 맨 앞에 추가
+      // splice(): 교체(치환)
+      // delete 연산자: 자우고 empty로 남김
+      // pop(): 맨 마지막 추출 및 제거
+      // concat(): 배열 결합
+      // sort(): 오름차순 정렬
+      // reverse(): 내림차순 정렬
+
+      // 배열의 선언
+      let arr0 = []; // 빈 배열
+      let arr1 = [10, 20, 30]; // 길이 3
+      let arr2 = new Array(); // 빈 배열
+      let arr3 = new Array(5); // 길이 5
+      let arr4 = new Array(10, 20, 30); // 길이 3
+      let arr5 = new Array("11111"); // 길이 1
+      let arr6 = Array.of("11111"); // 길이 1
+      let arr7 = Array.from("11111"); // 길이 5
+      console.log(arr5);
+      console.log(arr6);
+      console.log(arr7);
+
+      arr0.push(10); // 맨 뒤에 추가 [10]
+      console.log(arr0);
+      arr0.unshift(0); // 맨 앞에 추가 [0, 10]
+      console.log(arr0);
+
+      // 지우고 추가(교체)
+      // Array.splice(인덱스, 지우는 갯수, 교체값)
+      arr7.splice(2, 2, "2");
+      console.log(arr7);
+
+      // 지우고 empty로 남김
+      delete arr7[1];
+      console.log(arr7);
+
+      // 마지막 값 반환 및 제거
+      arr7.pop();
+      console.log(arr7);
+      console.log(arr7.pop());
+
+      // 처음 값 반환 및 제거
+      console.log(arr4);
+      arr4.shift();
+      console.log(arr4);
+      console.log(arr4.shift());
+
+      let arrA = [10, 20, 30];
+      let arrB = [30, 40, 50];
+      let arrC = arrA.concat(arrB);
+      console.log(arrC);
+      let arrC2 = arrA + arrB;
+      console.log(typeof arrC2, arrC2);
+      let setA = new Set(arrC);
+      console.log(setA);
+
+      // 정렬
+      // 값 타입 변수 vs 참조 타입 변수
+      // 값 타입은 메모리 공간에 실제 값 가짐
+      // 기본데이터타입 : number,string,boolean,undefined,null,symbol
+      // 참조 타입은 메모리 공간에 실제값의 주소값을 가짐
+      // 객체타입;object,Array,Function,Map,Set
+
+      let arrD = [20, 10, 30, 40, 50];
+      let sortedArray = arrD;
+      // 주소값을 복사하여 하나가 바뀌면 둘 다 바뀜
+      let orgArray = [...arrD];
+      // 새로운 주소에 값을 복사하여 별도 작동
+      console.log(arrD);
+      //   arrD.sort(); // 원본을 변경
+      sortedArray.sort();
+      console.log(arrD);
+      console.log(sortedArray);
+      console.log(orgArray);
+    </script>
+  </head>
+  <body></body>
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <title>타이머</title>
+    <script>
+      // setTimeout 함수: 일정 시간 후에 코드 호출
+      // setInterval함수: 일정 시간마다 코드 호출
+      setTimeout(() => {
+        console.log("타이머 3초 지남");
+      }, 3000);
+
+      setInterval(() => {
+        console.log("1초마다 수행됨");
+        // console.log(new_Date());
+        let time = new Data().toTimeString().split(" ")[0];
+        let date = new Data().toisosreing(T).split("T")[0];
+        colsole.log(date + " " + time); // 2025-01-20 13:35:35
+      }, 1000);
+    </script>
+  </head>
+  <body></body>
+</html>
