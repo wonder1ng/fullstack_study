@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <title>테이블 입력값 조작하기</title>
+    <script>
+      //연습문제
+      //값 지우기 버튼을 클릭하면, 왼쪽의 입력창의 값을 지우시오.
+      window.onload = () => {
+        makeTable();
+        let inputs = document.getElementsByTagName("input");
+        let buttons = document.getElementsByTagName("button");
+        let deletes = [];
+
+        // let이 없으면 i가 전부 10(조건을 나간 최종 i)로 인식되기 때문에 작동 안 함
+        for (let i = 0; i < 10; i++) {
+          buttons[i].onclick = () => {
+            console.log(i + 1 + "번 버튼 클릭됨.");
+            inputs[i].value = "";
+          };
+        }
+      };
+      function makeTable() {
+        //document.writeln함수를 이용하여
+        //동적으로 테이블을 작성하시오.
+        document.writeln("<table border=1>");
+        for (var i = 1; i <= 10; i++) {
+          document.writeln("<tr>");
+          document.writeln("<td>목록" + i + "</td>");
+          document.writeln('<td><input id="input' + i + '" type="text"></td>');
+          document.writeln(
+            '<td><button id="btn' +
+              i +
+              '" value="' +
+              i +
+              '">값지우기</button></td>'
+          );
+          document.writeln("</tr>");
+        }
+        document.writeln("</table");
+      }
+    </script>
+  </head>
+  <body></body>
+</html>
+
+<!-- <!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <title>테이블 입력값 조작하기</title>
+    <script>
+        //연습문제
+        //값 지우기 버튼을 클릭하면, 왼쪽의 입력창의 값을 지우시오.
+        window.onload = () => {
+          makeTable();
+          deleteInput();
+        };
+        function makeTable() {
+          //document.writeln함수를 이용하여
+          //동적으로 테이블을 작성하시오.
+          document.writeln("<table border=1>");
+          for (var i = 1; i <= 10; i++) {
+            document.writeln("<tr>");
+            document.writeln("<td>목록" + i + "</td>");
+            document.writeln('<td><input id="input' + i + '" type="text"></td>');
+            document.writeln(
+              '<td><button id="btn' +
+                i +
+                '" value="' +
+                i +
+                '">값지우기</button></td>'
+            );
+            document.writeln("</tr>");
+          }
+          document.writeln("</table");
+
+      }
+      deleteInput = () => {
+      let inputs = document.getElementsByTagName("input");
+      let buttons = document.getElementsByTagName("button");
+      for (var i = 0; i < 10; i++) {
+          buttons[i].onclick() = () => {
+              input.value = ""
+          }
+      }}
+    </script>
+  </head>
+  <body></body>
+</html> -->

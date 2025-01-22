@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <title>JS로 html 요소(문서 객체) 속성 변경</title>
+    <script>
+      // getAttribute : 속성 가져오기
+      // setAttribute : 속성 설정하기
+      window.onload = () => {
+        let img = document.getElementById("img");
+        let h1 = document.getElementById("name");
+        h1.innerHTML = "이미지 이름: " + img.getAttribute("src");
+      };
+      function changeImg() {
+        let img = document.getElementById("img");
+        let h1 = document.getElementById("name");
+        if (img.getAttribute("src") === "images/apple.png") {
+          img.setAttribute("src", "images/banana.png");
+        } else {
+          img.setAttribute("src", "images/apple.png");
+        }
+
+        h1.innerHTML = "이미지 이름: " + img.getAttribute("src");
+      }
+    </script>
+  </head>
+  <body>
+    <h1 id="name">이미지 이름</h1>
+    <button onclick="changeImg();">이미지 변경하기</button>
+    <br />
+    <br />
+    <img id="img" src="images/apple.png" alt="사과이미지" />
+  </body>
+</html>
