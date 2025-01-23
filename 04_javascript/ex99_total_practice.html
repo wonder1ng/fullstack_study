@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <title>Document</title>
+    <script>
+      // 1
+      //   alert("Javascript");
+
+      // 2
+      let str1 = "Hi";
+      let str2 = "ECMA Script";
+      console.log("문제 2");
+      console.log(str1 + " " + str2);
+
+      // 3
+      console.log("문제 3");
+      console.log("자바스크립트!");
+
+      // 4
+      document.write("문제 4");
+      document.write(
+        '<table border="1px" style="border-collapse: collapse "><thead><tr><th>학번</th><th>이름</th><th>국어점수</th></tr></thead><tr><td>010</td><td>길동</td><td>80</td></tr></table>'
+      );
+
+      // 5
+      // let ans5 = prompt("문제 5: 이름을 입력하세요", "김다정");
+      // alert("안녕하세요. 저는 " + ans5 + "입니다.");
+
+      // 6
+      // let ans6 = prompt("문제 6: 당신의 수학 점수는?", 70);
+      // alert("수학 점수는 " + ans6 + "점입니다.");
+
+      // 7
+      let ans7 = (a, b, c) => {
+        return Number(a) + Number(b) + Number(c);
+      };
+      console.log("문제 7");
+      console.log(ans7(10, 20, 30));
+
+      // 9
+      console.log(
+        "문제 9: 1. Number, 2. String, 3. Boolean, 4. undefined, 5. Object, 6. function"
+      );
+
+      // 10
+      // let ans10 = prompt("문제 10: 숫자를 입력하세요.");
+      // alert(ans10 * 2);
+
+      // 11
+      // let ans11 = prompt("문제 11: 세 자릿수 숫자 입력");
+      // alert(
+      //   `백의 자릿수: ${ans11[0]}\n십의 자릿수: ${ans11[1]}\n일의 자릿수: ${ans11[2]}`
+      //  );
+
+      // 12
+      let ans12 = (a, b, c) => {
+        return parseInt((a + b + c) / 3);
+      };
+      console.log("문제 12");
+      console.log(ans12(20, 30, 40));
+
+      // 13
+      let ans13 = (a, b) => {
+        return `${parseInt(a / b)} ${a % b}`;
+      };
+      console.log("문제 13");
+      console.log(ans13(10, 2));
+
+      // 14
+      let ans14 = (a, b) => {
+        return a ** b;
+      };
+      console.log("문제 14");
+      console.log(ans14(2, 3));
+
+      // 15
+      let ans15 = (n) => {
+        return n * n * 3.14;
+      };
+      console.log("문제 15");
+      console.log(ans15(5));
+
+      // 16
+      console.log("문제 16");
+      console.log(20 < 30, 20 <= 30);
+
+      // 17
+      console.log("문제 17");
+      console.log(10 < 20 && 10 > 5, "123"[2] == 3, 5 > 1 || 5 < 10);
+
+      // 18
+      let ans18 = (n) => {
+        if (n % 3 === 0) {
+          return "짝";
+        } else {
+          return n;
+        }
+      };
+      console.log("문제 18");
+      console.log(ans18(3), ans18(2));
+
+      // 19
+      let ans;
+    </script>
+  </head>
+  <body>
+    <!-- 8 -->
+    <h3>문제 8</h3>
+    <img
+      width="100"
+      height="100"
+      src="images/apple.png"
+      alt="사과"
+      onmouseover="this.src='images/banana.png'"
+      onmouseout="this.src='images/apple.png'"
+    />
+  </body>
+</html>
