@@ -100,7 +100,239 @@
       console.log(ans18(3), ans18(2));
 
       // 19
-      let ans;
+      let ans19 = (n) => {
+        switch (n) {
+          case 1:
+            console.log("수성");
+            break;
+          case 2:
+            console.log("금성");
+            break;
+          case 3:
+            console.log("지구");
+            break;
+          case 4:
+            console.log("화성");
+            break;
+          case 5:
+            console.log("목성");
+            break;
+          case 6:
+            console.log("토성");
+            break;
+          case 7:
+            console.log("천왕성");
+            break;
+          case 8:
+            console.log("해왕성");
+            break;
+          default:
+            console.log("1 ~ 8 사이의 숫자를 입력해야 합니다.");
+        }
+      };
+      console.log("문제 19");
+      ans19(1);
+
+      // 20
+      // let ans20 = prompt("문제 20: 키(cm) 입력");
+      // alert(ans20 >= 150 ? "탑승 가능합니다." : "탑승 불가합니다.");
+
+      // 21: 2번
+      // 22: X
+
+      // 23
+      let makeUpper = (str) => {
+        return str.toUpperCase();
+      };
+      console.log(makeUpper("mary"));
+
+      // 24
+      let ans20 = {
+        수성: "Mercury",
+        금성: "Venus",
+        지구: "Earth",
+        화성: "Mars",
+        목성: "Jupiter",
+        토성: "Saturn",
+        천왕성: "Uranus",
+        해왕성: "Neptune",
+      };
+      console.log("문제 24");
+      console.log(ans20["지구"]);
+
+      // 25
+      let ans21_1 = "Yujin Hyewon";
+      let ans21_2 = "70 100";
+      console.log("문제 25");
+
+      console.log(
+        Object.fromEntries(
+          ans21_1.split(" ").map((k, i) => [k, ans21_2.split(" ")[i]])
+        )
+      );
+
+      // 26
+      let ans26 = "Javascript";
+      console.log("문제 26");
+      for (let i = 0; i < ans26.length; i += 2) {
+        console.log(ans26[i] + " " + ans26[i + 1]);
+      }
+
+      // 27
+      let ans27 = (str) => {
+        return str === str.toUpperCase() ? "YES" : "NO";
+      };
+      console.log(ans27("a"));
+
+      // 28
+      let ans28 = (target, find) => {
+        return target.indexOf(find);
+      };
+      //   console.log("문재 28: ", ans28("pinapple is yummy", "apple"));
+      console.log("문재 28: ", "pineapple is yummy".indexOf("apple"));
+
+      // 29: 3, 5
+
+      // 30
+      let ans30 = (str) => {
+        return str.split(" ").length;
+      };
+      console.log("문재 30");
+      console.log(
+        ans30("안녕하세요. 저는 제주대학교 컴퓨터공학전공 혜림입니다.")
+      );
+
+      // 31
+      let ans31 = (str) => {
+        let res31 = "";
+        for (let i = -1; i + 1 > -str.length; i--) {
+          res31 += str.at(i);
+        }
+        return res31;
+      };
+      console.log("문제 31");
+      console.log(ans31("1 2 3 4 5"));
+      console.log(ans31("2 4 6 7 8"));
+
+      // 32
+      let ans32 = (str) => {
+        return str.split(" ").toString() ===
+          [...str.split(" ")].sort().toString()
+          ? "YES"
+          : "NO";
+      };
+      console.log("문제 32");
+      console.log(ans32("176 156 155 165 166 169"));
+      console.log(ans32("155 156 165 166 169 176"));
+
+      // 33
+      function one(n) {
+        function two(m) {
+          return m ** n;
+        }
+        return two;
+      }
+      const a = one(2);
+      const b = one(3);
+      const c = one(4);
+      console.log("문제 33");
+      console.log(a(10));
+      console.log(b(10));
+      console.log(c(10));
+
+      // 34
+      let ans34 = (n) => {
+        let res34 = String(n);
+        for (i = 2; i < 10; i++) {
+          res34 += " " + n * i;
+        }
+        return res34;
+      };
+      console.log(ans34(2));
+
+      // 35
+      let ans35 = (str) => {
+        let obj35 = Object.fromEntries(str.split(" ").map((name) => [name, 0]));
+        let voteCnt = 0;
+        for (let name of str.split(" ")) {
+          obj35[name] += 1;
+          if (obj35[name] > voteCnt) {
+            var winner = name;
+            voteCnt = obj35[name];
+          }
+        }
+        console.log(winner + "(이)가 총", voteCnt + "표로 반장이 되었습니다.");
+      };
+      ans35("원범 원범 혜원 혜원 혜원 혜원 유진 유진");
+
+      // 36
+      let ans36 = (str) => {
+        let sorted = str.split(" ").sort();
+        let winner = sorted.pop();
+        let rank = 1;
+        let candies = 0;
+        while (rank < 4) {
+          candies += 1;
+          if (winner === sorted.pop()) {
+          } else {
+            rank += 1;
+          }
+        }
+        return candies;
+      };
+      console.log("문제 36");
+      console.log(ans36("97 86 75 66 55 97 85 97 97 95"));
+
+      // 37
+      let ans37 = (str) => {
+        return str.replace("q", "e");
+      };
+      console.log("문제 37");
+      console.log(ans37("querty"));
+      console.log(ans37("hqllo my namq is hyqwon"));
+
+      // 38
+      let ans38 = (limit, n, ...arr) => {
+        let weight = 0;
+        let cnt = 0;
+        for (oneWeight of arr) {
+          if (weight + oneWeight < limit) {
+            weight += oneWeight;
+            cnt += 1;
+          } else {
+            break;
+          }
+        }
+        return cnt;
+      };
+      console.log("문제 38");
+      console.log(ans38(50, 5, 20, 20, 20, 20, 20));
+
+      // 39
+      let s = 0;
+      for (let i = 1; i < 101; i++) {
+        s += i;
+      }
+      console.log("문제 39");
+      console.log(s);
+      // 40
+      var names = ["장미", "수선화", "코스모스"];
+      let ans40 = (names) => {
+        let winnner = "";
+        let length = 0;
+        names.forEach((name) => {
+          console.log(name);
+          if (length < name.length) {
+            length = name.length;
+            winnner = name;
+          }
+        });
+        console.log(`가장 긴 단어는 ${winnner}입니다.`);
+      };
+      console.log("문제 40");
+      ans40(names);
+      const now = new Date();
+      console.log(now.getTime());
     </script>
   </head>
   <body>
