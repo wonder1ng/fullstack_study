@@ -331,8 +331,148 @@
       };
       console.log("문제 40");
       ans40(names);
-      const now = new Date();
-      console.log(now.getTime());
+
+      // 41
+      let ans41 = (n) => {
+        n = Number(n);
+        if (n > 1 && (n % 2 != 0 || n === 2)) {
+          for (let i = 3; i < n; i += 2) {
+            if (n % i == 0) {
+              return "NO";
+            }
+          }
+          return "YES";
+        } else {
+          return "NO";
+        }
+      };
+      console.log("문제 41");
+      console.log(ans41(1), ans41(2), ans41(3), ans41(5), ans41(6), ans41(97));
+
+      // 42
+      let ans42 = (a, b) => {
+        let days = ["TUE", "WED", "THU", "FRI", "SAT", "SUN", "MON"];
+        let months = {
+          1: 0,
+          2: 31,
+          3: 60,
+          4: 91,
+          5: 121,
+          6: 152,
+          7: 182,
+          8: 213,
+          9: 244,
+          10: 274,
+          11: 305,
+          12: 335,
+        };
+        return days[(months[a] + Number(b)) % 7];
+      };
+      console.log("문제 42");
+      console.log(ans42(5, 24));
+      // 답안
+      // function solution(a, b) {
+      //   const day = ["SUN", "MON", "TUE", "WED", "THU", "FRI", "SAT"];
+      //   const x = new Date("2020-" + a + "-" + b);
+      //   return day[x.getDay()];}
+
+      // 43
+      let ans43 = (n) => {
+        return n.toString(2);
+      };
+      console.log("문제 43");
+      console.log(ans43(28893));
+
+      // 44
+      let ans44 = (n) => {
+        res = 0;
+        for (num of String(n)) {
+          res += Number(num);
+        }
+        return res;
+      };
+      console.log("문제 44");
+      console.log(ans44(18234), ans44(3849));
+
+      // 45
+      let ans45 = () => {
+        let time = new Date();
+        return parseInt(time.getTime() / (1000 * 60 * 60 * 24 * 365)) + 1970;
+      };
+      console.log("문제 45");
+      console.log(ans45());
+
+      // 46
+      let ans46 = (n) => {
+        res = 0;
+        for (i = 1; i <= n; i++) {
+          for (j of String(i)) {
+            res += Number(j);
+          }
+        }
+        return res;
+      };
+      console.log("문제 46");
+      console.log(ans46(20));
+
+      // 47
+      const people = {
+        이호준: "01050442903",
+        이호상: "01051442904",
+        이준호: "01050342904",
+        이호준: "01050442903",
+        이준: "01050412904",
+        이호: "01050443904",
+        이호준: "01050442903",
+      };
+      console.log("문제 47");
+      console.log(Object.keys(people).length);
+
+      // 48
+      let ans48 = (str) => {
+        res = "";
+        for (char of str) {
+          if (char === char.toUpperCase()) {
+            res += char.toLowerCase();
+          } else {
+            res += char.toUpperCase();
+          }
+        }
+        return res;
+      };
+      console.log("문제 48");
+      console.log(ans48("AAABBBcccddd"));
+
+      // 49
+      let ans49 = (str) => {
+        return Math.max(...str.split(" "));
+      };
+      console.log("문제 49");
+      console.log(ans49("10 9 8 7 6 5 4 3 2 1"));
+
+      // 50
+      // function bubble(arr) {
+      //   let result = arr.slice();
+
+      //   for (let i = 0; i < result.length - 1; i++) {
+      //     for (let j = 0; j < result.length; j++) {
+      //       if (result[j] > result[j + 1]) {
+      //         result.splice(j, 2, result[j + 1], result[j]);
+      //       }
+      //     }
+      //   }
+      //   return result;
+      // }
+
+      // const items = prompt("문제 50: 입력해주세요.")
+      //   .split(" ")
+      //   .map((n) => {
+      //     return parseInt(n, 10);
+      //   });
+
+      // console.log(bubble(items));
+
+      // 51
     </script>
   </head>
   <body>
