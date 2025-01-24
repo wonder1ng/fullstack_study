@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
   <head>
     <title>JSX를 이용한 html요소 생성하기</title>
     <script
@@ -14,5 +14,34 @@
     <!-- min : 용량을 줄이기 위해서 공백,줄바꿈을 없앰. -->
     <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
   </head>
-  <body></body>
+  <body>
+    <p>JSX를 이용한 HTML 요소 생성하기</p>
+    <div id="root"></div>
+
+    <script type="text/babel">
+      // 클래스형 컴퍼넌트(구성 요소)(과거)
+      // 리액트 클래스형 컴퍼넌트 정의
+      class Greeting extends React.Component {
+        // React.Component에 정의된 함수: 함수 오버라이딩
+        render() {
+          return (
+            // JSX 문법 사용(class(html)이 아닌 className(js)임)
+            <h1 className="greeting">Hello World!</h1>
+          );
+        }
+      }
+
+      // 함수형 컴퍼넌트(요즘)
+      // 리액트 함수형 컴퍼넌트 정의
+      const Greeting2 = <h1 className="greeting">Hello World2~</h1>;
+      // const Greeting2: JSX.Element
+
+      // ReactDOM을 이용하여 컴퍼넌트를 root에 렌더링
+      const root = ReactDOM.createRoot(document.getElementById("root"));
+      // 클래스형 컴퍼넌트 렌더링
+      // root.render(React.createElement(Greeting));
+      // 함수형
+      root.render(Greeting2);
+    </script>
+  </body>
 </html>
