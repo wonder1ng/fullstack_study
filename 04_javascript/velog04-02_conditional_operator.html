@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <title>A?B:C(conditional_operator)</title>
+    <script>
+      console.log(true ? "true입니다." : "false입니다.");
+      // 아래처럼 2개 이상의 조건부 연산자는 가독성 떨어짐(더티 코드)
+      console.log(
+        true
+          ? false
+            ? "1 true입니다."
+            : "1 false입니다."
+          : true
+          ? "2 true입니다."
+          : "2 false입니다."
+      );
+      console.log(
+        false
+          ? false
+            ? "1 true입니다."
+            : "1 false입니다."
+          : true
+          ? "2 true입니다."
+          : "2 false입니다."
+      );
+    </script>
+  </head>
+  <body></body>
+</html>

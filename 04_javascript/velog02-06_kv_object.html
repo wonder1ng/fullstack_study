@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <title>Key-Value Object</title>
+    <script>
+      let obj1 = { key2: "value", key: "value1", key3: "value3", key: "value" };
+      let obj2 = {
+        key: "origin_value",
+        0.11: "value",
+        fads: "value",
+        "021": "value",
+        31: "value",
+        1: "value",
+        5: "value",
+        asd: "value",
+        "10d": "value",
+        "5d": "value",
+      };
+
+      // key는 중복되지 않지만 value는 상관 없음
+      // 뒤에 있는 key-value는 기존 자리에 덮어씀
+      console.log(obj1);
+      // KV 객체는 자연수(0과 자연수 변환 가능한 문자열 포함)를 오름차순으로 먼저 정렬하고 그외는 입력순으로 기억함
+      console.log(obj2);
+
+      // 값 호출: 자연수는 string과 nubmer로 출력 가능하며 변수 작명법에 어긋나는 key는 대괄호로만 출력 가능
+      console.log(obj2.asd, obj2["fads"], obj2[1], obj2["1"]);
+      // 값 변경
+      obj2.asd = "modified value";
+      obj2["fads"] = "modified value";
+      console.log(obj2.asd, obj2["fads"]);
+      // Objcet.keys(object): object의 key 반환, Object.values(object): object의 value 반환
+      console.log(Object.keys(obj1), Object.values(obj1));
+      // Object.entries(object): object의 각 키와 값을 배열로 묶어 반환
+      console.log(Object.entries(obj1));
+      // kv객체는 length 속성이 없기 때문에 배열로 변환 후 length 사용
+      console.log(
+        obj1.length,
+        Object.keys(obj1).length,
+        Object.values(obj1).length,
+        Object.entries(obj1).length
+      );
+
+      // 객체 병합
+      console.log({ ...obj1, ...obj2 });
+      console.log({ ...obj2, ...obj1 });
+      console.log(Object.assign({}, obj2, obj1));
+      console.log(Object.assign({}, obj1, obj2));
+      // 주의: `Object.assign()을 할 때는 원본(첫 번째 인자)이 수정됨.
+      console.log(Object.assign(obj2, obj1));
+      console.log(obj2);
+      console.log(obj1);
+
+      // 다중 할당
+      let { key, key3 } = obj1; // 키가 변수명이 되고 값이 값이 됨
+      console.log(key, key3);
+      let { a = key, b = key3 } = obj1; // 변수명 지정
+      console.log(a, b);
+    </script>
+  </head>
+  <body></body>
+</html>

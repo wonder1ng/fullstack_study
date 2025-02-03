@@ -8,23 +8,23 @@
       let c = Number(-3.333); // Number로 선언
       let d = Number("4.4444"); // 문자열을 숫자로 선언
       let e = "3.333"; // 문자열
-      
+
       console.log(a, b, c, d, e); // e만 문자열
       console.log(a + e - b); // 문자열 숫자는 +에서는 문자열 연산, 나머지 연산에선 숫자 연산
       console.log(
-      parseInt(c), // 정수만 숫자 변환
-      parseFloat(c), // 실수 전체 숫자 변환
-      typeof parseInt(e), // 문자열도 숫자로 반환
-      Math.trunc(10 / 3), // 몫
-      Math.trunc(-10 / 3), // 몫
-      Math.floor(10 / 3), // 몫
-      Math.floor(-10 / 3) // 음수는 몫을 하나 작게 반환
+        parseInt(c), // 정수만 숫자 변환
+        parseFloat(c), // 실수 전체 숫자 변환
+        typeof parseInt(e), // 문자열도 숫자로 반환
+        Math.trunc(10 / 3), // 몫
+        Math.trunc(-10 / 3), // 몫
+        Math.floor(10 / 3), // 몫
+        Math.floor(-10 / 3) // 음수는 몫을 하나 작게 반환
       );
-      
+
       let i = 10;
-      
+
       console.log(i + 2, i - 2, i * 2, i / 2, i % 2);
-      
+
       // 단항 연산자(++, --)
       // ++: 자신에게 1을 더하는 연산자
       // --: 자신에게 1을 빼는 연산자
@@ -41,7 +41,7 @@
       console.log("i 값: ", i);
       console.log("++i 값: ", ++i);
       console.log("i 값: ", i);
-      
+
       // 이항 연산자: 산술
       console.log(10 + 3);
       console.log(10 + 3 - 5);
@@ -52,7 +52,7 @@
       // prettier-ignore
       console.log(10 + 3 * 5 / 3 * 2); // 계산 순서는 아래처럼 됨
       console.log(10 + ((3 * 5) / 3) * 2);
-      
+
       // 할당 연산: 변수에 계산 후 결과 할당
       console.log("i의 시작값", i);
       i += 2;
@@ -74,7 +74,7 @@
       console.log(typeof num1, " ", num1);
       let str1 = String(num1);
       console.log(typeof str1, " ", str1);
-      
+
       // Number(): string -> number
       let str2 = "123"; // 숫자로만 이뤄져야함
       let num2 = Number(str2);
@@ -85,14 +85,14 @@
       let str23 = "0 123";
       let num23 = Number(str23);
       console.log(typeof num23, " ", num23);
-      
+
       // 이전 방법
       let str3 = "123.45";
       let num5 = parseInt(str3); // 정수로 변환
       let num6 = parseFloat(str3); // 실수로 변환
       console.log(num5);
       console.log(num6);
-      
+
       // 오류 발생
       let str4 = "abc";
       let num7 = parseInt(str4); // NaN: Not a Number
@@ -102,13 +102,13 @@
       console.log(999 ** 999);
       console.log(20 / null); // null은 숫자 연산에선 0으로 인식
       console.log(null + "adqweds"); // 문자 연산에선 "null"로 인식
-      
+
       // NaN 발생 예
       // 1. 숫자로 변활할 수 없는 값: "abc"
       // 2. 0으로 나눴을 때: 10/0
       // 3. undefined에 연산할 때: undefined + 5
       // 4. 잘못된 수학 연산: `Math.sqrt(-1)`(음수의 제곱근)
-      
+
       // 예외적인 방법(더티코드)
       let num3 = "123" * 1;
       console.log(typeof num3, " ", num3);
@@ -116,6 +116,5 @@
       console.log(typeof num4, " ", num4);
     </script>
   </head>
-  <body>
-  </body>
+  <body></body>
 </html>

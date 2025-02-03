@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <title>const, var, let, new</title>
+    <script>
+      // const(ant): 상수로 값이 변경되지 않음. 블록 스코프.
+      // PI; // ReferenceError: 초기화 전 접근 불가 오류 발생
+      const PI = 3.141592;
+      console.log(PI, PI + 1); // PI를 변환하지 않는 연산은 상관없음
+      // TypeError: 아래 코드들은 상수 재선언 하거나 상수의 값을 변환하려 하기에 오류 발생
+      // PI = 3.14
+      // PI += 1
+      console.log(PI);
+
+      // var(iable): 변수로 값이 변경됨. 함수 스코프.
+      console.log(pi); // var 변수 선언 전 호출 시 undefined 반환
+      var pi = 3.141592;
+      console.log(pi);
+      // SyntaxError: 아래 코드는 변수 재선언으로 오류 발생
+      // let pi = 3.14;
+      // const pi = 3.14;
+      // var로는 재할당 가능하여 아래 코드 작동.
+      pi = "삼점일사";
+      console.log(pi);
+      var pi = 3.14;
+      console.log(pi);
+      pi += 1;
+      console.log(pi);
+
+      // let: 변수로 값이 변경됨. 블록 스코프.
+      // console.log(pie);  // ReferenceError: 초기화 전 접근 불가 오류 발생
+      let pie = 3.141592;
+      console.log(pie);
+      // SyntaxError: 기선언 변수로로 오류 발생
+      // let pie = 3.14;
+      // var pie = 3.14;
+      // const pie = 3.14;
+      pie = "삼점일사"; // 암묵적 전역 변수는 재선언 가능. 하지만 재선언 후에도 위의 재선언 코드들은 오류 발생
+      console.log(pie);
+      pie += 3.14;
+      console.log(pie);
+
+      // 암묵적 전역 변수: 키워드 없이 선언하는 변수로 값이 변경됨. 전역 스코프
+      // console.log(파이);  // ReferenceError: 변수 선언 되지 않아 오류 발생
+      파이 = 3.141592;
+      console.log(파이);
+      // 키워드로 재선언 시 각 키워드에 따른 결과(오류) 발생(암묵적 전역 변수가 우선순위 낮은 것으로 추정정)
+      // const 파이 = 3.14
+      // var 파이 = 3.14
+      // let 파이 = 3.14
+      파이 = 3.14;
+      console.log(파이);
+      파이 += 3.14;
+      console.log(파이);
+
+      // new: 새로운 객체 생성 시 사용(String, Number, Boolean, Array, Object 제외한 변수 선언 시 사용)
+      // let set1 = Set([1, 2, 3]) // TypeError: Constructor Set requires 'new' at Set (<anonymous>)
+      let set2 = new Set([1, 2, 3]);
+      console.log(set2);
+
+      // 스코프(ChatGPT 코드)
+      console.log("");
+      console.log("스코프");
+      // 1. const, var, let의 스코프 테스트
+      function varScopeTest() {
+        const LOCALCONST = "나는 const로 선언된 지역 변수";
+        var localVar = "나는 var로 선언된 지역 변수";
+        let localLet = "나는 let으로 선언된 지역 변수";
+        if (true) {
+          const BLOCKCONST = "나는 블록 내부에서 선언된 const 변수";
+          var blockVar = "나는 블록 내부에서 선언된 var 변수";
+          let blockLet = "나는 블록 내부에서 선언된 let 변수";
+        }
+        console.log(LOCALCONST); // ✅ 정상 출력: "나는 const로 선언된 지역 변수"
+        // console.log(BLOCKCONST);  // ❌ ReferenceError: BLOCKCONST is not defined (블록 바깥에서 접근 불가)
+        console.log(localVar); // ✅ 정상 출력: "나는 var로 선언된 지역 변수"
+        console.log(blockVar); // ✅ 정상 출력: "나는 블록 내부에서 선언된 var 변수" (블록 스코프가 아님)
+        console.log(localLet); // ✅ 정상 출력: "나는 let으로 선언된 지역 변수"
+        // console.log(blockLet);  // ❌ ReferenceError: blockLet is not defined (블록 바깥에서 접근 불가)
+      }
+
+      varScopeTest();
+      // console.log(localVar);  // ❌ ReferenceError: localVar is not defined (함수 바깥에서 접근 불가)
+      // console.log(blockVar);  // ❌ ReferenceError: blockVar is not defined (함수 바깥에서 접근 불가)
+
+      // 2. 암묵적 전역 변수의 스코프 테스트
+      function implicitGlobalTest() {
+        localImplicit = "나는 함수 안의 암묵적 전역 변수"; // var, let, const 없이 선언 (strict 모드가 아니므로 허용됨)
+        if (true) {
+          blockImplicit = "나는 블록 안의 암묵적 전역 변수"; // var, let, const 없이 선언 (strict 모드가 아니므로 허용됨)
+        }
+      }
+
+      implicitGlobalTest();
+      console.log(localImplicit); // ✅ 정상 출력: "나는 함수 안의 암묵적 전역 변수" (전역 스코프)
+      console.log(blockImplicit); // ✅ 정상 출력: "나는 블록 안의 암묵적 전역 변수" (전역 스코프)
+
+      // 3. 전역 변수는 전역 객체(window)의 property가 됨 (브라우저 환경에서 실행)
+      var explicitGlobal = "나는 var로 선언된 전역 변수";
+      console.log(explicitGlobal); // ✅ 정상 출력: "나는 var로 선언된 전역 변수"
+      console.log(window.localVar); // ❌ undefined (전역 변수로 선언되지 않음)
+      console.log(window.explicitGlobal); // ✅ "나는 var로 선언된 전역 변수" (전역 객체의 속성이 됨)
+      console.log(window.blockImplicit); // ✅ "나는 암묵적 전역 변수" (전역 객체의 속성이 됨)
+    </script>
+    <script>
+      "use strict";
+      x = 10; // ❌ ReferenceError: x is not defined
+    </script>
+  </head>
+  <body></body>
+</html>

@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <title>function</title>
+    <script>
+      //4가지 형식
+      // 1. 매배변수 X 반환값 X
+      function myFunc1() {
+        console.log("myFunc1()");
+      }
+      myFunc1();
+
+      // 2. 매개변수 O 반환값 X
+      function myFunc2(param) {
+        console.log("myFunc2()" + param);
+        return; // `return;`: myFunc1처럼 안 적어도 됨
+      }
+      // 여기서 param이 인자, "홍길동"이 인수
+      myFunc2("홍길동");
+
+      // 3. 매개변수 X 반환값 O
+      function myFunc3() {
+        return "홍길동2";
+      }
+      const name = myFunc3();
+      console.log(name);
+
+      // 4. 매개변수 O 반환값 O
+      function myFunc4(param) {
+        return param * 2;
+      }
+      console.log(myFunc4(2));
+
+      // 함수형 변수(익명함수)
+      let varFunc = function () {
+        console.log("varfunc()");
+        return;
+      };
+      varFunc();
+      // 선언 함수 익명 함수 비교
+      console.log(typeof myFunc1, typeof varFunc);
+      console.log(myFunc1);
+      console.log(varFunc);
+
+      // 화살표 연산자 사용
+      let varFunc2 = () => {
+        console.log("varfunc2()");
+        return;
+      };
+      varFunc2();
+
+      // 전개 연산자 사용
+      let reduceSum = (...arr) => {
+        res = 0;
+        console.log(typeof arr, arr);
+        for (let i of arr) {
+          res += i;
+        }
+        return res;
+      };
+      console.log(reduceSum(1, 2, 3, 4, 5));
+      // arguments: 구버전 가변 매개변수. 화살표 함수 사용 불가.
+      let argumentsSum = function () {
+        res = 0;
+        arguments;
+        console.log(typeof arguments, arguments);
+        for (let i of arguments) {
+          res += i;
+        }
+        return res;
+      };
+      console.log(argumentsSum(1, 2, 3, 4, 5));
+
+      // 기본 매개 변수
+      let greeting = (name = "아무개") => {
+        console.log(name + "님 반갑습니다.");
+      };
+      greeting();
+      greeting("홍길동");
+      // 구버전 코드
+      let oldGreeting1 = (name) => {
+        name = name !== undefined ? name : "아무개";
+        console.log(name + "님 반갑습니다.");
+      };
+      oldGreeting1();
+      oldGreeting1("홍길동");
+      let oldGreeting2 = (name) => {
+        name = name || "아무개";
+        console.log(name + "님 반갑습니다.");
+      };
+      oldGreeting2();
+      oldGreeting2("홍길동");
+
+      // 콜백 함수
+      let sum = (param1, param2) => {
+        return param1 + param2;
+      };
+      let sub = (param1, param2) => {
+        return param1, param2;
+      };
+      function calc(param1, param2, method) {
+        return method(param1, param2);
+      }
+      console.log(calc(10, 20, sum));
+      console.log(calc(10, 20, sub));
+
+      // Array.forEach()
+      let arr = [10, 20, 30, 40, 50];
+      arr.forEach((element) => {
+        // `arr.forEach((element) => {`: 인자에 괄호 없어도 작동동
+        console.log(element + 5);
+      });
+      console.log(arr);
+      // Array.map(value, index, array)
+      arr.map((value, index, array) => {
+        console.log(value, index, array);
+      });
+      console.log(
+        arr.map((v) => {
+          return v * v;
+        })
+      );
+      // Array.filter(value, index, array)
+      let filterArr = arr.filter((v) => {
+        return parseInt(v / 10) % 2 === 0;
+      });
+      console.log(filterArr);
+      // Map.foreach()
+      let map = new Map([
+        ["key1", 10],
+        ["key2", 20],
+        ["key3", 30],
+        ["key4", 40],
+      ]);
+      map.forEach((element) => {
+        console.log(element + 3);
+      });
+      map.forEach((value, key) => {
+        console.log(value, key);
+      });
+      // Set.foreach()
+      let set = new Set([10, 20, 30, 40]);
+      set.forEach((element) => {
+        console.log(element + 3);
+      });
+
+      // timeout과 interval
+      setTimeout(() => {
+        console.log("2초 후에 출력합니다.");
+      }, 2 * 1000); // 1000 = 1초
+
+      let interval = setInterval(() => {
+        console.log("0.5초마 다 출력합니다.");
+      }, 1 * 500);
+
+      setTimeout(() => {
+        console.log("interval을 종료합니다.");
+        clearInterval(interval);
+      }, 3 * 1000 - 1);
+
+      let timeout = setTimeout(() => {
+        console.log("3초 후에 출력합니다.");
+      }, 2 * 1000);
+
+      setTimeout(() => {
+        console.log("timeout을 종료합니다.");
+        clearTimeout(timeout);
+      }, 1 * 1000 - 1);
+
+      // 즉시 호출 함수
+      (function () {
+        console.log("이 함수는 즉시 호출됩니다!");
+      })();
+      (() => {
+        console.log("이 함수는 즉시 호출됩니다!");
+      })();
+
+      // this: 자기 자신을 가르키는 키워드
+      // 메서드
+      console.log("this 1번 메서드");
+      let obj1 = {
+        fun1: function () {
+          console.log(typeof this);
+          console.log(this);
+        },
+        fun2: () => {
+          console.log(typeof this);
+          console.log(this);
+        },
+      };
+      obj1.fun1(), obj1.fun2();
+
+      // 함수
+      console.log("this 2번 함수");
+      (function () {
+        console.log(typeof this);
+        console.log(this);
+        (function () {
+          console.log(typeof this);
+          console.log(this);
+        })();
+        (() => {
+          console.log(typeof this);
+          console.log(this);
+        })();
+      })();
+
+      // call, apply, bind(ChatGPT 응답)
+      const person = { name: "Alice" };
+
+      function greetCall(city, country) {
+        console.log(`Hello, I'm ${this.name}, from ${city}, ${country}`);
+      }
+      // call을 사용하여 this를 person 객체로 설정하고, 인수들은 직접 전달
+      greetCall.call(person, "New York", "USA");
+
+      function greetApply(city, country) {
+        console.log(`Hello, I'm ${this.name}, from ${city}, ${country}`);
+      }
+      // apply를 사용하여 this를 person 객체로 설정하고, 인수들을 배열로 전달
+      greetApply.apply(person, ["New York", "USA"]);
+
+      function greetBind(city, country) {
+        console.log(`Hello, I'm ${this.name}, from ${city}, ${country}`);
+      }
+      // bind를 사용하여 this를 person 객체로 설정하고, 인수들을 고정
+      const greetPerson = greetBind.bind(person, "New York");
+      // greetPerson 함수는 나중에 호출될 때 'New York'과 다른 인수를 전달할 수 있음
+      greetPerson("USA");
+    </script>
+  </head>
+  <body></body>
+</html>

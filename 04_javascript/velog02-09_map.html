@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <title>Map</title>
+    <script>
+      let map1 = new Map([
+        ["key2", "value"],
+        ["key", "value1"],
+        ["key3", "value3"],
+        ["key", "value"],
+      ]);
+      let map2 = new Map([
+        [1, 10],
+        [2, 20],
+        ["e", 50],
+        ["d", 40],
+        ["f", 60],
+        [11, 110],
+        [3, 30],
+      ]);
+      console.log(map1);
+      console.log(map2); // 순서 보장
+      console.log(map1[0], map1["key"], map1.key); // 잘못된 호출(undefined 반환)
+      console.log(map1.get("key")); // get으로 값 반환
+
+      // 값 추가
+      map1.set("key4", [90, 80, 70, 10]); // 배열을 추가
+      map1.set("일", 1).set("이", 2).set("삼", 3); // set는 동시에 여러 개 가능
+      console.log(map1);
+      console.log(map1.keys()); // keys 반환
+      console.log(map1.values()); // values 반환
+      console.log(map1.entries()); // K-V쌍 반환
+      // 값 제거
+      console.log(map1.delete("key2"), map1.delete("k")); // 성공 시 true, 실패 시 false 반환
+      // map1.delete("key2").delete("key3")  // delete는 동시에 여러 개 불가
+      console.log(map1);
+      // 보유 확인
+      console.log(map1.has("key"), map1.has("key3"));
+      // 합치기
+      let mergedMap = new Map([...map1, ...map2]);
+      console.log(mergedMap);
+      // 크기(length) 확인
+      console.log(map1.size);
+      // 모든 값 제거
+      mergedMap.clear();
+      console.log(mergedMap);
+    </script>
+  </head>
+  <body></body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <title>JSON</title>
+    <script>
+      let str = "template literals";
+      let obj1 = {
+        key1: "value1",
+        key2: `value2`,
+        key3: "value3",
+        key4: true,
+        key5: false,
+        key6: null,
+        key7: 99999 ** 99999,
+        123: "null",
+        274: undefined,
+        374: [undefined, null, "null"],
+        575: `for ${str}`,
+      };
+      console.log(obj1);
+
+      // JSON.stringify(object, array, num): object를 JSON 문자열로 변환.
+      // array: 특정 키(속성)만 추출. 전부 추출 시 (null)
+      // num(0~10): 들여쓰기 공백 개수
+      let json1 = JSON.stringify(obj1);
+      // undefined, 함수, 심볼(symbol) 등은 변환될 때 생략되거나(객체 안에 있을 경우) null 로 변환
+      console.log(typeof json1); // string 타입
+      console.log(json1); // 274 제거되고 374 배열의 undefined가 null로 변경
+      console.log(JSON.stringify(obj1, null, 2));
+      console.log(JSON.stringify(obj1, ["key1", "key2", `key3`], 2));
+
+      // JSON.parse(text, reviver): text를 JS객체로 변환
+      // reviver: 함수 적용
+      console.log(JSON.parse(json1));
+      console.log(
+        JSON.parse(json1, (k, v) => (typeof v === "string" ? "string" : v))
+      );
+    </script>
+  </head>
+  <body></body>
+</html>

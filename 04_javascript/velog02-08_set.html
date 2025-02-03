@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <title>Set</title>
+    <script>
+      // Set으로 변수 선언 시 new 필수. 자세한 설명은 변수 챕터에서 기술
+      let set = new Set([60, 10, 20, 30, 50, 10, 20, 30, 40]);
+      console.log(set);
+      console.log(set[0]); // set은 인덱싱 불가(undefined 반환)
+
+      // 값 추가
+      set.add([90, 80, 70, 10]); // 배열을 추가
+      set.add(...[90, 80, 70, 10]); // 첫 원소만 추가됨
+      set.add("일").add("이").add("삼"); // add는 동시에 여러 개 가능
+      console.log(set);
+      let set2 = new Set([...set, ...[90, 80, 70, 10]]); // 배열의 원소 추가하려면 새로 선언
+      console.log(set2); // `[[Entries]] 속성 없음`으로 출력됨. 원인 모름
+      console.log(set2.entries()); // `[[Entries]] 속성 없음`으로 출력됨. 원인 모름
+      console.log(...set2); // 값 전부 확인됨
+      console.log(...set2.entries()); // 값 전부 확인됨
+      console.log(set);
+      console.log(set.entries());
+      // 값 제거
+      set.delete(20);
+      set.delete(...[30, 40]); // 첫 원소만 삭제됨
+      // set2.delete(100).delete(110).delete(120)  // delete는 동시에 여러 개 불가
+      console.log(set);
+      // 보유 확인
+      console.log(set.has(40), set.has(30));
+      // 크기(length) 확인
+      console.log(set.size);
+      // 모든 값 제거
+      set2.clear();
+      console.log(set2, set);
+    </script>
+  </head>
+  <body></body>
+</html>

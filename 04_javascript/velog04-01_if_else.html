@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <title>if else</title>
+    <script>
+      // if문의 4가지 형식
+      // 1. 단일 if문
+      if (true) {
+        console.log("true입니다.");
+      }
+      // 2. if else문
+      if (false) {
+        console.log("true입니다.");
+      } else {
+        console.log("false입니다.");
+      }
+      // 3. if else if문
+      if (false) {
+        console.log("조건 1이 true입니다.");
+      } else if (true) {
+        console.log("조건 1이 false이고 조건 2가 true입니다.");
+      } else {
+        console.log("조건 1이 false이고 조건 2도 false입니다.");
+      }
+      // 4. 중첩 if문
+      if (true) {
+        if (false) {
+          console.log("조건 1-1이 true입니다.");
+        } else if (false) {
+          console.log("조건 1-2이 false이고 조건 1-2가 true입니다.", "<br />");
+        } else {
+          console.log("조건 1은 true이지만 하위 조건이 false입니다.", "<br />");
+        }
+      } else {
+        console.log("조건 1이 false입니다.");
+      }
+
+      // 연습문제
+      //1. 1~10까지의 정수중에 하나를 prompt로 입력받고,
+      //   짝수이면, "짝수입니다"
+      //   홀수이면, "홀수입니다"
+      // 1~10외의 수이면, "그외의 수입니다."
+      //2. 1~10까지의 정수중에 하나를 prompt로 3개 입력받고,
+      //  총합을 출력하시오.
+
+      let num1 = prompt("1 ~ 10 중의 정수 하나를 입력하세요.");
+      if (num1 < 1 || num1 > 10 || parseFloat(num1) > parseInt(num1)) {
+        alert("잘못 입력하였습니다.");
+      } else if (num1 % 2 == 0) {
+        alert(num1 + "은 짝수입니다.");
+      } else {
+        alert(num1 + "은(는) 홀수입니다.");
+      }
+
+      let num2 = Number(prompt("1 ~ 10 중의 정수 하나를 입력하세요."));
+      if (num2 < 1 || num2 > 10 || parseFloat(num2) > parseInt(num2)) {
+        alert("잘못 입력하였습니다.");
+      } else {
+        let num3 = Number(prompt("1 ~ 10 중의 정수 하나를 입력하세요."));
+        if (num3 < 1 || num3 > 10 || parseFloat(num3) > parseInt(num3)) {
+          alert("잘못 입력하였습니다.");
+        } else {
+          let num4 = Number(prompt("1 ~ 10 중의 정수 하나를 입력하세요."));
+          if (num4 < 1 || num4 > 10 || parseFloat(num4) > parseInt(num4)) {
+            alert("잘못 입력하였습니다.");
+          } else {
+            alert("세 수의 합은 " + (num2 + num3 + num4) + "입니다.");
+          }
+        }
+      }
+    </script>
+  </head>
+  <body></body>
+</html>

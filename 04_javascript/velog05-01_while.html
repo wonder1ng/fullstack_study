@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <title>while</title>
+    <script>
+      // 2의 배수 찾기
+      let res = [];
+      let num = 1;
+      while (num < 11) {
+        let target = num;
+        console.log("target: " + target);
+        if (target < 3) {
+          num += 1;
+          target === 2 ? res.push(target) : "";
+          console.log("continue 실행");
+          continue;
+        }
+        let cnt = 0;
+        while (target % 2 === 0) {
+          cnt += 1;
+          target = parseInt(target / 2);
+          if (target === 2) {
+            res.push(num);
+            console.log("break 실행");
+            break;
+          }
+        }
+        console.log(`중첩 반복문 ${cnt} loop 실행`);
+        num += 1;
+        console.log("");
+      }
+      console.log(res);
+    </script>
+  </head>
+  <body></body>
+</html>
