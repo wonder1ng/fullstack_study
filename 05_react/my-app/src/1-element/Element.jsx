@@ -22,6 +22,13 @@ export const E2 = React.createElement(
 export const E3 = <h1 style={{ color: "blue" }}>엘리먼트3</h1>;
 
 const fruits = ["사과", "바나나", "포도"];
+// export const E4 = (
+//   <ul>
+//     <li>사과</li>
+//     <li>바나나</li>
+//     <li>포도</li>
+//   </ul>
+// );
 export const E4 = (
   <ul>
     {fruits.map((item, index, array) => {
@@ -32,13 +39,6 @@ export const E4 = (
     })}
   </ul>
 );
-// export const E4 = (
-//   <ul>
-//     <li>사과</li>
-//     <li>바나나</li>
-//     <li>포도</li>
-//   </ul>
-// );
 
 // 내보내기 할 하나의 컴포넌트(오소)
 export default E1;
