@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <title>class</title>
+    <script>
+      class Student {
+        // constructor(생성자): 인스턴스 생성 시 호출되는 메서드. 객체 초기화, 속성 추가 등
+        constructor(name, kor, eng, math, sci) {
+          this.name = name;
+          this.kor = kor;
+          this.eng = eng;
+          this.math = math;
+          this.sci = sci;
+        }
+
+        getSubjectsNum() {
+          return Object.values(this).length - 1;
+        }
+        getSum() {
+          let res = 0;
+          // prettier-ignore
+          for (let score of Object.values(this).
+          slice(1)) {
+            res = res + score;
+          }
+          return res;
+        }
+        getAverage() {
+          return this.getSum() / this.getSubjectsNum();
+        }
+        toString() {
+          return `${this.name}\t${this.getSum()}점\t${this.getAverage()}점\n`;
+        }
+      }
+
+      const students = [
+        new Student("구름", 87, 98, 88, 90),
+        new Student("별이", 92, 98, 96, 88),
+        new Student("겨울", 76, 96, 94, 86),
+        new Student("바다", 98, 52, 98, 92),
+      ];
+
+      for (let student of students) {
+        console.log(student.toString());
+      }
+
+      class MoreSubjects extends Student {
+        constructor(name, kor, eng, math, sci, hist, soc) {
+          super(name, kor, eng, math, sci);
+          this.hist = hist;
+          this.soc = soc;
+        }
+
+        toString() {
+          return `${
+            this.name
+          }\t${this.getSubjectsNum()} 과목\t${this.getSum()}점\t${this.getAverage()}점\n`;
+        }
+      }
+      const moreStudents = [
+        new MoreSubjects("하늘", 91, 92, 85, 50, 99, 80),
+        new MoreSubjects("대지", 71, 99, 95, 90, 81, 79),
+      ];
+      for (let student of moreStudents) {
+        console.log(student.toString());
+      }
+    </script>
+  </head>
+  <body></body>
+</html>
