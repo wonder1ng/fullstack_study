@@ -1,6 +1,7 @@
 import React from "react";
 import * as E from "./4-props/Props";
 import * as Ex from "./4-props/Ex";
+import * as Ex2 from "./4-props/Ex2";
 
 function App() {
   return (
@@ -16,6 +17,9 @@ function App() {
       <Ex.Props3 />
       <Ex.Props4 />
       <Ex.Props5 />
+      <hr />
+      <Ex2.Props1 />
+      <Ex2.Props2 />
     </>
   );
 }
