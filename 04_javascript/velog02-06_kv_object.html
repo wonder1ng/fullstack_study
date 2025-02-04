@@ -25,10 +25,12 @@
 
       // 값 호출: 자연수는 string과 nubmer로 출력 가능하며 변수 작명법에 어긋나는 key는 대괄호로만 출력 가능
       console.log(obj2.asd, obj2["fads"], obj2[1], obj2["1"]);
-      // 값 변경
+      // 값 추가 및 변경
+      obj2.asd2 = "added value";
+      obj2["fads2"] = "added value";
       obj2.asd = "modified value";
       obj2["fads"] = "modified value";
-      console.log(obj2.asd, obj2["fads"]);
+      console.log(obj2.asd2, obj2["fads"]);
       // Objcet.keys(object): object의 key 반환, Object.values(object): object의 value 반환
       console.log(Object.keys(obj1), Object.values(obj1));
       // Object.entries(object): object의 각 키와 값을 배열로 묶어 반환

@@ -3,6 +3,7 @@
   <head>
     <title>class</title>
     <script>
+      // 부모 클래스 선언
       class Student {
         // constructor(생성자): 인스턴스 생성 시 호출되는 메서드. 객체 초기화, 속성 추가 등
         constructor(name, kor, eng, math, sci) {
@@ -44,17 +45,22 @@
         console.log(student.toString());
       }
 
+      // 자식 클래스 선언
+      // extends: 상속 받을 부모 클래스 지정(다수 가능)
       class MoreSubjects extends Student {
         constructor(name, kor, eng, math, sci, hist, soc) {
+          // super: 부모 생성자 호출하는 함수
           super(name, kor, eng, math, sci);
           this.hist = hist;
           this.soc = soc;
         }
 
+        // 부모 클래스와 동일한 메서드 재정의
         toString() {
           return `${
             this.name
           }\t${this.getSubjectsNum()} 과목\t${this.getSum()}점\t${this.getAverage()}점\n`;
+          // 따로 메서드 정의하지 않았지만 부모 클래스로부터 상속 받아 메서드 작동
         }
       }
       const moreStudents = [
@@ -62,6 +68,7 @@
         new MoreSubjects("대지", 71, 99, 95, 90, 81, 79),
       ];
       for (let student of moreStudents) {
+        // 메서드명은 부모 클래스와 같지만 결과가 다름.
         console.log(student.toString());
       }
     </script>
