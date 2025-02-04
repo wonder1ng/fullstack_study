@@ -28,7 +28,6 @@ function App() {
       <E.Hello2 name="아무개" />
       <E.ConfirmDialog />
       <hr />
-      {/* {Ex.Namecard(Ex.user)} */}
       {Ex.Namecard}
       <Ex.ans2 />
       {Ex.ans3}

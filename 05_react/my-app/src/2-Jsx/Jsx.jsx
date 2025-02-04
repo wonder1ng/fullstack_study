@@ -59,6 +59,17 @@ export const E6 = React.createElement(
 const items = ["Apple", "banana", "Cherry"];
 export const E7 = (
   <ul>
-    <li></li>
+    {items.map((item) => {
+      <li key={item}>{item}</li>;
+    })}
   </ul>
+);
+
+// React함수로 리스트 렌더링
+export const E8 = React.createElement(
+  "ul",
+  null,
+  items.map((item) => {
+    return React.createElement("li", { key: item }, item);
+  })
 );
