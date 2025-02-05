@@ -113,7 +113,11 @@ function InfoCard(params) {
 export function Props5() {
   return (
     <>
-      <InfoCard title="제목">
+      <InfoCard title="카드 1">
+        <h2>부제목</h2>
+        <p>본문</p>
+      </InfoCard>
+      <InfoCard title="카드 2">
         <h2>부제목</h2>
         <p>본문</p>
       </InfoCard>

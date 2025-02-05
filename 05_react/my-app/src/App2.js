@@ -36,6 +36,7 @@ function App() {
       <p>
         <Ex.Greeting hour="3" />
       </p>
+      <hr style={{ border: "2px solid red" }} />
     </>
   );
 }

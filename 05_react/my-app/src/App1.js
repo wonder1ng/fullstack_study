@@ -31,6 +31,7 @@ function App() {
       {Ex.Namecard}
       <Ex.ans2 />
       {Ex.ans3}
+      <hr style={{ border: "2px solid red" }} />
     </>
   );
 }

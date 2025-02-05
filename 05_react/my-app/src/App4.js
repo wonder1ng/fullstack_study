@@ -20,6 +20,9 @@ function App() {
       <hr />
       <Ex2.Props1 />
       <Ex2.Props2 />
+      <Ex2.Props3 />
+      <Ex2.Props4 />
+      <hr style={{ border: "2px solid red" }} />
     </>
   );
 }
