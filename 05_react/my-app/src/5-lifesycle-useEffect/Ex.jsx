@@ -21,10 +21,11 @@ export function Props1(params) {
 // 힌트: useEffect의 의존성 배열에 상태값을 넣으세요.
 export function Props2() {
   let [count, setCount] = useState(0);
-  function plus() {}
+
   useEffect(() => {
     console.log("문제2 컴포넌트가 업데이트되었습니다.");
   }, [count]);
+
   return (
     <div>
       <button type="button" onClick={() => setCount(count + 1)}>
@@ -77,6 +78,7 @@ export function Props3() {
 // 힌트: window.addEventListener와 window.removeEventListener
 export function Getsize() {
   let [size, setSize] = useState(window.innerWidth);
+
   function getSize() {
     setSize(window.innerWidth);
   }

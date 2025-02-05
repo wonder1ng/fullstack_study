@@ -48,11 +48,12 @@
       // 자식 클래스 선언
       // extends: 상속 받을 부모 클래스 지정(다수 가능)
       class MoreSubjects extends Student {
+        #soc; // #: private 속성으로 미리 선언
         constructor(name, kor, eng, math, sci, hist, soc) {
           // super: 부모 생성자 호출하는 함수
           super(name, kor, eng, math, sci);
           this.hist = hist;
-          this.soc = soc;
+          this.#soc = soc; // private 속성
         }
 
         // 부모 클래스와 동일한 메서드 재정의
@@ -71,6 +72,11 @@
         // 메서드명은 부모 클래스와 같지만 결과가 다름.
         console.log(student.toString());
       }
+
+      // .soc는 undefined로 출력(정의되지 않은 속성)
+      console.log(moreStudents[0].hist, moreStudents[0].soc);
+      // SyntaxError: Private field '#soc' must be declared in an enclosing class 발생
+      // console.log(moreStudents[0].#soc);
     </script>
   </head>
   <body></body>

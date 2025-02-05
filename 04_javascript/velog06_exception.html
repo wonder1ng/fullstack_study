@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <title>exception(try, catch, finally, throw)</title>
+    <script>
+      // 기본 예외 처리
+      let num = prompt("양수 입력하세요.");
+      if (parseFloat(num) > 0) {
+        console.log("양수 " + num + "을(를) 입력하였습니다.");
+      } else {
+        console.log("양수가 아닙니다.");
+      }
+      // 고급 예외 처리(try, catch, finally): 조건문보다 미세하게 느림
+      try {
+        notExist; // 존재하지 않는 변수
+      } catch (exception) {
+        // exception: 예외 객체. 예외 객체 선언 없이 바로 예외 처리 구문 사용 가능
+        console.log(exception.name);
+        console.log(exception.message);
+        console.log("오류 발생으로 catch 실행");
+      } finally {
+        console.log("오류 발생 여부 관계 없이 실행");
+      }
+      try {
+        null;
+      } finally {
+        console.log("오류 발생 여부 관계 없이 실행");
+      }
+      try {
+        // throw: 값을 반환
+        throw "throw";
+      } catch (exception) {
+        // 오류 객체 정보 없음
+        console.log(exception.name);
+        console.log(exception.message);
+      }
+      try {
+        // throw new [Error]: 오류 객체를 반환. TypeError 등 구체적 사용 가능
+        // Error 종류: Error, SyntaxError, ReferenceError, TypeError, RangeError, EvalError, URIError
+        throw new Error("throw new Error");
+      } catch (exception) {
+        // 오류 객체 정보 있음
+        console.log(exception.name);
+        console.log(exception.message);
+      }
+    </script>
+  </head>
+  <body></body>
+</html>
