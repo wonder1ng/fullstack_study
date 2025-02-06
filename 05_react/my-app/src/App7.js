@@ -15,6 +15,8 @@ function App() {
       <E.Counter7 />
       <hr />
       <Ex.Props1 />
+      <Ex.Props2 />
+      <Ex.Props3 />
       <hr />
       <C.Counter />
       <hr style={{ border: "2px solid red" }} />
