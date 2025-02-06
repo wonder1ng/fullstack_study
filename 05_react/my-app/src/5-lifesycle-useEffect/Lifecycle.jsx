@@ -29,16 +29,17 @@ export class LifecycleClass extends Component {
 
   // 마운트 직후 호출.
   componentDidMount() {
-    console.log("클래스 컴퍼넌트가 마운트되었습니다.");
+    console.log("LifecycleClass클래스 컴퍼넌트가 마운트되었습니다.");
   }
   // 언마운트 직후 호출
   componentWillUnmount() {
-    console.log("클래스 컴퍼넌트가 언마운트되었습니다.");
+    console.log("LifecycleClass클래스 컴퍼넌트가 언마운트되었습니다.");
   }
   // 상태나 props 변경 직후 호출(update)
   componentDidUpdate() {
     console.log(
-      "클래스 컴퍼넌트가 업데이트되었습니다." + `${this.state.count}`
+      "LifecycleClass클래스 컴퍼넌트가 업데이트되었습니다." +
+        `${this.state.count}`
     );
   }
   render() {
@@ -72,14 +73,14 @@ export function LifecycleFunc() {
 
   // 마운트 & 언마운트
   useEffect(() => {
-    console.log("함수 컴퍼넌트가 마운트되었습니다.");
+    console.log("LifecycleFunc함수 컴퍼넌트가 마운트되었습니다.");
     return () => {
-      console.log("함수 컴퍼넌트가 언마운트되었습니다.");
+      console.log("LifecycleFunc함수 컴퍼넌트가 언마운트되었습니다.");
     };
   }, []); // 빈 배열 넣으면 마운트/언마운트 시 한 번만 호출
   // 업데이트
   useEffect(() => {
-    console.log("함수 컴퍼넌트가 업데이트되었습니다.");
+    console.log("LifecycleFunc함수 컴퍼넌트가 업데이트되었습니다.");
   }, [count]); // 의존성 상태 변수 배열을 설정
 
   return (

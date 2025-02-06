@@ -10,7 +10,7 @@ import axios from "axios";
 // 힌트: 빈 배열 []을 의존성 배열로 사용하세요.
 export function Props1(params) {
   useEffect(() => {
-    console.log("문제1 컴포넌트가 마운트되었습니다.");
+    console.log("문제5-1 컴포넌트가 마운트되었습니다.");
   }, []);
 }
 
@@ -23,7 +23,7 @@ export function Props2() {
   let [count, setCount] = useState(0);
 
   useEffect(() => {
-    console.log("문제2 컴포넌트가 업데이트되었습니다.");
+    console.log("문제5-2 컴포넌트가 업데이트되었습니다.");
   }, [count]);
 
   return (
