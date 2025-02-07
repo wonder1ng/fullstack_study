@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <title>DOM control</title>
+    <script>
+      console.log(document.all);
+      console.log(document.getElementsByTagName("*"));
+      console.log(Object.entries(document.getElementsByTagName("*")));
+      for (let [k, v] of Object.entries(document.getElementsByTagName("*"))) {
+        console.log("k: " + k + " / v: " + v);
+      }
+    </script>
+  </head>
+  <body>
+    <h1>이것은 무엇일까요</h1>
+  </body>
+</html>

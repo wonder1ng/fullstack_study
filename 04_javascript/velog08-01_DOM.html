@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <title>Document Objects Model</title>
+    <script>
+      // document object(문서 객체): html에서의 요소(element)
+      // DOM(문서 객체 모델): 문서 객체를 조합해 만든 전체적 형태
+      const makeH1Tag = (text) => "<h1>" + text + "</h1>";
+      document.body.innerHTML += makeH1Tag(
+        "1번째 태그: 로드 전 실행으로 오류 발생"
+      );
+    </script>
+    <!-- 위 script TypeError 이후 작동 정지하기에 새로 script 태그 생성 -->
+    <script>
+      // document.addEventListener(event, () => {}): 지정 event 발생 후 함수 실행
+      // load: 페이지의 전체 모든 것이 로드 되고 발생.
+      // 구버전은 window가 document라는 것 같기도 하고 책이 틀린 거 같기도 하고...
+      window.addEventListener("load", function () {
+        document.body.innerHTML += makeH1Tag(
+          "2번째 태그: 전부 load 후 실행으로 6번으로 생성"
+        );
+      });
+      // 위 코드와 같다고 함
+      window.onload = function () {
+        document.body.innerHTML += makeH1Tag(
+          "3번째 태그: 전부 load 후 실행으로 7번으로 생성"
+        );
+      };
+      // DOMContentLoaded: HTML 문서가 로드되고 스크립트가 다운로드된 후 발생(이미지, 비동기 스크립트 등이 로드 전).
+      document.addEventListener("DOMContentLoaded", () => {
+        document.body.innerHTML += makeH1Tag(
+          "4번째 태그: 비동기 실행으로 5번으로 생성"
+        );
+      });
+    </script>
+  </head>
+  <body>
+    <script>
+      document.body.innerHTML += makeH1Tag("5번째 태그: 1번으로 생성");
+    </script>
+    <h1>6번째 태그: 2번으로 생성</h1>
+    <script>
+      document.body.innerHTML += makeH1Tag("7번째 태그: 3번으로 생성");
+    </script>
+    <h1>8번째 태그: 4번으로 생성</h1>
+  </body>
+</html>
