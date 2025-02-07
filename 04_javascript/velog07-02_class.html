@@ -14,10 +14,11 @@
           this.sci = sci;
         }
 
-        getSubjectsNum() {
+        // 오버라이드
+        subjectsNum() {
           return Object.values(this).length - 1;
         }
-        getSum() {
+        sum() {
           let res = 0;
           // prettier-ignore
           for (let score of Object.values(this).
@@ -26,11 +27,13 @@
           }
           return res;
         }
-        getAverage() {
-          return this.getSum() / this.getSubjectsNum();
+        average() {
+          return this.sum() / this.subjectsNum();
         }
         toString() {
-          return `${this.name}\t${this.getSum()}점\t${this.getAverage()}점\n`;
+          return `${
+            this.name
+          }\t${this.subjectsNum()} 과목\t${this.sum()}점\t${this.average()}점\n`;
         }
       }
 
@@ -48,35 +51,117 @@
       // 자식 클래스 선언
       // extends: 상속 받을 부모 클래스 지정(다수 가능)
       class MoreSubjects extends Student {
-        #soc; // #: private 속성으로 미리 선언
-        constructor(name, kor, eng, math, sci, hist, soc) {
+        #hist; // #: private 특성 적용
+        #soc;
+        static #counter = 0; // static: static 특성 적용
+        constructor(name, kor, eng, math, sci, art, hist, soc) {
+          // 사전에 잘못된 값 입력 못 하도록 예외 처리
+          for (let score of [kor, eng, math, sci, art, hist, soc]) {
+            if (score < 0 || score > 100 || parseInt(score) - score !== 0) {
+              throw "인스턴스 생성 오류: 점수는 0 이상 100 이하의 정수여야 합니다.";
+            }
+          }
           // super: 부모 생성자 호출하는 함수
           super(name, kor, eng, math, sci);
-          this.hist = hist;
-          this.#soc = soc; // private 속성
+          this.art = art;
+          this.#hist = hist; // private 속성
+          this.#soc = soc;
+          // static 속성으로 this가 아닌 클래스명으로 접근
+          MoreSubjects.#counter += 1;
         }
 
         // 부모 클래스와 동일한 메서드 재정의
-        toString() {
-          return `${
-            this.name
-          }\t${this.getSubjectsNum()} 과목\t${this.getSum()}점\t${this.getAverage()}점\n`;
-          // 따로 메서드 정의하지 않았지만 부모 클래스로부터 상속 받아 메서드 작동
+        subjectsNum() {
+          // super로 부모 메서드 접근 가능
+          return super.subjectsNum() + 2; // 사적 속성 접근 불가로 #hist와 #soc는 따로 처리
+        }
+        sum() {
+          return super.sum() + this.#hist + this.#soc;
+        }
+
+        // 게터
+        getHist() {
+          // 사적 속성도 클래스 내부에선 접근 가능
+          return this.#hist;
+        }
+        // 세터
+        setHist(value) {
+          if (value < 0 || value > 100 || parseInt(value) - value !== 0) {
+            throw "인스턴스 변경 오류: hist 점수는 0 이상 100 이하의 정수여야 합니다.";
+          }
+          this.#hist = value;
+        }
+        // get 키워드
+        get soc() {
+          // 사적 속성도 클래스 내부에선 접근 가능
+          return this.#soc;
+        }
+        // set 키워드
+        set soc(value) {
+          if (value < 0 || value > 100 || parseInt(value) - value !== 0) {
+            throw "인스턴스 변경 오류: soc 점수는 0 이상 100 이하의 정수여야 합니다.";
+          }
+          this.#soc = value;
+        }
+
+        // static
+        static get counter() {
+          return MoreSubjects.#counter + "명의 학생이 존재합니다.";
         }
       }
+
       const moreStudents = [
-        new MoreSubjects("하늘", 91, 92, 85, 50, 99, 80),
-        new MoreSubjects("대지", 71, 99, 95, 90, 81, 79),
+        new MoreSubjects("하늘", 91, 92, 85, 80, 50, 99, 80),
+        new MoreSubjects("대지", 71, 99, 95, 90, 99, 81, 79),
       ];
       for (let student of moreStudents) {
-        // 메서드명은 부모 클래스와 같지만 결과가 다름.
+        // 따로 메서드 정의하지 않았지만 부모 클래스로부터 상속 받아 메서드 작동
         console.log(student.toString());
       }
 
-      // .soc는 undefined로 출력(정의되지 않은 속성)
-      console.log(moreStudents[0].hist, moreStudents[0].soc);
-      // SyntaxError: Private field '#soc' must be declared in an enclosing class 발생
-      // console.log(moreStudents[0].#soc);
+      // private ==================================
+      try {
+        let myError = new MoreSubjects("오류", 200, 99, 95, 86, 90, 81, 79);
+      } catch (error) {
+        console.error(error);
+      }
+
+      let myError = new MoreSubjects("오류", 71, 99, 95, 86, 90, 81, 79);
+      try {
+        for (key in myError) {
+          myError[key] = 200;
+          console.log(key + " 점수 변경 완료");
+        }
+        // 사적 속성은 접근 불가.
+        console.log(Object.keys(myError));
+        // hist라는 속성은 존재하지 않음
+        console.log(myError.hist);
+        // #soc에 접근 시 `SyntaxError: Private field '#soc' must be declared in an enclosing class` 발생
+        // console.log(myError.#hist);
+      } catch (error) {
+        console.error("인스턴스 생성 후 속성 접근 시 오류 미발생");
+      } finally {
+        console.log(Object.entries(myError));
+      }
+
+      // getter & setter ======================================
+      // get[attr]: 게터
+      console.log(myError.getHist());
+      // set[attr]: 세터
+      myError.setHist(100);
+      console.log(myError.getHist());
+
+      try {
+        console.log("soc 접근 가능: " + myError.soc);
+        myError.soc = -1;
+      } catch (error) {
+        console.error(error);
+        myError.soc = 100;
+        console.log("soc 재할당(게터 사용) 가능: " + myError.soc);
+      }
+
+      // static =========================================
+      console.log("static 속성 호출: " + MoreSubjects.counter);
     </script>
   </head>
   <body></body>
