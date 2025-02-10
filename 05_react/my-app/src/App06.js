@@ -1,6 +1,6 @@
 import React from "react";
-import * as E from "./6-state/State";
-import * as Ex from "./6-state/Ex";
+import * as E from "./06-state/State";
+import * as Ex from "./06-state/Ex";
 
 function App() {
   return (

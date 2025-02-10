@@ -1,6 +1,6 @@
 import React from "react";
-import Library from "./2-Jsx/Library";
-import * as Ex from "./2-Jsx/Ex";
+import Library from "./02-Jsx/Library";
+import * as Ex from "./02-Jsx/Ex";
 
 function App() {
   //   return <Library />;

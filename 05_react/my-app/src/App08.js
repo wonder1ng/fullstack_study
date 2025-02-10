@@ -1,6 +1,6 @@
 import React from "react";
-import * as E from "./8-event/Event";
-import * as Ex from "./8-event/Ex";
+import * as E from "./08-event/Event";
+import * as Ex from "./08-event/Ex";
 
 function App() {
   return (

@@ -127,7 +127,16 @@ export function Counter5() {
         setNumber(parseInt(e.target.value));
       }
     },
-    [number]
+    []
+    // [number]
+  );
+
+  let multiplier = 2;
+  const handleNumberChange2 = useCallback(
+    (e) => {
+      setNumber((prevNumber) => prevNumber * multiplier);
+    },
+    [multiplier]
   );
 
   const handleInputChange = useCallback(
@@ -147,6 +156,7 @@ export function Counter5() {
       <h2>두 배 결과: {double}</h2>
 
       <input type="number" value={number} onChange={handleNumberChange} />
+      <input type="number" value={number} onChange={handleNumberChange2} />
       <br />
       <input
         type="text"

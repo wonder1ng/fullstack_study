@@ -1,7 +1,7 @@
 import React from "react";
-import * as E from "./7-hook/Hook";
-import * as Ex from "./7-hook/Ex";
-import * as C from "./7-hook/CustomHook";
+import * as E from "./07-hook/Hook";
+import * as Ex from "./07-hook/Ex";
+import * as C from "./07-hook/CustomHook";
 
 function App() {
   return (

@@ -1,7 +1,7 @@
 import React from "react";
-import * as E from "./4-props/Props";
-import * as Ex from "./4-props/Ex";
-import * as Ex2 from "./4-props/Ex2";
+import * as E from "./04-props/Props";
+import * as Ex from "./04-props/Ex";
+import * as Ex2 from "./04-props/Ex2";
 
 function App() {
   return (

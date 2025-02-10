@@ -1,6 +1,6 @@
 import React from "react";
-import * as E from "./9-conditional-render/ConditionalRender";
-import * as Ex from "./9-conditional-render/Ex";
+import * as E from "./09-conditional-render/ConditionalRender";
+import * as Ex from "./09-conditional-render/Ex";
 
 function App() {
   return (

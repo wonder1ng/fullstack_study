@@ -1,9 +1,9 @@
 // default는 이름만, 외는 중괄호 안에 기입
-import E1, { E2, E3, E4, E5 } from "./1-element/Element";
+import E1, { E2, E3, E4, E5 } from "./01-element/Element";
 // default는 *에 포함되지 않음.
-// import E1, * as E from "./1-element/Element";
-import * as E from "./1-element/Element";
-import * as Ex from "./1-element/Ex";
+// import E1, * as E from "./01-element/Element";
+import * as E from "./01-element/Element";
+import * as Ex from "./01-element/Ex";
 
 // return은 최종적으로 html로 출력된다는 걸 유념.
 function App() {

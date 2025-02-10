@@ -1,6 +1,6 @@
 import React from "react";
-import * as E from "./5-lifesycle-useEffect/Lifecycle";
-import * as Ex from "./5-lifesycle-useEffect/Ex";
+import * as E from "./05-lifesycle-useEffect/Lifecycle";
+import * as Ex from "./05-lifesycle-useEffect/Ex";
 
 function App() {
   return (

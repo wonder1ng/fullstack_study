@@ -10,5 +10,101 @@ import React, { useState } from "react";
 
 // 간단한 숫자 리스트 렌더링
 export function NumberList() {
-  1;
+  const nums = [1, 2, 3, 4, 5];
+
+  return (
+    <>
+      <p>Number List</p>
+      <ul>
+        {/* List.jsx:17  Warning: Each child in a list should have a unique "key" prop. */}
+        {/* 배열의 인덱스 사용 시, 배열의 데이터 항목이 수정되면 리액트 모드 항목을 재렌더링해야 함. */}
+        {nums.map((number, index) => (
+          <li key={index}>{number}</li>
+        ))}
+      </ul>
+    </>
+  );
+}
+
+// 객체 리스트 렌더링
+export function UserList() {
+  const users = [
+    { id: 1, name: "홍길동", email: "111@mail.com" },
+    { id: 2, name: "김철수", email: "222@mail.com" },
+    { id: 3, name: "이영희", email: "333@mail.com" },
+  ];
+
+  return (
+    <ul>
+      {users.map((user) => {
+        return (
+          <li key={user.id}>
+            {user.name} {user.email}
+          </li>
+        );
+      })}
+    </ul>
+  );
+}
+
+// 중첩된 리스트
+export function CategoryList() {
+  const cate = [
+    {
+      id: "fruits",
+      name: "Fruits",
+      items: ["Apple", "Banana", "Orange"],
+    },
+    {
+      id: "vegetables",
+      name: "Vegetables",
+      items: ["Carrot", "Lettuce", "Cabbage"],
+    },
+  ];
+
+  return (
+    <div>
+      {cate.map((category) => {
+        return (
+          <div key={category.id}>
+            <h3>{category.name}</h3>
+            <ul>
+              {category.items.map((item) => {
+                return (
+                  // 객체 자체를 key로 사용
+                  <li key={item}>{item}</li>
+                );
+              })}
+            </ul>
+          </div>
+        );
+      })}
+    </div>
+  );
+}
+
+// 동적 객체 리스트
+export function TodoApp() {
+  const [todos, setTodos] = useState([
+    { id: 1, text: "리액트 공부" },
+    { id: 2, text: "JS 공부" },
+    { id: 3, text: "Node 공부" },
+  ]);
+
+  const addTodo = () => {
+    const newTodo = { id: todos.length + 1, text: "새로운 할 일" };
+    setTodos([...todos, newTodo]);
+  };
+
+  return (
+    <div>
+      <h3>Todo List</h3>
+      <ul>
+        {todos.map((todo) => {
+          return <li key={todo.id}>{todo.text}</li>;
+        })}
+      </ul>
+      <button onClick={addTodo}>추가하기</button>
+    </div>
+  );
 }

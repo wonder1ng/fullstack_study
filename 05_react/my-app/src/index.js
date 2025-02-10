@@ -8,10 +8,12 @@ import App6 from "./App06";
 import App7 from "./App07";
 import App8 from "./App08";
 import App9 from "./App09";
+import App10 from "./App10";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <>
+    <App10 />
     <App9 />
     <App8 />
     <App7 />
