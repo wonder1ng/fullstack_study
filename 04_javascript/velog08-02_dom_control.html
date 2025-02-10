@@ -7,7 +7,12 @@
       console.log(document.all);
       console.log(document.getElementsByTagName("*"));
       // documnet의 속성으로 바로 접근 가능한 태그들
-      console.log(document.head, document.title, document.scripts, document.body);
+      console.log(
+        document.head,
+        document.title,
+        document.scripts,
+        document.body
+      );
     </script>
   </head>
   <body>
@@ -34,7 +39,7 @@
     // 2. 클래스로 선택: getElementsByClassName()
     // 3. 아이디로 선택: getElementById()
     // 4. css 선택자로 선택: querySelector(css 선택자), querySelectorAll(css선택자)
-    console.log(document.getElementsByTagName("*"));  // *: 전체
+    console.log(document.getElementsByTagName("*")); // *: 전체
     console.log(document.getElementsByClassName("first"));
     console.log(document.getElementById("first-span"));
     console.log(document.querySelectorAll("div"));
@@ -47,7 +52,7 @@
     console.log(document.querySelector("#first-span"));
     console.log(document.querySelectorAll("#first-div span"));
     console.log(document.querySelectorAll("#first-div>span"));
-    
+
     // 요소 다루기
     // innerHTML: 문자열이 HTML 태그로 인식 "<br>"
     // innerText: 문자열이 단순 Text로 인식 "<br>"
@@ -58,26 +63,24 @@
     el2.innerText = "space <br /> second";
     el2.style.color = "green";
     document.querySelectorAll(".second").forEach((el) => {
-      el.style.backgroundColor = "#ccc"
-      el.innerHTML += "<br /><br />forEach<br /><br />"
-      }
-    );
-    
+      el.style.backgroundColor = "#ccc";
+      el.innerHTML += "<br /><br />forEach<br /><br />";
+    });
+
     // setAttribute: 속성 설정
     // getAttribute: 속성 반환
     // createElement: 요소 생성
     document.querySelectorAll(".first").forEach((el) => {
-        el.setAttribute("style", "font-size: 28px")
-        let elId = el.getAttribute("id")
-        let newContent1 = document.createElement("span");
-        newContent1.innerHTML = "id: " + elId + "<br />";
-        el.insertBefore(newContent1, el.firstChild);
-        
-        let elClass = el.getAttribute("class")
-        let newContent2 = document.createElement("span");
-        newContent2.innerHTML = "<br />class: " + elClass + "<br />";
-        el.appendChild(newContent2)
-      }
-    );
+      el.setAttribute("style", "font-size: 28px");
+      let elId = el.getAttribute("id");
+      let newContent1 = document.createElement("span");
+      newContent1.innerHTML = "id: " + elId + "<br />";
+      el.insertBefore(newContent1, el.firstChild);
+
+      let elClass = el.getAttribute("class");
+      let newContent2 = document.createElement("span");
+      newContent2.innerHTML = "<br />class: " + elClass + "<br />";
+      el.appendChild(newContent2);
+    });
   </script>
 </html>

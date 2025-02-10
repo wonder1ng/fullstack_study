@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="ko">
   <head>
-    <title>evnet control</title>
+    <title>evnet control with class</title>
     <!-- 클래스명을 변경함으로써 동적으로 CSS 적용 -->
     <style>
       .active {
@@ -15,7 +15,7 @@
     </style>
     <script>
       function func1() {
-        let h1 = document.getElementById("header");
+        let h1 = document.getElementById("header1");
         if (h1.classList.contains("active")) {
           h1.classList.remove("active");
         } else {
@@ -23,17 +23,13 @@
         }
       }
       function func2() {
-        let h1 = document.getElementById("header");
-        if (h1.classList.contains("select")) {
-          h1.classList.remove("select");
-        } else {
-          h1.classList.add("select");
-        }
+        let h1 = document.getElementById("header1");
+        h1.classList.toggle("select");
       }
     </script>
   </head>
   <body>
-    <h1 id="header" class="">액티브 셀렉트</h1>
+    <h1 id="header1" class="">액티브 셀렉트</h1>
     <button onclick="func1();">액티브 Active</button>
     <button onclick="func2();">셀렉트 Select</button>
   </body>

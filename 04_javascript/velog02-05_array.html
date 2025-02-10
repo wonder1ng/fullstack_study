@@ -38,11 +38,15 @@
       console.log(arr);
       arr.unshift(100, 110); // 여러 원소 맨 앞에 추가
       console.log(arr);
-      arr[0] = 120; // 값 변환
+      arr[0] = 0; // 값 변환
       console.log(arr);
 
-      arr.splice(-199, 5, 1, 1);
+      // 값 탐색
+      console.log(arr.includes(0), arr.includes(400));
+      // Array.indexof(value, startIndex): startIndex부터 해서 value가 있는 index 반환. 부재시 -1
+      console.log(arr.indexOf(0), arr.indexOf(0, 1), arr.indexOf(0, 3));
       // Array.splice(start_index, delete_count, insert_nums): start_index에서부터 delete_count만큼 값 제거 후 insuert_nums를 삽입.
+      arr.splice(-199, 5, 1, 1);
       // start_index가 index 범위를 초과하는 경우  마지막 값으로 인식
       // delete_count가 0이하인 경우 제거 없이 삽입
       // insert nums 부재 시 delete_count까지만 작동.

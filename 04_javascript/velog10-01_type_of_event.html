@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HTML 이벤트 속성 예제</title>
+    <style>
+      .event-box {
+        margin: 10px;
+        padding: 20px;
+        border: 1px solid #ccc;
+        width: 300px;
+      }
+      .output {
+        margin-top: 10px;
+        padding: 5px;
+        background-color: #f0f0f0;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>HTML 이벤트 속성 예제</h1>
+
+    <div class="event-box">
+      <h3>1. onclick</h3>
+      <button
+        onclick="document.getElementById('onclick-output').innerText = '버튼을 클릭했습니다.'"
+      >
+        클릭하세요
+      </button>
+      <p class="output" id="onclick-output"></p>
+    </div>
+
+    <div class="event-box">
+      <h3>2. ondblclick</h3>
+      <p class="output" id="ondblclick-output"></p>
+      <button
+        ondblclick="document.getElementById('ondblclick-output').innerText = '버튼을 더블 클릭했습니다.'"
+      >
+        더블 클릭하세요
+      </button>
+    </div>
+
+    <div class="event-box">
+      <h3>3. onmouseover / onmouseout</h3>
+      <button
+        onmouseover="this.style.backgroundColor='lightcyan'"
+        onmouseout="this.style.backgroundColor='lightpink'"
+      >
+        마우스를 올려보세요
+      </button>
+    </div>
+
+    <div class="event-box">
+      <h3>4. onkeydown / onkeyup</h3>
+      <input
+        type="text"
+        placeholder="키를 꾹 누르다 떼주세요."
+        onkeydown="document.getElementById('keydown-output').innerText = '키를 눌렀습니다.'"
+        onkeyup="document.getElementById('keyup-output').innerText = '키를 뗐습니다.'"
+      />
+      <p class="output" id="keydown-output"></p>
+      <p class="output" id="keyup-output"></p>
+    </div>
+
+    <div class="event-box">
+      <h3>5. onfocus / onblur</h3>
+      <input
+        type="text"
+        onfocus="this.style.backgroundColor='lightblue'; this.placeholder=''"
+        onblur="this.style.backgroundColor=''; this.placeholder='포커스를 해제하였습니다.'"
+      />
+    </div>
+
+    <div class="event-box">
+      <h3>6. oninput</h3>
+      <input
+        type="text"
+        oninput="document.getElementById('input-output').innerText = '입력 중입니다: ' + this.value"
+      />
+      <p class="output" id="input-output"></p>
+    </div>
+
+    <div class="event-box">
+      <h3>7. onchange</h3>
+      <input
+        type="text"
+        onchange="document.getElementById('change-output').innerText = '값 입력 후 Enter를 눌러주세요.\n현재 값입니다: ' + this.value"
+        placeholder="Enter를 눌러주세요."
+      />
+      <p class="output" id="change-output"></p>
+    </div>
+
+    <div class="event-box">
+      <h3>8. onsubmit</h3>
+      <form
+        onsubmit="event.preventDefault(); document.getElementById('submit-output').innerText = '폼이 제출되었습니다.'"
+      >
+        <input type="text" placeholder="폼 입력" />
+        <button type="submit">제출</button>
+      </form>
+      <p class="output" id="submit-output"></p>
+    </div>
+
+    <div class="event-box">
+      <h3>9. onscroll</h3>
+      <div
+        style="width: 300px; height: 100px; overflow: scroll"
+        onscroll="document.getElementById('scroll-output').innerText = '스크롤 중입니다!'"
+      >
+        <div style="height: 300px">스크롤을 해보세요.</div>
+      </div>
+      <p class="output" id="scroll-output"></p>
+    </div>
+
+    <div class="event-box">
+      <h3>10. oncontextmenu</h3>
+      <div
+        oncontextmenu="this.innerText += '\n우클릭 했습니다!'"
+        style="width: 300px; height: 100px; background-color: lightgray"
+      >
+        우클릭을 해보세요.
+      </div>
+    </div>
+    </div>
+  </body>
+</html>

@@ -46,7 +46,7 @@
       // 특정 예외만 처리
       try {
         // throw new TypeError("TypeError occurred");
-        throw new ReferenceError;
+        throw new ReferenceError();
       } catch (exception) {
         if (exception instanceof TypeError) {
           console.log(exception.name + ": " + exception.message);
