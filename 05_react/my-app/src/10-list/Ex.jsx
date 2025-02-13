@@ -72,8 +72,8 @@ export function DynamicList() {
   const [newItem, setNewItem] = useState("");
 
   function handleAddItem() {
-    // items.push({ id: items.length, text: newItem });
     setItems([...items, { id: items.length, text: newItem }]);
+    setNewItem("");
   }
 
   return (

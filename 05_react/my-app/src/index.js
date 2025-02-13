@@ -15,6 +15,9 @@ import App12 from "./App12";
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <>
+    {/* <App15 /> */}
+    {/* <App14 /> */}
+    {/* <App13 /> */}
     <App12 />
     <App11 />
     <App10 />
