@@ -13,3 +13,6 @@
 // 7.npm install -D tailwindcss@3 postcss autoprefixer
 // 8.npx tailwindcss init -p
 // 9.내문서>react>tailwindcss-project>code . (VScode로 열기)
+
+// 강사님 노션
+// https://codinggangsa.notion.site/Tailwind-React-632d44a1c29242cba8fec19080b1c07f
