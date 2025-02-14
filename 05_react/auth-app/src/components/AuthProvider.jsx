@@ -4,7 +4,7 @@ const AuthContext = createContext();
 
 export const useAuth = () => useContext(AuthContext);
 
-export const AuthProvider = () => {
+export const AuthProvider = ({ children }) => {
   const preset = [{ email: "hong@mail.com", password: "1234" }];
   const [users, setUsers] = useState(preset); // 사용자 목록
   const [currentUser, setCurrentUset] = useState(null); // 현재 로그인 된 사용자
@@ -14,7 +14,8 @@ export const AuthProvider = () => {
       return { error: "이미 가입된 이메일입니다." };
     }
     const newUser = { email, password };
-    setUsers();
+    setUsers([...users, newUser]);
+    return { success: true };
   };
   const login = (email, password) => {
     const user = users.find(
@@ -31,8 +32,8 @@ export const AuthProvider = () => {
   };
 
   return (
-    <AuthContext.Provider
-      value={{ users, currentUser, signup, login, logout }}
-    ></AuthContext.Provider>
+    <AuthContext.Provider value={{ users, currentUser, signup, login, logout }}>
+      {children}
+    </AuthContext.Provider>
   );
 };

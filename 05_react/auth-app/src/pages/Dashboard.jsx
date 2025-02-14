@@ -1,4 +1,4 @@
-import { useAuth } from "../components/AUthProvider";
+import { useAuth } from "../components/AuthProvider";
 import { useNavigate } from "react-router-dom";
 
 const Dashboard = () => {
