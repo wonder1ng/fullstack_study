@@ -1,6 +1,6 @@
 // 제네릭: 타입을 동적으로 결정해주는 기능
 
-//
+// 어떤 타입의 데이터가 들어올지 모르는 상황
 function func1(value: number | string | null) {}
 function func2(value: any) {}
 function func3<T>(value: T) {
