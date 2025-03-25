@@ -7,7 +7,7 @@ USE 세계무역;
 CREATE TABLE 부서(
   부서번호 CHAR(2) PRIMARY KEY,
   부서명 VARCHAR(20)
- ) DEFAULT CHARSET=utf8mb4;
+ ) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;
 
 
 
@@ -25,7 +25,7 @@ CREATE TABLE 사원(
   집전화 VARCHAR(20),
   상사번호 CHAR(3),
   부서번호 CHAR(2)
-  ) DEFAULT CHARSET=utf8mb4;
+  ) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;
   
   
 
@@ -40,7 +40,7 @@ CREATE TABLE 고객(
    지역 VARCHAR(20),
    전화번호 VARCHAR(20),
    마일리지 INT
-  ) DEFAULT CHARSET=utf8mb4;
+  ) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;
 
 
 
@@ -50,7 +50,7 @@ CREATE TABLE 제품(
   포장단위 VARCHAR(30),
   단가 INT,
   재고 INT
-  ) DEFAULT CHARSET=utf8mb4;
+  ) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;
 
 
 
@@ -62,7 +62,7 @@ CREATE TABLE 주문(
   주문일 DATE,
   요청일 DATE,
   발송일 DATE
-  ) DEFAULT CHARSET=utf8mb4;
+  ) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;
 
 
 
@@ -74,7 +74,7 @@ CREATE TABLE 주문세부(
   주문수량 INT,
   할인율 FLOAT,
   PRIMARY KEY(주문번호, 제품번호)
- ) DEFAULT CHARSET=utf8mb4;
+ ) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;
 
 
 
@@ -83,4 +83,4 @@ CREATE TABLE 마일리지등급(
   등급명 CHAR(1) PRIMARY KEY,
   하한마일리지 INT,
   상한마일리지 INT
-  ) DEFAULT CHARSET=utf8mb4;
+  ) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;
