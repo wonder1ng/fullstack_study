@@ -6,12 +6,15 @@ public class ex01 {
         System.out.print("Hello print\n");
         System.out.println("Hello println");
         System.out.printf("%nHello %s%n\n", "printf\n%n");
-
         int a;
         int b = 10;
+        final int CONSTANT_NUMBER = 100;
+        // CONSTANT_NUMBER = 1;
+        // java: cannot assign a value to final variable CONSTANT_NUMBER
+        System.out.println(b);
+        System.out.println(CONSTANT_NUMBER);
         // System.out.println(a);
         // java: variable a might not have been initialized
-        System.out.println(b);
         a = 2;
         System.out.println(a);
         int a1, a2, a3;
