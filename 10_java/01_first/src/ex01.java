@@ -1,5 +1,7 @@
+import java.io.IOException;
+
 public class ex01 {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
         System.out.print("Hello print");
         System.out.println("Hello println");
         System.out.printf("Hello printf");
@@ -29,5 +31,7 @@ public class ex01 {
         System.out.println(c2);
         System.out.println(c3);
         System.out.println(c4);
+
+        System.out.println(System.in.read());
     }
 }
