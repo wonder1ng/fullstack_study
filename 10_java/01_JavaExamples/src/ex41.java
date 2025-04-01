@@ -1,5 +1,6 @@
 import java.lang.annotation.Annotation;
 import java.lang.reflect.Constructor;
+import java.lang.reflect.Field;
 import java.lang.reflect.Method;
 
 public class ex41 {
@@ -31,6 +32,12 @@ public class ex41 {
         System.out.println("Annotation list ------------------");
         for (Annotation a: annotations) {
             System.out.println(a);
+        }
+
+        Field[] fields = c3.getFields();
+        System.out.println("Field list ------------------");
+        for (Field f: fields) {
+            System.out.println(f);
         }
     }
 }
