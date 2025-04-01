@@ -11,7 +11,6 @@
 //           행동  sit    "앉는다"
 //자식클래스의 객체를 생성하고 속성과 행동을 출력하시오.
 public class ex29 {
-
     public static void main(String[] args) {
         WoodDesk desk = new WoodDesk();
         desk.price = 1000;
