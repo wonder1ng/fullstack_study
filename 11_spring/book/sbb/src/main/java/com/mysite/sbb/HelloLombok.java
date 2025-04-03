@@ -4,9 +4,9 @@ import lombok.Getter;
 import lombok.Setter;
 import lombok.NoArgsConstructor;
 
-@Getter
-@Setter
-@NoArgsConstructor
+@Getter	// getter 자동 생성
+@Setter	// setter 자동 생성
+@NoArgsConstructor	// 기본 생성자 생성
 public class HelloLombok {
     private String greeting;
     private int lombok;
