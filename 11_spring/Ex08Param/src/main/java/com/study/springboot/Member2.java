@@ -9,11 +9,6 @@ import org.springframework.stereotype.Component;
 //2. lombok의 @Value
 //  1) final, private, getter, equals, toString 등이 생성됨.
 
-//@Component
-//@Getter
-//@Setter
-//@NoArgsConstructor
-//@AllArgsConstructor
 @Value
 public class Member2 {
 
