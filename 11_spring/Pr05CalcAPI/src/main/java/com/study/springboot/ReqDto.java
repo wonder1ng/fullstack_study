@@ -5,6 +5,6 @@ import lombok.Data;
 @Data
 public class ReqDto {
     private int numA;
-    private int NumB;
+    private int numB;
     private int cond;
 }
