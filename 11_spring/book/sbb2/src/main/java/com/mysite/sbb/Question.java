@@ -1,12 +1,15 @@
 package com.mysite.sbb;
 
 import java.time.LocalDateTime;
+import java.util.List;
 
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.OneToMany;
 import jakarta.persistence.Transient;
 import lombok.Getter;
 import lombok.Setter;
@@ -32,6 +35,10 @@ public class Question {
 	// @Column 미기재 시 자동 적용
 	private LocalDateTime createDate;
 	// db에서는 createDate(카멜)가 create_date(스네이크)로 변환됨. 
+	
+	@OneToMany(mappedBy = "question", cascade = CascadeType.REMOVE)
+	// 1:N 관계로 구성,  참조 속성, `cascade = CascadeType.REMOVE`:  question 삭제 시 answerList도 삭제
+	private List<Answer> answerList;
 	
 	@Transient // 테이블의 열이 아닌 클래스의 속성으로 사용
 	private void desc() {
