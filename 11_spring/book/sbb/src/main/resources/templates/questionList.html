@@ -14,11 +14,15 @@
 				<!-- `th:`: 타임리프에서 사용하는 속성을 나타냄 -->
 				<!-- each: 자바의 forEach와 유사 -->
 				<tr th:each="question, loop: ${paging}">
-					<td th:text="${loop.count}"></td>
+					<td th:text="${paging.getTotalElements - (paging.number * paging.size) - loop.index}"></td>
 					<td>
 						<!-- `th:href`: 링크 설정 시 @{}의 안에 기입 -->
 						<!-- `{|${}|}`: 일종의 포맷팅 방법으로 bar(|)로 감싸줘야 변수 활용 가능. 감싸지 않으면 전부 문자 취급 -->
-						<a th:href="@{|/question/detail/${question.id}|}" th:text="${question.subject}"></a> 
+						<a th:href="@{|/question/detail/${question.id}|}" th:text="${question.subject}"></a>
+						<span class="text-danger small ms-2"
+							th:if="${#lists.size(question.answerList) > 0}"
+							th:text="${#lists.size(question.answerList)}">
+						</span>
 					</td>
 					<!-- text: 태그의 innerText 값 -->
 					<td th:text="${#temporals.format(question.createDate, 'yyyy-MM-dd HH:mm')}"></td>
@@ -34,6 +38,7 @@
 				</a>
 				</li>
 				<li th:each="page: ${#numbers.sequence(0, paging.totalPages-1)}"
+					th:if="${page >= paging.number-5 and page <= paging.number+5}"
 					th:classappend="${page == paging.number} ? 'active'"
 					class="page-item">
 					<a th:text="${page}" class="page-link" th:href="@{|?page=${page}|}"></a>
