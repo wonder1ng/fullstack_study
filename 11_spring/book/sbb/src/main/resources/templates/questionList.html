@@ -13,7 +13,7 @@
 			<tbody>
 				<!-- `th:`: 타임리프에서 사용하는 속성을 나타냄 -->
 				<!-- each: 자바의 forEach와 유사 -->
-				<tr th:each="question, loop: ${questionList}">
+				<tr th:each="question, loop: ${paging}">
 					<td th:text="${loop.count}"></td>
 					<td>
 						<!-- `th:href`: 링크 설정 시 @{}의 안에 기입 -->
@@ -25,6 +25,27 @@
 				</tr>
 			</tbody>
 		</table>
+		<!-- 페이징 시작 -->
+		<div thLif="${!paging.isEmpty()}">
+			<ul class="pagination justify-content-center">
+				<li class="page-item" th:classAppend="${!paging.hasPrevious} ? 'disabled'">
+					<a class="page-link" th:href="@{|?page=${paging.number-1}|}">
+						<span>이전</span>
+				</a>
+				</li>
+				<li th:each="page: ${#numbers.sequence(0, paging.totalPages-1)}"
+					th:classappend="${page == paging.number} ? 'active'"
+					class="page-item">
+					<a th:text="${page}" class="page-link" th:href="@{|?page=${page}|}"></a>
+				</li>
+				<li class="page-item" th:classappend="${!paging.hasNext} ? 'disabled'">
+					<a class="page-link" th:href="@{|?page=${paging.number+1}|}">
+						<span>다음</span>
+					</a>
+				</li>
+			</ul>
+		</div>
+		<!-- 페이징 끝-->
 		<a th:href="@{/question/create}" class="btn btn-primary">질문 등록하기</a>
 	</div>
 </html>
