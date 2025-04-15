@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ko-kr" xmlns:th="https:www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>postForm.html</title>
+</head>
+<body>
+    <!-- 페이지 이동 방법-->
+    <!-- redirect: 네부데이터(model, request, response) 버리고 이동 -->
+    <!-- forward(dispatch): 내부 데이터 갖고 이동 -->
+
+    <!-- http:localhost:8080/model2 -->
+    <form action="/model2" method="post">
+        <label>이름</label>
+        <input type="text" name="name" value=""><br/>
+        <label>나이</label>
+        <input type="text" name="age" value="">
+        <input type="submit">
+    </form>
+    <form action="/model3" method="post">  <!-- 여기서 POST 요청을 보내도록 설정 -->
+        <label>이름</label>
+        <input type="text" name="name" value=""><br/>
+        <label>나이</label>
+        <input type="text" name="age" value="">
+        <input type="submit">
+    </form>
+</body>
+</html>

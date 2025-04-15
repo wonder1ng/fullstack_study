@@ -1,0 +1,30 @@
+<html layout:decorate="~{layout}">
+<!-- `layout:decorate`: 레이아웃 템플릿 설정 -->
+<!-- `layout:fragment`: 이 요소를 부모 레이아웃에 매핑 -->
+	<div layout:fragment="content" class="container my-3">	
+		<table class="table">
+			<thead class="table-dark">
+				<tr>
+					<th>번호</th>
+					<th>제목</th>
+					<th>작성일시</th>
+				</tr>
+			</thead>
+			<tbody>
+				<!-- `th:`: 타임리프에서 사용하는 속성을 나타냄 -->
+				<!-- each: 자바의 forEach와 유사 -->
+				<tr th:each="question, loop: ${questionList}">
+					<td th:text="${loop.count}"></td>
+					<td>
+						<!-- `th:href`: 링크 설정 시 @{}의 안에 기입 -->
+						<!-- `{|${}|}`: 일종의 포맷팅 방법으로 bar(|)로 감싸줘야 변수 활용 가능. 감싸지 않으면 전부 문자 취급 -->
+						<a th:href="@{|/question/detail/${question.id}|}" th:text="${question.subject}"></a> 
+					</td>
+					<!-- text: 태그의 innerText 값 -->
+					<td th:text="${#temporals.format(question.createDate, 'yyyy-MM-dd HH:mm')}"></td>
+				</tr>
+			</tbody>
+		</table>
+		<a th:href="@{/question/create}" class="btn btn-primary">질문 등록하기</a>
+	</div>
+</html>

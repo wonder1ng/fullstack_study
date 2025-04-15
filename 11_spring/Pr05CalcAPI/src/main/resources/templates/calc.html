@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="ko-kr">
+<head>
+    <title>계산기 with API</title>
+    <style>
+        #wrap {
+          border: 1px solid black;
+          padding: 0;
+          /* 가로중앙 정렬 */
+          margin: 0 auto;
+          width: 300px;
+          height: 500px;
+          /* flexbox : Flexable Grid 사용 - 컨테이너에 적용 */
+          display: flex;
+          /* 콘텐츠가 넘치면 줄바꿈한다. */
+          flex-wrap: wrap;
+          /* 주축방향 세로로 */
+          flex-direction: column;
+          align-items: center;
+          text-align: center;
+        }
+        #res {
+          display: flex;
+        }
+        #numA,
+        #numB {
+          background-color: rgb(216, 213, 213);
+          margin-bottom: 18px;
+          margin-left: 20px;
+          width: 150px;
+          height: 25px;
+          text-align: center;
+          border: 1px solid rgb(112, 112, 112);
+        }
+        #result {
+          background-color: rgb(112, 112, 112);
+          color: white;
+          margin-bottom: 18px;
+          margin-left: 5px;
+          width: 150px;
+          height: 25px;
+          text-align: center;
+          border: 1px solid rgb(112, 112, 112);
+        }
+        #add,
+        #mul,
+        #sub,
+        #divide {
+          width: 220px;
+          height: 30px;
+          background-color: rgb(40, 108, 209);
+          border: none;
+          color: white;
+          margin-bottom: 5px;
+        }
+        #del {
+          width: 220px;
+          height: 30px;
+          background-color: rgb(241, 50, 50);
+          border: 0px;
+          color: white;
+        }
+        #btn-group {
+          display: flex;
+          flex-flow: column wrap;
+          justify-items: center;
+          align-items: center;
+          text-align: center;
+        }
+    </style>
+</head>
+<body>
+<div id="wrap">
+    <div>
+        <p>Spring Boot</p>
+        <p>계산기 프로그램</p>
+    </div>
+    <div>
+        <label>숫자 1</label>
+        <input type="text" id="numA" value=""/>
+        <br/>
+    </div>
+    <div>
+        <label>숫자 2</label>
+        <input type="text" id="numB" value=""/>
+        <br/>
+    </div>
+    <div id="res">
+        <label>연산 결과</label>
+        <input type="text" disabled="disabled" id="result" value=""/>
+    </div>
+    <div id="btn-group">
+        <p id="add" onclick="onCalc(0)">덧셈</p>
+        <p id="sub" onclick="onCalc(1)">뺄셈</p>
+        <p id="mul" onclick="onCalc(2)">곱셈</p>
+        <p id="divide" onclick="onCalc(3)">나눗셈</p>
+        <p id="del" onclick="onCalc(4)">지우기</p>
+    </div>
+</div>
+<script>
+    function onCalc(cond){
+        let numA = document.getElementById("numA").value;
+        let numB = document.getElementById("numB").value;
+
+        if (!numA || !numB) {
+            console.log("Insert Numbers!!");
+            return;
+        } else if (cond == 4) {
+            document.getElementById("numA").value = "";
+            document.getElementById("numB").value = "";
+        }
+
+        //fetch() : JS6에서 서버에 AJAX통신하는 함수
+        fetch("http://localhost:8080/api/v1/calc",{
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({
+                numA: parseInt(numA),
+                numB: parseInt(numB),
+                cond: cond
+            })
+        })
+        .then((response) => { //HTTP 응답객체
+            console.log(response);
+            return response.json();
+        })
+        .then((json) =>  { //JSON객체
+            console.log(json);
+            document.getElementById("result").value = json.numR;
+            //응답메시지 표시하기
+            console.log(json.status, json.message);
+        })
+        .catch((error) => {
+            console.log(error);
+        })
+    }
+</script>
+</body>
+</html>

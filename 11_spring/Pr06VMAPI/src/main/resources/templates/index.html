@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>자판기 프로그램</title>
+    <style>
+        body {
+          margin: 0;
+          background: #b41e1e;
+          font-family: sans-serif;
+          color: white;
+          text-align: center;
+          padding: 20px;
+        }
+        .container {
+          background: white;
+          color: black;
+          padding: 20px;
+          border-radius: 10px;
+          display: inline-block;
+          min-width: 500px;
+        }
+        .header {
+          font-size: 24px;
+          font-weight: bold;
+          color: #b41e1e;
+          margin-bottom: 10px;
+        }
+        .top-bar {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+        }
+        .lang-toggle {
+          display: flex;
+          align-items: center;
+          gap: 5px;
+        }
+        .toggle-switch {
+          position: relative;
+          width: 40px;
+          height: 20px;
+        }
+        .toggle-switch input {
+          opacity: 0;
+          width: 0;
+          height: 0;
+        }
+        .slider {
+          position: absolute;
+          cursor: pointer;
+          top: 0; left: 0;
+          right: 0; bottom: 0;
+          background-color: #ccc;
+          border-radius: 20px;
+          transition: 0.4s;
+        }
+        .slider::before {
+          position: absolute;
+          content: "";
+          height: 16px;
+          width: 16px;
+          left: 2px;
+          bottom: 2px;
+          background-color: white;
+          transition: 0.4s;
+          border-radius: 50%;
+        }
+        .toggle-switch input:checked + .slider {
+          background-color: #2196F3;
+        }
+        .toggle-switch input:checked + .slider::before {
+          transform: translateX(20px);
+        }
+        table {
+          width: 100%;
+          border-collapse: collapse;
+          margin-top: 10px;
+        }
+        th, td {
+          border: 1px solid #ccc;
+          padding: 8px;
+        }
+        th {
+          background-color: #eee;
+        }
+        .btn {
+          padding: 5px 10px;
+          border: none;
+          border-radius: 5px;
+          cursor: pointer;
+        }
+        .btn-add {
+          background-color: #e64d4d;
+          color: white;
+          margin-top: 15px;
+        }
+        .btn-edit {
+          background-color: #1e90ff;
+          color: white;
+        }
+        .btn-delete {
+          background-color: #f44336;
+          color: white;
+        }
+        .summary {
+          background: #fff3f3;
+          padding: 5px;
+          color: red;
+          margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="header">★자판기 프로그램★</div>
+    <div class="top-bar">
+        <button>▽ 자판기 상품 목록</button>
+        <div class="lang-toggle">
+            <span>한글</span>
+            <label class="toggle-switch">
+                <input type="checkbox" id="langToggle">
+                <span class="slider"></span>
+            </label>
+            <span>ENG</span>
+        </div>
+    </div>
+
+    <!-- 상품 목록 -->
+    <table id="table">
+<!--        <tr>-->
+<!--            <th>번호</th>-->
+<!--            <th>상품명</th>-->
+<!--            <th>가격</th>-->
+<!--            <th>유통기한</th>-->
+<!--            <th>수정</th>-->
+<!--            <th>삭제</th>-->
+<!--        </tr>-->
+<!--        <tr>-->
+<!--            <td>1</td>-->
+<!--            <td>상추버거</td>-->
+<!--            <td>3000</td>-->
+<!--            <td>2023-12-30</td>-->
+<!--            <td><button class="btn btn-edit">수정</button></td>-->
+<!--            <td><button class="btn btn-delete">삭제</button></td>-->
+<!--        </tr>-->
+<!--        <tr>-->
+<!--            <td>2</td>-->
+<!--            <td>소고기버거</td>-->
+<!--            <td>1000</td>-->
+<!--            <td>2023-12-05</td>-->
+<!--            <td><button class="btn btn-edit">수정</button></td>-->
+<!--            <td><button class="btn btn-delete">삭제</button></td>-->
+<!--        </tr>-->
+<!--        <tr>-->
+<!--            <td>3</td>-->
+<!--            <td>치즈버거</td>-->
+<!--            <td>2000</td>-->
+<!--            <td>2023-12-05</td>-->
+<!--            <td><button class="btn btn-edit">수정</button></td>-->
+<!--            <td><button class="btn btn-delete">삭제</button></td>-->
+<!--        </tr>-->
+    </table>
+
+    <div class="summary"></div>
+    <a href="/add" class="btn btn-add">상품 추가하기!</a>
+</div>
+
+<script>
+    document.getElementById('langToggle').addEventListener('change', function () {
+    });
+    let table = document.getElementById("table")
+    function deleteProduct(i) {
+        fetch(`http://localhost:8080/api/v1/product/` + i, {
+            method: "DELETE"
+        })
+        .then((response) => {
+            location.reload();
+        })
+        .catch((error) => {
+            console.log(error);
+        });
+    }
+
+    const products = fetch("http://localhost:8080/api/v1/product")
+        .then((response) => {
+            return response.json();
+        }).then(json => {
+            document.getElementsByClassName("summary")[0].textContent = "▲ 총 " + (json.length ? json.length : 0) + "개의 상품이 있습니다."
+            if (json.length) {
+                const trName = document.createElement("tr")
+                trName.innerHTML = `
+                    <th>번호</th>
+                    <th>상품명</th>
+                    <th>가격</th>
+                    <th>유통기한</th>
+                    <th>수정</th>
+                    <th>삭제</th>
+                `
+                table.appendChild(trName)
+                json.forEach((product, i) => {
+                const tr = document.createElement("tr")
+                tr.innerHTML = `
+                    <td>${1 + i}</td>
+                    <td>${product.name}</td>
+                    <td>${product.price}</td>
+                    <td>${product.endDate}</td>
+                    <td><button class="btn btn-edit"><a href="/edit?num=${i}&name=${product.name}&price=${product.price}&endDate=${product.endDate}">수정</a></button></td>
+                    <td><button class="btn btn-delete" onClick="deleteProduct(${i})">삭제</button></td>
+                `
+                table.appendChild(tr)
+                })
+            } else {table.textContent = "상품 목록이 비어 있습니다."}
+        })
+        .catch((error) => {
+            console.log(error);
+        })
+
+</script>
+</body>
+</html>

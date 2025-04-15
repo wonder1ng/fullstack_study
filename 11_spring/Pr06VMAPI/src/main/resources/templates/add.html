@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>자판기 상품 추가</title>
+    <style>
+        body {
+          background: #b41e1e;
+          color: white;
+          font-family: sans-serif;
+          text-align: center;
+          padding: 20px;
+        }
+        .form-container {
+          background: white;
+          color: black;
+          padding: 20px;
+          border-radius: 10px;
+          display: inline-block;
+          width: 300px;
+        }
+        input {
+          width: 100%;
+          padding: 10px;
+          margin: 10px 0;
+          border: 1px solid #ccc;
+          border-radius: 5px;
+        }
+        .btn {
+          padding: 10px 20px;
+          border: none;
+          border-radius: 5px;
+          cursor: pointer;
+          margin: 5px;
+        }
+        .btn-complete {
+          background-color: black;
+          color: white;
+        }
+        .btn-back {
+          background-color: white;
+          color: black;
+        }
+    </style>
+</head>
+<body>
+<div class="form-container">
+    <h2>자판기 상품 추가</h2>
+    <form>
+        <label>상품명:</label>
+        <input id="name" type="text">
+
+        <label>가격:</label>
+        <input id="price" type="number">
+
+        <label>유통기한:</label>
+        <input id="endDate" type="text">
+
+        <a class="btn btn-complete" onclick="add()">상품 추가 완료!</a>
+        <a class="btn btn-back" href="/">돌아가기</a>
+    </form>
+</div>
+</body>
+<script>
+    function add() {
+        const name = document.getElementById("name").value;
+        const price = document.getElementById("price").value
+        const endDate = document.getElementById("endDate").value
+        fetch("http://localhost:8080/api/v1/product", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({
+                num: 0,
+                name: name,
+                price: parseInt(price),
+                endDate: endDate
+            })
+        })
+        .then((response) => { //HTTP 응답객체
+            console.log(response);
+        location.href = "http://localhost:8080/";
+        })
+        .catch((error) => {
+            console.log(error);
+        })
+    }
+</script>
+</html>
