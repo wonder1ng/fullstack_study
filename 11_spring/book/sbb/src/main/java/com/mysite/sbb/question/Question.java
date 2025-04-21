@@ -4,6 +4,7 @@ import java.time.LocalDateTime;
 import java.util.List;
 
 import com.mysite.sbb.answer.Answer;
+import com.mysite.sbb.user.SiteUser;
 
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
@@ -11,6 +12,7 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.ManyToOne;
 import jakarta.persistence.OneToMany;
 import jakarta.persistence.Transient;
 import lombok.Getter;
@@ -43,7 +45,10 @@ public class Question {
 	private List<Answer> answerList;
 	
 	@Transient // 테이블의 열이 아닌 클래스의 속성으로 사용
-	private void desc() {
+	public void desc() {
 		System.out.println("Integer id(@GeneratedValue(strategy = GenerationType.IDENTITY)), String subject(length = 200), String content(columnDefinition = \"TEXT\"), LocalDateTime createDate");
 	}
+	
+	@ManyToOne
+	private SiteUser author;
 }
