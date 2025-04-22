@@ -1,8 +1,10 @@
 package com.mysite.sbb.question;
 
+import java.security.Principal;
 import java.util.List;
 
 import org.springframework.data.domain.Page;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -14,6 +16,8 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.mysite.sbb.answer.AnswerForm;
+import com.mysite.sbb.user.SiteUser;
+import com.mysite.sbb.user.UserService;
 
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
@@ -24,6 +28,7 @@ import lombok.RequiredArgsConstructor;
 public class QuestionController {
 	
 	private final QuestionRepository questionRepository;
+	private final UserService userService;
 	
 	@GetMapping("/listEx") // Get 방식으로 매핑
 	@ResponseBody // response를 body에 넣음
@@ -58,18 +63,21 @@ public class QuestionController {
 	}
 	
     @GetMapping("/create")
+    @PreAuthorize("isAuthenticated()") // 로그인한 경우에만 실행 
     public String questionCreate(QuestionForm questionForm) {
         return "questionForm";
     }
-	
+    
     @PostMapping("/create")
-    public String questionCreate(@Valid QuestionForm questionForm, BindingResult bindingResult) {
+    @PreAuthorize("isAuthenticated()")
+    public String questionCreate(@Valid QuestionForm questionForm, BindingResult bindingResult, Principal principal) {
     	// @Valid: 검증 기능 작동
     	// BindingResult: @Valid의 검증 결과를 반환하는 객체로 @Valid 매개 변수 바로 뒤에 위치.
     	if (bindingResult.hasErrors()) {
     		return "questionForm";
     	}
-    	this.questionService.create(questionForm.getSubject(), questionForm.getContent());
+    	SiteUser siteUser = this.userService.getUser(principal.getName());
+    	this.questionService.create(questionForm.getSubject(), questionForm.getContent(), siteUser);
         return "redirect:/question/list";
     }
 }
