@@ -23,7 +23,9 @@ import com.mysite.sbb.user.UserService;
 
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 
+@Slf4j
 @RequestMapping("/question") // URL prefix: 메서드 url의 접두사
 @RequiredArgsConstructor // 상수와 @NotNull 변수 생성자 주입	
 @Controller
@@ -51,6 +53,7 @@ public class QuestionController {
 	@GetMapping("/list")
 	public String list(Model model, @RequestParam(value="page", defaultValue="0") int page,
 			@RequestParam(value = "kw", defaultValue = "") String kw) {
+		log.info("page: {}, kw: {}", page, kw);
 		Page<Question> paging = this.questionService.getList(page, kw);
 		model.addAttribute("paging", paging);
 		model.addAttribute("kw", kw);
